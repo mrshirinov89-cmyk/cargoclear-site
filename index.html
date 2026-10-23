@@ -510,8 +510,10 @@
     drawStars(t); draw(t);
     if (!reduce) requestAnimationFrame(frame);
   }
-  function resize() { initStars(); layout(); if (reduce) frame(0); }
+  function resize() { initStars(); layout(); if (!reduce) return; frame(0); }
   window.addEventListener("resize", resize);
+  // Смена языка меняет высоту первого экрана — холст должен пересчитаться, иначе планету растянет.
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(hero);
   resize();
   if (reduce) frame(0); else { frame(0); requestAnimationFrame(frame); }
 })();
