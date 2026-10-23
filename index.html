@@ -25,6 +25,7 @@
 
   header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+  header.over-hero .logo { color: #fff; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; letter-spacing: -.01em; }
   .logo .mark { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--teal), var(--teal-2)); display: grid; place-items: center; }
   .links { display: flex; gap: 26px; font-weight: 500; color: var(--ink-2); font-size: 15px; }
@@ -39,8 +40,6 @@
   .btn.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
   .btn.small { padding: 9px 15px; font-size: 14px; }
 
-  .hero { background: radial-gradient(1200px 500px at 85% -10%, #d5f1ec 0%, transparent 60%), linear-gradient(180deg, #fbfdfd, #fff); padding: 88px 0 72px; overflow: hidden; }
-  .hero .grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--teal-soft); color: var(--teal); font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px; }
   h1 { font-size: 52px; line-height: 1.08; letter-spacing: -.03em; margin: 18px 0 18px; }
   h1 em { font-style: normal; color: var(--teal); }
@@ -50,18 +49,6 @@
   .trust span { display: inline-flex; align-items: center; gap: 7px; }
   .trust svg { color: var(--teal); }
 
-  .card-route { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 26px; box-shadow: 0 24px 60px rgba(11,34,51,.10); }
-  .route-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-  .route-head b { font-size: 15px; }
-  .pill { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--teal-soft); color: var(--teal); }
-  .step-row { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding: 11px 0; position: relative; }
-  .step-row:not(:last-child)::after { content: ""; position: absolute; left: 13px; top: 38px; bottom: -6px; width: 2px; background: var(--line); }
-  .dot { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--teal-soft); color: var(--teal); }
-  .dot.done { background: var(--teal); color: #fff; }
-  .step-row .t { font-weight: 600; font-size: 14px; }
-  .step-row .s { color: var(--muted); font-size: 13px; }
-  .route-foot { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); display: flex; justify-content: space-between; font-size: 14px; }
-  .route-foot b { color: var(--teal); }
 
   section { padding: 88px 0; }
   .alt { background: var(--bg-2); }
@@ -131,6 +118,61 @@
     h1 { font-size: 32px; }
     .lead { font-size: 17px; }
   }
+
+  /* --- Космос и планета на первом экране --- */
+  header { transition: background .35s, border-color .35s, color .35s; }
+  header.over-hero { background: transparent; border-color: transparent; backdrop-filter: none; color: #fff; }
+  header.over-hero .links { color: rgba(255,255,255,.78); }
+  header.over-hero .links a:hover { color: #fff; }
+  header.over-hero .lang { border-color: rgba(255,255,255,.25); }
+  header.over-hero .lang button { color: rgba(255,255,255,.7); }
+  header.over-hero .lang button.on { background: #fff; color: var(--navy); }
+  .hero { position: relative; min-height: 100vh; margin-top: -68px; padding: 0; display: flex; align-items: center; color: #fff; overflow: hidden;
+          background: radial-gradient(1100px 700px at 75% 45%, #0f3a4a 0%, #071a26 45%, #030b12 100%); }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(180deg, rgba(255,255,255,0), #fff); pointer-events: none; z-index: 3; }
+  #stars, #globe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  #stars { z-index: 0; }
+  #globe { z-index: 1; will-change: transform, opacity; }
+  .hero-glow { position: absolute; z-index: 1; width: 720px; height: 720px; right: -140px; top: 50%; transform: translateY(-50%); border-radius: 50%;
+               background: radial-gradient(circle, rgba(20,184,166,.20), rgba(20,184,166,0) 62%); pointer-events: none; }
+  .hero-inner { position: relative; z-index: 2; padding-top: 120px; padding-bottom: 140px; width: 100%; }
+  .hero-text { max-width: 610px; }
+  .hero h1 { color: #fff; font-size: 60px; }
+  .hero h1 em { color: #5eead4; }
+  .hero .lead { color: rgba(226,240,240,.86); }
+  .eyebrow.dark { background: rgba(94,234,212,.12); color: #5eead4; border: 1px solid rgba(94,234,212,.25); }
+  .btn.glass { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(6px); }
+  .btn.glass:hover { background: rgba(255,255,255,.14); }
+  .routes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 34px; }
+  .routes-title { font-size: 13px; color: rgba(226,240,240,.6); margin-right: 4px; }
+  .chip { font-size: 13px; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); color: #d7ecea; }
+  .scroll-hint { position: absolute; z-index: 4; left: 50%; bottom: 34px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px;
+                 color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+  .scroll-hint i { width: 22px; height: 34px; border: 2px solid currentColor; border-radius: 12px; position: relative; opacity: .8; }
+  .scroll-hint i::after { content: ""; position: absolute; left: 50%; top: 6px; width: 4px; height: 7px; margin-left: -2px; border-radius: 2px; background: currentColor; animation: wheel 1.8s infinite; }
+  @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(10px); opacity: 0; } 100% { opacity: 0; } }
+  .hero-text > * { opacity: 0; transform: translateY(18px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .hero-text > *:nth-child(2) { animation-delay: .12s; } .hero-text > *:nth-child(3) { animation-delay: .24s; }
+  .hero-text > *:nth-child(4) { animation-delay: .36s; } .hero-text > *:nth-child(5) { animation-delay: .5s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  /* --- Плавное появление блоков при прокрутке --- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .services .reveal:nth-child(3n+2), .steps .reveal:nth-child(4n+2) { transition-delay: .08s; }
+  .services .reveal:nth-child(3n), .steps .reveal:nth-child(4n+3) { transition-delay: .16s; }
+  .steps .reveal:nth-child(4n) { transition-delay: .24s; }
+  @media (max-width: 960px) {
+    .hero h1 { font-size: 40px; }
+    .hero-glow { width: 520px; height: 520px; right: -200px; top: 30%; }
+    .hero-inner { padding-top: 110px; padding-bottom: 150px; }
+    #globe { opacity: .45; }
+  }
+  @media (max-width: 600px) { .hero h1 { font-size: 34px; } .routes { margin-top: 24px; } }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .hero-text > * { opacity: 1; transform: none; animation: none; transition: none; }
+    .scroll-hint i::after { animation: none; }
+  }
 </style>
 </head>
 <body data-lang="en">
@@ -159,72 +201,66 @@
 </header>
 
 <main id="top">
-  <section class="hero">
-    <div class="wrap grid">
-      <div>
-        <span class="eyebrow">
+  <section class="hero" id="hero">
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <canvas id="globe" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow dark">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
           <span class="en">Customs broker &amp; technical importer in Russia</span><span class="ru">Таможенный брокер и технический импортёр в России</span><span class="zh">俄罗斯报关行与技术进口商</span>
         </span>
-        <h1>
-          <span class="en">Sell to Russia.<br><em>We handle the border.</em></span>
-          <span class="ru">Продавайте в Россию.<br><em>Границу берём на себя.</em></span><span class="zh">向俄罗斯出口。<br><em>清关交给我们。</em></span>
-        </h1>
-        <p class="lead">
-          <span class="en">Customs clearance, a Russian importer of record and a clear landed-cost estimate — so exporters of food, fresh produce, beverages and other goods can enter the Russian market without opening a local company.</span>
-          <span class="ru">Таможенное оформление, российский импортёр и понятный расчёт всех платежей — чтобы производители продуктов, фруктов, напитков и других товаров могли выйти на рынок России без открытия своей компании.</span><span class="zh">报关、俄罗斯进口商以及清晰的到岸成本测算——食品、生鲜、饮料及其他商品的出口商无需在俄罗斯开设公司即可进入俄罗斯市场。</span>
-        </p>
+        <h1><span class="en">Sell to Russia.<br><em>We handle the border.</em></span><span class="ru">Продавайте в Россию.<br><em>Границу берём на себя.</em></span><span class="zh">向俄罗斯出口。<br><em>清关交给我们。</em></span></h1>
+        <p class="lead"><span class="en">Customs clearance, a Russian importer of record and a clear landed-cost estimate — so exporters of food, fresh produce, beverages and other goods can enter the Russian market without opening a local company.</span><span class="ru">Таможенное оформление, российский импортёр и понятный расчёт всех платежей — чтобы производители продуктов, фруктов, напитков и других товаров могли выйти на рынок России без открытия своей компании.</span><span class="zh">报关、俄罗斯进口商以及清晰的到岸成本测算——食品、生鲜、饮料及其他商品的出口商无需在俄罗斯开设公司即可进入俄罗斯市场。</span></p>
         <div class="cta">
           <a class="btn primary" href="#contact"><span class="en">Get a free duty estimate</span><span class="ru">Бесплатный расчёт пошлин</span><span class="zh">免费测算关税</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          <a class="btn ghost" href="#how"><span class="en">How it works</span><span class="ru">Как это работает</span><span class="zh">合作流程</span></a>
+          <a class="btn glass" href="#how"><span class="en">How it works</span><span class="ru">Как это работает</span><span class="zh">合作流程</span></a>
         </div>
-        <div class="trust">
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span class="en">EAEU customs code &amp; tariffs</span><span class="ru">ТК ЕАЭС и единый тариф</span><span class="zh">欧亚经济联盟海关法典与统一税则</span></span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span class="en">Phyto &amp; certification</span><span class="ru">Фито и сертификация</span><span class="zh">植物检疫与认证</span></span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span class="en">Reply within one business day</span><span class="ru">Ответ в течение рабочего дня</span><span class="zh">一个工作日内回复</span></span>
+        <div class="routes" aria-label="Routes">
+          <span class="routes-title"><span class="en">Routes to Russia</span><span class="ru">Маршруты в Россию</span><span class="zh">通往俄罗斯的线路</span></span>
+          <span class="chip"><span class="en">China</span><span class="ru">Китай</span><span class="zh">中国</span></span>
+          <span class="chip"><span class="en">Türkiye</span><span class="ru">Турция</span><span class="zh">土耳其</span></span>
+          <span class="chip"><span class="en">UAE</span><span class="ru">ОАЭ</span><span class="zh">阿联酋</span></span>
+          <span class="chip"><span class="en">Egypt</span><span class="ru">Египет</span><span class="zh">埃及</span></span>
+          <span class="chip"><span class="en">India</span><span class="ru">Индия</span><span class="zh">印度</span></span>
+          <span class="chip"><span class="en">Iran</span><span class="ru">Иран</span><span class="zh">伊朗</span></span>
+          <span class="chip"><span class="en">Morocco</span><span class="ru">Марокко</span><span class="zh">摩洛哥</span></span>
+          <span class="chip"><span class="en">Ecuador</span><span class="ru">Эквадор</span><span class="zh">厄瓜多尔</span></span>
         </div>
-      </div>
-
-      <div class="card-route" aria-hidden="true">
-        <div class="route-head"><b><span class="en">Your shipment</span><span class="ru">Ваша поставка</span><span class="zh">您的货物</span></b><span class="pill"><span class="en">Example</span><span class="ru">Пример</span><span class="zh">示例</span></span></div>
-        <div class="step-row"><span class="dot done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><div class="t"><span class="en">Documents checked</span><span class="ru">Документы проверены</span><span class="zh">单证已审核</span></div><div class="s"><span class="en">Invoice, packing list, contract</span><span class="ru">Инвойс, упаковочный лист, контракт</span><span class="zh">发票、装箱单、合同</span></div></div></div>
-        <div class="step-row"><span class="dot done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><div class="t"><span class="en">HS code &amp; duties calculated</span><span class="ru">Код ТН ВЭД и платежи рассчитаны</span><span class="zh">已确定海关编码并计算税费</span></div><div class="s"><span class="en">Duty, VAT, customs fees</span><span class="ru">Пошлина, НДС, сборы</span><span class="zh">关税、增值税、海关规费</span></div></div></div>
-        <div class="step-row"><span class="dot done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><div class="t"><span class="en">Phyto &amp; certificates</span><span class="ru">Фито и сертификаты</span><span class="zh">植物检疫与证书</span></div><div class="s"><span class="en">Arranged before arrival</span><span class="ru">Готовим до прибытия груза</span><span class="zh">货物到达前办妥</span></div></div></div>
-        <div class="step-row"><span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12h18M13 5l7 7-7 7"/></svg></span>
-          <div><div class="t"><span class="en">Released in Russia</span><span class="ru">Выпуск в России</span><span class="zh">在俄罗斯放行</span></div><div class="s"><span class="en">Delivered to your buyer</span><span class="ru">Доставка вашему покупателю</span><span class="zh">交付给您的买家</span></div></div></div>
-        <div class="route-foot"><span class="en">Landed cost estimate</span><span class="ru">Расчёт «под ключ»</span><span class="zh">到岸成本测算</span><b><span class="en">before you ship</span><span class="ru">до отгрузки</span><span class="zh">发货前完成</span></b></div>
       </div>
     </div>
+    <a class="scroll-hint" href="#services" aria-label="Scroll">
+      <span><span class="en">Scroll</span><span class="ru">Листайте</span><span class="zh">向下滚动</span></span>
+      <i></i>
+    </a>
   </section>
 
   <section id="services">
     <div class="wrap">
-      <div class="head">
+      <div class="head reveal">
         <div class="kicker"><span class="en">Services</span><span class="ru">Услуги</span><span class="zh">服务</span></div>
         <h2><span class="en">Everything between your factory gate and the Russian buyer</span><span class="ru">Всё, что между вашим складом и покупателем в России</span><span class="zh">从您的工厂大门到俄罗斯买家的全部环节</span></h2>
         <p><span class="en">One contact for customs, paperwork and the import itself.</span><span class="ru">Один контакт для таможни, документов и самого ввоза.</span><span class="zh">海关、单证和进口本身，只需一个联系人。</span></p>
       </div>
       <div class="services">
-        <div class="svc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
+        <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
           <h3><span class="en">Customs clearance</span><span class="ru">Таможенное оформление</span><span class="zh">报关</span></h3>
           <p><span class="en">Customs declaration, HS classification and communication with Russian customs until release.</span><span class="ru">Декларация, классификация по ТН ВЭД и работа с таможней до выпуска груза.</span><span class="zh">报关单申报、海关编码归类，并与俄罗斯海关沟通直至放行。</span></p></div>
-        <div class="svc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
           <h3><span class="en">Technical importer</span><span class="ru">Технический импортёр</span><span class="zh">技术进口商</span></h3>
           <p><span class="en">We import the goods on our Russian company — you don't need a legal entity or bank account in Russia.</span><span class="ru">Ввозим товар на нашу российскую компанию — вам не нужны юрлицо и счёт в России.</span><span class="zh">我们以俄罗斯公司名义进口货物——您无需在俄罗斯设立法人或开设银行账户。</span></p></div>
-        <div class="svc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h2M14 15h2M8 18h2M14 18h2"/></svg></div>
+        <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h2M14 15h2M8 18h2M14 18h2"/></svg></div>
           <h3><span class="en">Duty &amp; VAT calculation</span><span class="ru">Расчёт пошлин и НДС</span><span class="zh">关税与增值税测算</span></h3>
           <p><span class="en">A clear landed-cost estimate before shipment: duty, VAT, fees, warehouse and our services.</span><span class="ru">Понятный расчёт до отгрузки: пошлина, НДС, сборы, склад и наши услуги.</span><span class="zh">发货前提供清晰的到岸成本：关税、增值税、规费、仓储及我们的服务费。</span></p></div>
-        <div class="svc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21c0-6 4-9 10-10-1 6-4 10-10 10z"/><path d="M7 21c2-4 4-6 7-7"/></svg></div>
+        <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21c0-6 4-9 10-10-1 6-4 10-10 10z"/><path d="M7 21c2-4 4-6 7-7"/></svg></div>
           <h3><span class="en">Phytosanitary control</span><span class="ru">Фитосанитарный контроль</span><span class="zh">植物检疫</span></h3>
           <p><span class="en">Guidance on phyto certificates and coordination of Rosselkhoznadzor inspection for plant products.</span><span class="ru">Подскажем по фитосертификатам и проведём контроль Россельхознадзора для растительной продукции.</span><span class="zh">指导植物检疫证书办理，并协调俄罗斯联邦兽医和植物检疫监督局对植物产品的查验。</span></p></div>
-        <div class="svc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M9 15l2 2 4-4"/></svg></div>
+        <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M9 15l2 2 4-4"/></svg></div>
           <h3><span class="en">Certification &amp; labelling</span><span class="ru">Сертификация и маркировка</span><span class="zh">认证与标签</span></h3>
           <p><span class="en">EAEU declarations of conformity and Russian-language labelling required for food and consumer goods.</span><span class="ru">Декларации соответствия ЕАЭС и маркировка на русском для продуктов и товаров народного потребления.</span><span class="zh">办理欧亚经济联盟符合性声明，以及食品和消费品所需的俄文标签。</span></p></div>
-        <div class="svc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div>
+        <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div>
           <h3><span class="en">Logistics coordination</span><span class="ru">Логистика</span><span class="zh">物流协调</span></h3>
           <p><span class="en">Truck, air and sea — temporary storage at the border and delivery to your buyer's warehouse.</span><span class="ru">Авто, авиа и море — склад временного хранения и доставка до склада покупателя.</span><span class="zh">公路、航空和海运——边境临时仓储并送达买家仓库。</span></p></div>
       </div>
@@ -233,21 +269,21 @@
 
   <section id="how" class="alt">
     <div class="wrap">
-      <div class="head">
+      <div class="head reveal">
         <div class="kicker"><span class="en">How it works</span><span class="ru">Как работаем</span><span class="zh">合作流程</span></div>
         <h2><span class="en">From first message to release in four steps</span><span class="ru">От первого письма до выпуска — четыре шага</span><span class="zh">从第一封邮件到放行，只需四步</span></h2>
       </div>
       <div class="steps">
-        <div class="stp"><h3><span class="en">Tell us about the goods</span><span class="ru">Расскажите о товаре</span><span class="zh">介绍您的货物</span></h3><p><span class="en">Product, value, weight, origin and route — or just send your invoice and packing list.</span><span class="ru">Товар, стоимость, вес, страна и маршрут — или просто пришлите инвойс и упаковочный лист.</span><span class="zh">产品、货值、重量、原产国和路线——或直接发送发票和装箱单。</span></p></div>
-        <div class="stp"><h3><span class="en">Get the estimate</span><span class="ru">Получите расчёт</span><span class="zh">获取测算</span></h3><p><span class="en">HS code, duty, VAT, fees and service costs — reviewed by our customs specialist.</span><span class="ru">Код ТН ВЭД, пошлина, НДС, сборы и услуги — проверено нашим специалистом.</span><span class="zh">海关编码、关税、增值税、规费和服务费——由我们的报关专家审核。</span></p></div>
-        <div class="stp"><h3><span class="en">We prepare the import</span><span class="ru">Готовим ввоз</span><span class="zh">准备进口</span></h3><p><span class="en">Contract, certificates, phyto and the checklist of documents for your specific shipment.</span><span class="ru">Контракт, сертификаты, фито и чек-лист документов именно под вашу поставку.</span><span class="zh">合同、证书、植物检疫以及针对您这批货物的单证清单。</span></p></div>
-        <div class="stp"><h3><span class="en">Clearance &amp; delivery</span><span class="ru">Выпуск и доставка</span><span class="zh">清关与交付</span></h3><p><span class="en">We declare the goods, pay duties as importer and hand the cargo over in Russia.</span><span class="ru">Декларируем груз, платим пошлины как импортёр и передаём груз в России.</span><span class="zh">我们申报货物，作为进口商缴纳税费，并在俄罗斯交付货物。</span></p></div>
+        <div class="stp reveal"><h3><span class="en">Tell us about the goods</span><span class="ru">Расскажите о товаре</span><span class="zh">介绍您的货物</span></h3><p><span class="en">Product, value, weight, origin and route — or just send your invoice and packing list.</span><span class="ru">Товар, стоимость, вес, страна и маршрут — или просто пришлите инвойс и упаковочный лист.</span><span class="zh">产品、货值、重量、原产国和路线——或直接发送发票和装箱单。</span></p></div>
+        <div class="stp reveal"><h3><span class="en">Get the estimate</span><span class="ru">Получите расчёт</span><span class="zh">获取测算</span></h3><p><span class="en">HS code, duty, VAT, fees and service costs — reviewed by our customs specialist.</span><span class="ru">Код ТН ВЭД, пошлина, НДС, сборы и услуги — проверено нашим специалистом.</span><span class="zh">海关编码、关税、增值税、规费和服务费——由我们的报关专家审核。</span></p></div>
+        <div class="stp reveal"><h3><span class="en">We prepare the import</span><span class="ru">Готовим ввоз</span><span class="zh">准备进口</span></h3><p><span class="en">Contract, certificates, phyto and the checklist of documents for your specific shipment.</span><span class="ru">Контракт, сертификаты, фито и чек-лист документов именно под вашу поставку.</span><span class="zh">合同、证书、植物检疫以及针对您这批货物的单证清单。</span></p></div>
+        <div class="stp reveal"><h3><span class="en">Clearance &amp; delivery</span><span class="ru">Выпуск и доставка</span><span class="zh">清关与交付</span></h3><p><span class="en">We declare the goods, pay duties as importer and hand the cargo over in Russia.</span><span class="ru">Декларируем груз, платим пошлины как импортёр и передаём груз в России.</span><span class="zh">我们申报货物，作为进口商缴纳税费，并在俄罗斯交付货物。</span></p></div>
       </div>
     </div>
   </section>
 
   <section id="food">
-    <div class="wrap food">
+    <div class="wrap food reveal">
       <div>
         <div class="kicker"><span class="en">Focus</span><span class="ru">Специализация</span><span class="zh">专注领域</span></div>
         <h2><span class="en">Food, fresh produce and beverages</span><span class="ru">Продукты, фрукты, овощи и напитки</span><span class="zh">食品、生鲜和饮料</span></h2>
@@ -262,27 +298,27 @@
         </div>
       </div>
       <div class="checks">
-        <div class="check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Duties checked against the EAEU tariff</span><span class="ru">Ставки — по единому тарифу ЕАЭС</span><span class="zh">按欧亚经济联盟统一税则核对税率</span></b><span><span class="en">Up-to-date rates and fees on the date of your shipment.</span><span class="ru">Актуальные ставки и сборы на дату вашей поставки.</span><span class="zh">以您发货日期的最新税率和规费为准。</span></span></div></div>
-        <div class="check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Your invoice price stays your price</span><span class="ru">Цена инвойса остаётся вашей</span><span class="zh">发票价格由您决定</span></b><span><span class="en">We check documents for discrepancies before the goods reach the border.</span><span class="ru">Проверяем документы на расхождения ещё до прибытия груза на границу.</span><span class="zh">货物到达边境前，我们先核查单证是否存在差异。</span></span></div></div>
-        <div class="check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">No surprises at the border</span><span class="ru">Без сюрпризов на границе</span><span class="zh">边境零意外</span></b><span><span class="en">Phyto, certificates and labelling are listed for your goods in advance.</span><span class="ru">Фито, сертификаты и маркировка — заранее, под ваш товар.</span><span class="zh">植物检疫、证书和标签要求，提前为您的货物列明。</span></span></div></div>
+        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Duties checked against the EAEU tariff</span><span class="ru">Ставки — по единому тарифу ЕАЭС</span><span class="zh">按欧亚经济联盟统一税则核对税率</span></b><span><span class="en">Up-to-date rates and fees on the date of your shipment.</span><span class="ru">Актуальные ставки и сборы на дату вашей поставки.</span><span class="zh">以您发货日期的最新税率和规费为准。</span></span></div></div>
+        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Your invoice price stays your price</span><span class="ru">Цена инвойса остаётся вашей</span><span class="zh">发票价格由您决定</span></b><span><span class="en">We check documents for discrepancies before the goods reach the border.</span><span class="ru">Проверяем документы на расхождения ещё до прибытия груза на границу.</span><span class="zh">货物到达边境前，我们先核查单证是否存在差异。</span></span></div></div>
+        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">No surprises at the border</span><span class="ru">Без сюрпризов на границе</span><span class="zh">边境零意外</span></b><span><span class="en">Phyto, certificates and labelling are listed for your goods in advance.</span><span class="ru">Фито, сертификаты и маркировка — заранее, под ваш товар.</span><span class="zh">植物检疫、证书和标签要求，提前为您的货物列明。</span></span></div></div>
       </div>
     </div>
   </section>
 
   <section id="faq" class="alt">
     <div class="wrap">
-      <div class="head">
+      <div class="head reveal">
         <div class="kicker">FAQ</div>
         <h2><span class="en">Common questions</span><span class="ru">Частые вопросы</span><span class="zh">常见问题</span></h2>
       </div>
       <div class="faq">
-        <details><summary><span class="en">What is a technical importer?</span><span class="ru">Что такое технический импортёр?</span><span class="zh">什么是技术进口商？</span></summary>
+        <details class="reveal"><summary><span class="en">What is a technical importer?</span><span class="ru">Что такое технический импортёр?</span><span class="zh">什么是技术进口商？</span></summary>
           <p><span class="en">A Russian company that signs the contract with you, imports the goods in its name, pays duties and VAT, and sells the goods to your buyer in Russia. You sell abroad as usual — no Russian entity needed.</span><span class="ru">Российская компания, которая заключает с вами контракт, ввозит товар на себя, платит пошлины и НДС и продаёт товар вашему покупателю в России. Вы продаёте как обычно — без своей компании в России.</span><span class="zh">一家俄罗斯公司与您签订合同，以自己的名义进口货物，缴纳关税和增值税，再将货物销售给您在俄罗斯的买家。您照常出口——无需在俄罗斯设立公司。</span></p></details>
-        <details><summary><span class="en">How much does customs clearance cost?</span><span class="ru">Сколько стоит оформление?</span><span class="zh">清关费用是多少？</span></summary>
+        <details class="reveal"><summary><span class="en">How much does customs clearance cost?</span><span class="ru">Сколько стоит оформление?</span><span class="zh">清关费用是多少？</span></summary>
           <p><span class="en">It depends on the goods, value, weight and transport. Send us the details or your invoice and packing list — you'll get a free estimate of duties, taxes and our services.</span><span class="ru">Зависит от товара, стоимости, веса и транспорта. Пришлите данные или инвойс с упаковочным листом — бесплатно посчитаем пошлины, налоги и наши услуги.</span><span class="zh">取决于商品、货值、重量和运输方式。发送详情或发票和装箱单——我们免费测算税费和服务费用。</span></p></details>
-        <details><summary><span class="en">Which documents are needed?</span><span class="ru">Какие нужны документы?</span><span class="zh">需要哪些单证？</span></summary>
+        <details class="reveal"><summary><span class="en">Which documents are needed?</span><span class="ru">Какие нужны документы?</span><span class="zh">需要哪些单证？</span></summary>
           <p><span class="en">Usually a commercial invoice and packing list for the estimate; for clearance — a contract, transport document (CMR, AWB or B/L) and, depending on the goods, phyto and conformity certificates. We send a checklist for your shipment.</span><span class="ru">Для расчёта обычно достаточно инвойса и упаковочного листа; для оформления — контракт, транспортный документ (CMR, AWB или коносамент) и, в зависимости от товара, фито и сертификаты. Пришлём чек-лист под вашу поставку.</span><span class="zh">测算通常只需商业发票和装箱单；清关还需要合同、运输单据（CMR、AWB 或提单），并视商品需要植物检疫证书和符合性证书。我们会为您的货物发送单证清单。</span></p></details>
-        <details><summary><span class="en">Do you work with goods from any country?</span><span class="ru">Работаете с товарами из любых стран?</span><span class="zh">你们处理来自任何国家的货物吗？</span></summary>
+        <details class="reveal"><summary><span class="en">Do you work with goods from any country?</span><span class="ru">Работаете с товарами из любых стран?</span><span class="zh">你们处理来自任何国家的货物吗？</span></summary>
           <p><span class="en">Yes. Goods from EAEU countries (Kazakhstan, Belarus, Armenia, Kyrgyzstan) move to Russia without customs clearance — for everyone else we handle the full import.</span><span class="ru">Да. Товары из стран ЕАЭС (Казахстан, Беларусь, Армения, Киргизия) ввозятся без таможенного оформления — для всех остальных берём на себя весь ввоз.</span><span class="zh">是的。来自欧亚经济联盟国家（哈萨克斯坦、白俄罗斯、亚美尼亚、吉尔吉斯斯坦）的货物进入俄罗斯无需报关——其他国家的货物，我们负责全部进口手续。</span></p></details>
       </div>
     </div>
@@ -290,7 +326,7 @@
 
   <section id="contact">
     <div class="wrap">
-      <div class="contact">
+      <div class="contact reveal">
         <div>
           <h2><span class="en">Get a free duty estimate</span><span class="ru">Бесплатный расчёт пошлин</span><span class="zh">免费测算关税</span></h2>
           <p><span class="en">Send us the product, value, weight and route — or your invoice and packing list. We reply within one business day.</span><span class="ru">Пришлите товар, стоимость, вес и маршрут — или инвойс и упаковочный лист. Ответим в течение рабочего дня.</span><span class="zh">发送产品、货值、重量和路线——或发票和装箱单。我们在一个工作日内回复。</span></p>
@@ -338,6 +374,118 @@
     setLang(initial);
     document.getElementById("year").textContent = new Date().getFullYear();
   })();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var header = document.querySelector("header");
+  var hero = document.getElementById("hero");
+
+  // Шапка прозрачная над космосом, белая ниже.
+  function onScroll() {
+    var y = window.scrollY, h = hero.offsetHeight;
+    header.classList.toggle("over-hero", y < h - 120);
+    var p = Math.min(1, y / (h * 0.9));
+    var g = document.getElementById("globe");
+    if (g && !reduce) { g.style.transform = "translateY(" + (p * 120) + "px) scale(" + (1 - p * 0.35) + ")"; g.style.opacity = String(Math.max(0, 1 - p * 1.1) * (window.innerWidth < 960 ? 0.45 : 1)); }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Появление блоков.
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+
+  // Звёзды.
+  var stars = document.getElementById("stars"), sctx = stars.getContext("2d"), dots = [];
+  function sizeCanvas(c) { var r = window.devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = c.clientHeight * r; return r; }
+  function drawStars(t) {
+    var r = sizeCanvas.r || 1; sctx.clearRect(0, 0, stars.width, stars.height);
+    dots.forEach(function (d) {
+      var a = d.a * (reduce ? 1 : 0.6 + 0.4 * Math.sin(t / 900 + d.p));
+      sctx.fillStyle = "rgba(220,240,255," + a + ")"; sctx.beginPath(); sctx.arc(d.x * stars.width, d.y * stars.height, d.s * r, 0, 6.283); sctx.fill();
+    });
+  }
+  function initStars() { sizeCanvas.r = sizeCanvas(stars); dots = []; var n = Math.round(stars.clientWidth * stars.clientHeight / 2600);
+    for (var i = 0; i < n; i++) dots.push({ x: Math.random(), y: Math.random(), s: Math.random() * 1.2 + 0.2, a: Math.random() * 0.7 + 0.15, p: Math.random() * 6 }); }
+
+  // Планета: точки суши, маршруты в Москву, медленное вращение.
+  var canvas = document.getElementById("globe"), ctx = canvas.getContext("2d");
+  var MOSCOW = [37.62, 55.75];
+  var SOURCES = [[116.4, 39.9], [121.5, 31.2], [28.98, 41.0], [55.3, 25.27], [31.24, 30.04], [72.88, 19.08], [51.39, 35.69], [-7.59, 33.57], [-79.9, -2.17]];
+  var land = null, landDots = [], rotation = -70;
+  var projection = d3.geoOrthographic().clipAngle(90).precision(0.5);
+  var path = d3.geoPath(projection, ctx);
+
+  function layout() {
+    sizeCanvas(canvas); var w = canvas.width, h = canvas.height, mobile = canvas.clientWidth < 960;
+    var radius = mobile ? w * 0.48 : Math.min(w, h) * 0.37;
+    // На узком экране планета — фоном справа сверху, приглушённо, чтобы не мешать тексту.
+    projection.scale(radius).translate([mobile ? w * 0.82 : w * 0.76, mobile ? h * 0.24 : h * 0.5]);
+  }
+  function buildDots() {
+    landDots = [];
+    for (var lat = -60; lat <= 80; lat += 1.6) {
+      var step = 1.6 / Math.max(0.25, Math.cos(lat * Math.PI / 180));
+      for (var lon = -180; lon < 180; lon += step) if (d3.geoContains(land, [lon, lat])) landDots.push([lon, lat]);
+    }
+  }
+  function draw(t) {
+    var w = canvas.width, h = canvas.height, r = window.devicePixelRatio || 1;
+    ctx.clearRect(0, 0, w, h);
+    projection.rotate([rotation, -28, 0]);
+    var c = projection.translate(), rad = projection.scale();
+    var grad = ctx.createRadialGradient(c[0] - rad * 0.35, c[1] - rad * 0.4, rad * 0.1, c[0], c[1], rad);
+    grad.addColorStop(0, "#14404f"); grad.addColorStop(1, "#06141d");
+    ctx.beginPath(); path({ type: "Sphere" }); ctx.fillStyle = grad; ctx.fill();
+    ctx.lineWidth = 1.2 * r; ctx.strokeStyle = "rgba(94,234,212,.35)"; ctx.stroke();
+    ctx.beginPath(); path(d3.geoGraticule10()); ctx.lineWidth = 0.5 * r; ctx.strokeStyle = "rgba(148,210,220,.07)"; ctx.stroke();
+    var center = [-rotation, 28];
+    ctx.fillStyle = "rgba(160,230,225,.55)";
+    for (var i = 0; i < landDots.length; i++) {
+      var d = landDots[i]; if (d3.geoDistance(d, center) > 1.55) continue;
+      var p = projection(d); ctx.fillRect(p[0], p[1], 1.6 * r, 1.6 * r);
+    }
+    SOURCES.forEach(function (src, k) {
+      var line = { type: "LineString", coordinates: [src, MOSCOW] };
+      ctx.beginPath(); path(line); ctx.lineWidth = 1.2 * r; ctx.strokeStyle = "rgba(94,234,212,.28)"; ctx.stroke();
+      var interp = d3.geoInterpolate(src, MOSCOW), f = reduce ? 0.6 : ((t / 4200 + k * 0.17) % 1);
+      for (var j = 0; j < 8; j++) {
+        var q = f - j * 0.018; if (q < 0) continue;
+        var pt = interp(q); if (d3.geoDistance(pt, center) > 1.57) continue;
+        var pp = projection(pt); ctx.beginPath(); ctx.arc(pp[0], pp[1], (2.6 - j * 0.28) * r, 0, 6.283);
+        ctx.fillStyle = "rgba(94,234,212," + (0.95 - j * 0.11) + ")"; ctx.fill();
+      }
+      if (d3.geoDistance(src, center) < 1.57) { var sp = projection(src); ctx.beginPath(); ctx.arc(sp[0], sp[1], 2.6 * r, 0, 6.283); ctx.fillStyle = "#99f6e4"; ctx.fill(); }
+    });
+    if (d3.geoDistance(MOSCOW, center) < 1.57) {
+      var m = projection(MOSCOW), pulse = reduce ? 0.5 : (t / 1400) % 1;
+      ctx.beginPath(); ctx.arc(m[0], m[1], (6 + pulse * 18) * r, 0, 6.283); ctx.strokeStyle = "rgba(250,204,21," + (0.8 - pulse * 0.8) + ")"; ctx.lineWidth = 2 * r; ctx.stroke();
+      ctx.beginPath(); ctx.arc(m[0], m[1], 4.5 * r, 0, 6.283); ctx.fillStyle = "#facc15"; ctx.fill();
+      ctx.font = "600 " + (12 * r) + "px Inter, sans-serif"; ctx.fillStyle = "rgba(255,255,255,.9)";
+      ctx.fillText(document.body.dataset.lang === "ru" ? "Москва" : document.body.dataset.lang === "zh" ? "莫斯科" : "Moscow", m[0] + 10 * r, m[1] - 8 * r);
+    }
+  }
+  function frame(t) {
+    if (!reduce) rotation = -70 + Math.sin(t / 9000) * 32;
+    drawStars(t); if (land) draw(t);
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  function resize() { initStars(); layout(); if (reduce) frame(0); }
+  window.addEventListener("resize", resize);
+  resize();
+  // Один цикл анимации; карта суши подгружается и подхватывается им. Без анимации — один кадр.
+  fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json").then(function (r) { return r.json(); }).then(function (topo) {
+    land = topojson.feature(topo, topo.objects.land); buildDots(); if (reduce) frame(0);
+  }).catch(function () {});
+  if (reduce) frame(0); else requestAnimationFrame(frame);
+})();
 </script>
 </body>
 </html>
