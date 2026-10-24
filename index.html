@@ -6,8 +6,27 @@
 <title>CargoClear — Customs clearance and import to Russia</title>
 <meta name="description" content="CargoClear handles customs clearance in Russia, acts as your technical importer and calculates duties and VAT for exporters of food, fresh produce, beverages and other goods.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 12l7-4 7 4-7 4-7-4z M9 12v8l7 4 7-4v-8' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://cargoclear.ru/">
+<meta name="theme-color" content="#071a26">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CargoClear">
+<meta property="og:url" content="https://cargoclear.ru/">
+<meta property="og:title" content="CargoClear — Customs clearance and import to Russia">
+<meta property="og:description" content="Customs broker and importer of record in Russia. Free estimate of duties, VAT and landed cost for exporters of food, fresh produce and beverages.">
+<meta property="og:image" content="https://cargoclear.ru/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cargoclear.ru/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"CargoClear","url":"https://cargoclear.ru/","logo":"https://cargoclear.ru/og-image.png","email":"cargoclear8@gmail.com",
+ "description":"Customs clearance and importer of record services in Russia for foreign exporters.",
+ "areaServed":"RU","knowsLanguage":["en","ru","zh","tr","fa","ar"],
+ "contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+7-913-799-84-44","email":"cargoclear8@gmail.com","availableLanguage":["English","Russian"]},
+                 {"@type":"ContactPoint","contactType":"sales","telephone":"+7-925-838-45-22","availableLanguage":["English","Russian"]}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0b1d2a; --ink-2: #344451; --muted: #6b7a86; --line: #e3e8ec;
@@ -19,8 +38,12 @@
   body { margin: 0; font: 16px/1.65 Inter, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
   a { color: inherit; text-decoration: none; }
   .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-  [data-lang="en"] .ru, [data-lang="en"] .zh, [data-lang="ru"] .en, [data-lang="ru"] .zh,
-  [data-lang="zh"] .en, [data-lang="zh"] .ru { display: none !important; }
+  /* Видна только версия выбранного языка. */
+  body:not([data-lang="en"]) .en, body:not([data-lang="ru"]) .ru, body:not([data-lang="zh"]) .zh,
+  body:not([data-lang="tr"]) .tr, body:not([data-lang="fa"]) .fa, body:not([data-lang="ar"]) .ar { display: none !important; }
+  body[data-lang="fa"], body[data-lang="ar"] { font-family: Vazirmatn, Inter, Tahoma, sans-serif; }
+  [dir="rtl"] .hero-glow { right: auto; left: -140px; }
+  [dir="rtl"] .btn svg { transform: scaleX(-1); }
   [data-lang="zh"] body, body[data-lang="zh"] { font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif; }
 
   header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
@@ -34,6 +57,10 @@
   .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
   .lang button { border: 0; background: none; font: inherit; font-size: 13px; font-weight: 600; padding: 4px 11px; border-radius: 999px; color: var(--muted); cursor: pointer; }
   .lang button.on { background: var(--ink); color: #fff; }
+  .lang-select { display: none; font: inherit; font-size: 14px; font-weight: 600; border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; background: transparent; color: inherit; }
+  header.over-hero .lang-select { border-color: rgba(255,255,255,.3); }
+  .lang-select option { color: #0b1d2a; }
+  @media (max-width: 760px) { .lang { display: none; } .lang-select { display: inline-block; } }
   .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; padding: 12px 20px; font-weight: 600; font-size: 15px; border: 0; cursor: pointer; transition: transform .15s, box-shadow .15s; }
   .btn:hover { transform: translateY(-1px); }
   .btn.primary { background: var(--teal); color: #fff; box-shadow: 0 6px 18px rgba(15,118,110,.25); }
@@ -96,6 +123,24 @@
   .channel .ci { width: 40px; height: 40px; border-radius: 10px; background: rgba(20,184,166,.18); color: #5eead4; display: grid; place-items: center; flex: none; }
   .channel small { display: block; color: #9fb4bc; font-size: 13px; }
   .channel b { font-weight: 600; }
+
+  .quote { margin-top: 34px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 24px; grid-column: 1 / -1; }
+  .quote h3 { margin: 0 0 14px; font-size: 19px; }
+  .qgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .qgrid label { display: grid; gap: 5px; font-size: 13px; color: #b9cdd3; }
+  .qgrid .wide { grid-column: 1 / -1; }
+  .qgrid input, .qgrid textarea, .qgrid select { font: inherit; font-size: 15px; color: #fff; background: rgba(3,11,18,.45); border: 1px solid rgba(255,255,255,.18); border-radius: 10px; padding: 10px 12px; width: 100%; }
+  .qgrid textarea { min-height: 76px; resize: vertical; }
+  .qgrid input:focus, .qgrid textarea:focus { outline: 2px solid #5eead4; outline-offset: 1px; }
+  .qactions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; }
+  .btn.wa { background: #25d366; color: #06301a; }
+  .consent { font-size: 13px; color: #9fb4bc; display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; }
+  .consent a { color: #5eead4; text-decoration: underline; }
+  .qnote { font-size: 13px; color: #fca5a5; min-height: 18px; margin-top: 8px; }
+  .wa-float { position: fixed; z-index: 20; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0,0,0,.25); transition: transform .2s; }
+  .wa-float:hover { transform: scale(1.07); }
+  [dir="rtl"] .wa-float { right: auto; left: 20px; }
+  @media (max-width: 760px) { .qgrid { grid-template-columns: 1fr; } }
 
   footer { padding: 34px 0; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -184,18 +229,25 @@
       CargoClear
     </a>
     <nav class="links">
-      <a href="#services"><span class="en">Services</span><span class="ru">Услуги</span><span class="zh">服务</span></a>
-      <a href="#how"><span class="en">How it works</span><span class="ru">Как работаем</span><span class="zh">合作流程</span></a>
-      <a href="#food"><span class="en">Food import</span><span class="ru">Продукты</span><span class="zh">食品进口</span></a>
+      <a href="#services"><span class="en">Services</span><span class="ru">Услуги</span><span class="zh">服务</span><span class="tr">Hizmetler</span><span class="fa">خدمات</span><span class="ar">الخدمات</span></a>
+      <a href="#how"><span class="en">How it works</span><span class="ru">Как работаем</span><span class="zh">合作流程</span><span class="tr">Nasıl Çalışır</span><span class="fa">نحوه عملکرد</span><span class="ar">كيف تعمل</span></a>
+      <a href="#food"><span class="en">Food import</span><span class="ru">Продукты</span><span class="zh">食品进口</span><span class="tr">Gıda İthalatı</span><span class="fa">واردات مواد غذایی</span><span class="ar">استيراد الأغذية</span></a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="right">
+      <select class="lang-select" aria-label="Language">
+        <option value="en">EN</option><option value="ru">RU</option><option value="zh">中文</option>
+        <option value="tr">TR</option><option value="fa">فارسی</option><option value="ar">العربية</option>
+      </select>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-set="en" class="on">EN</button>
         <button type="button" data-set="ru">RU</button>
         <button type="button" data-set="zh">中文</button>
+        <button type="button" data-set="tr">TR</button>
+        <button type="button" data-set="fa">فا</button>
+        <button type="button" data-set="ar">ع</button>
       </div>
-      <a class="btn primary small" href="#contact"><span class="en">Get a quote</span><span class="ru">Расчёт</span><span class="zh">获取报价</span></a>
+      <a class="btn primary small" href="#contact"><span class="en">Get a quote</span><span class="ru">Расчёт</span><span class="zh">获取报价</span><span class="tr">Fiyat Teklifi Al</span><span class="fa">درخواست پیش‌فاکتور</span><span class="ar">احصل على عرض سعر</span></a>
     </div>
   </div>
 </header>
@@ -209,29 +261,29 @@
       <div class="hero-text">
         <span class="eyebrow dark">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
-          <span class="en">Customs broker &amp; technical importer in Russia</span><span class="ru">Таможенный брокер и технический импортёр в России</span><span class="zh">俄罗斯报关行与技术进口商</span>
+          <span class="en">Customs broker &amp; technical importer in Russia</span><span class="ru">Таможенный брокер и технический импортёр в России</span><span class="zh">俄罗斯报关行与技术进口商</span><span class="tr">Rusya'da Gümrük Müşaviri & Teknik İthalatçı</span><span class="fa">ترخیص‌کار گمرکی و واردکننده فنی در روسیه</span><span class="ar">وسيط جمركي ومستورد فني في روسيا</span>
         </span>
-        <h1><span class="en">Sell to Russia.<br><em>We handle the border.</em></span><span class="ru">Продавайте в Россию.<br><em>Границу берём на себя.</em></span><span class="zh">向俄罗斯出口。<br><em>清关交给我们。</em></span></h1>
-        <p class="lead"><span class="en">Customs clearance, a Russian importer of record and a clear landed-cost estimate — so exporters of food, fresh produce, beverages and other goods can enter the Russian market without opening a local company.</span><span class="ru">Таможенное оформление, российский импортёр и понятный расчёт всех платежей — чтобы производители продуктов, фруктов, напитков и других товаров могли выйти на рынок России без открытия своей компании.</span><span class="zh">报关、俄罗斯进口商以及清晰的到岸成本测算——食品、生鲜、饮料及其他商品的出口商无需在俄罗斯开设公司即可进入俄罗斯市场。</span></p>
+        <h1><span class="en">Sell to Russia.<br><em>We handle the border.</em></span><span class="ru">Продавайте в Россию.<br><em>Границу берём на себя.</em></span><span class="zh">向俄罗斯出口。<br><em>清关交给我们。</em></span><span class="tr">Rusya'ya satın.<br><em>Sınırdaki işleri biz hallederiz.</em></span><span class="fa">به روسیه بفروشید.<br><em>ما مرز را مدیریت می‌کنیم.</em></span><span class="ar">صدّر إلى روسيا.<br><em>نتولى إجراءات الحدود.</em></span></h1>
+        <p class="lead"><span class="en">Customs clearance, a Russian importer of record and a clear landed-cost estimate — so exporters of food, fresh produce, beverages and other goods can enter the Russian market without opening a local company.</span><span class="ru">Таможенное оформление, российский импортёр и понятный расчёт всех платежей — чтобы производители продуктов, фруктов, напитков и других товаров могли выйти на рынок России без открытия своей компании.</span><span class="zh">报关、俄罗斯进口商以及清晰的到岸成本测算——食品、生鲜、饮料及其他商品的出口商无需在俄罗斯开设公司即可进入俄罗斯市场。</span><span class="tr">Gümrük işlemleri, Rusya'da kayıtlı ithalatçı ve net varış maliyeti tahmini — böylece gıda, taze meyve-sebze, içecek ve diğer ürün ihracatçıları, yerel bir şirket açmadan Rusya pazarına girebilir.</span><span class="fa">ترخیص گمرکی، یک واردکننده قانونی در روسیه و یک برآورد شفاف از هزینه تمام‌شده — تا صادرکنندگان مواد غذایی، محصولات تازه، نوشیدنی‌ها و سایر کالاها بتوانند بدون تأسیس یک شرکت محلی، وارد بازار روسیه شوند.</span><span class="ar">التخليص الجمركي، ومستورد مسجّل في روسيا، وتقدير واضح للتكلفة الإجمالية — حتى يتمكن مصدرو الأغذية والمنتجات الطازجة والمشروبات وغيرها من السلع من دخول السوق الروسية دون الحاجة إلى فتح شركة محلية.</span></p>
         <div class="cta">
-          <a class="btn primary" href="#contact"><span class="en">Get a free duty estimate</span><span class="ru">Бесплатный расчёт пошлин</span><span class="zh">免费测算关税</span>
+          <a class="btn primary" href="#contact"><span class="en">Get a free duty estimate</span><span class="ru">Бесплатный расчёт пошлин</span><span class="zh">免费测算关税</span><span class="tr">Ücretsiz gümrük vergisi tahmini al</span><span class="fa">دریافت برآورد رایگان از عوارض گمرکی</span><span class="ar">احصل على تقدير مجاني للرسوم الجمركية</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          <a class="btn glass" href="#how"><span class="en">How it works</span><span class="ru">Как это работает</span><span class="zh">合作流程</span></a>
+          <a class="btn glass" href="#how"><span class="en">How it works</span><span class="ru">Как это работает</span><span class="zh">合作流程</span><span class="tr">Nasıl Çalışır</span><span class="fa">نحوه عملکرد</span><span class="ar">كيف تعمل</span></a>
         </div>
         <div class="routes" aria-label="Routes">
-          <span class="routes-title"><span class="en">Routes to Russia from any country:</span><span class="ru">Маршруты в Россию из любой страны:</span><span class="zh">从任何国家通往俄罗斯：</span></span>
-          <span class="chip"><span class="en">Asia</span><span class="ru">Азия</span><span class="zh">亚洲</span></span>
-          <span class="chip"><span class="en">Middle East</span><span class="ru">Ближний Восток</span><span class="zh">中东</span></span>
-          <span class="chip"><span class="en">Africa</span><span class="ru">Африка</span><span class="zh">非洲</span></span>
-          <span class="chip"><span class="en">Europe</span><span class="ru">Европа</span><span class="zh">欧洲</span></span>
-          <span class="chip"><span class="en">Latin America</span><span class="ru">Латинская Америка</span><span class="zh">拉丁美洲</span></span>
-          <span class="chip"><span class="en">North America</span><span class="ru">Северная Америка</span><span class="zh">北美</span></span>
-          <span class="chip"><span class="en">Oceania</span><span class="ru">Океания</span><span class="zh">大洋洲</span></span>
+          <span class="routes-title"><span class="en">Routes to Russia from any country:</span><span class="ru">Маршруты в Россию из любой страны:</span><span class="zh">从任何国家通往俄罗斯：</span><span class="tr">Her ülkeden Rusya'ya güzergahlar:</span><span class="fa">مسیرهای ورود به روسیه از هر کشوری:</span><span class="ar">طرق الوصول إلى روسيا من أي دولة:</span></span>
+          <span class="chip"><span class="en">Asia</span><span class="ru">Азия</span><span class="zh">亚洲</span><span class="tr">Asya</span><span class="fa">آسیا</span><span class="ar">آسيا</span></span>
+          <span class="chip"><span class="en">Middle East</span><span class="ru">Ближний Восток</span><span class="zh">中东</span><span class="tr">Orta Doğu</span><span class="fa">خاورمیانه</span><span class="ar">الشرق الأوسط</span></span>
+          <span class="chip"><span class="en">Africa</span><span class="ru">Африка</span><span class="zh">非洲</span><span class="tr">Afrika</span><span class="fa">آفریقا</span><span class="ar">أفريقيا</span></span>
+          <span class="chip"><span class="en">Europe</span><span class="ru">Европа</span><span class="zh">欧洲</span><span class="tr">Avrupa</span><span class="fa">اروپا</span><span class="ar">أوروبا</span></span>
+          <span class="chip"><span class="en">Latin America</span><span class="ru">Латинская Америка</span><span class="zh">拉丁美洲</span><span class="tr">Latin Amerika</span><span class="fa">آمریکای لاتین</span><span class="ar">أمريكا اللاتينية</span></span>
+          <span class="chip"><span class="en">North America</span><span class="ru">Северная Америка</span><span class="zh">北美</span><span class="tr">Kuzey Amerika</span><span class="fa">آمریکای شمالی</span><span class="ar">أمريكا الشمالية</span></span>
+          <span class="chip"><span class="en">Oceania</span><span class="ru">Океания</span><span class="zh">大洋洲</span><span class="tr">Okyanusya</span><span class="fa">اقیانوسیه</span><span class="ar">أوقيانوسيا</span></span>
         </div>
       </div>
     </div>
     <a class="scroll-hint" href="#services" aria-label="Scroll">
-      <span><span class="en">Scroll</span><span class="ru">Листайте</span><span class="zh">向下滚动</span></span>
+      <span><span class="en">Scroll</span><span class="ru">Листайте</span><span class="zh">向下滚动</span><span class="tr">Kaydır</span><span class="fa">پیمایش</span><span class="ar">تمرير</span></span>
       <i></i>
     </a>
   </section>
@@ -239,29 +291,29 @@
   <section id="services">
     <div class="wrap">
       <div class="head reveal">
-        <div class="kicker"><span class="en">Services</span><span class="ru">Услуги</span><span class="zh">服务</span></div>
-        <h2><span class="en">Everything between your factory gate and the Russian buyer</span><span class="ru">Всё, что между вашим складом и покупателем в России</span><span class="zh">从您的工厂大门到俄罗斯买家的全部环节</span></h2>
-        <p><span class="en">One contact for customs, paperwork and the import itself.</span><span class="ru">Один контакт для таможни, документов и самого ввоза.</span><span class="zh">海关、单证和进口本身，只需一个联系人。</span></p>
+        <div class="kicker"><span class="en">Services</span><span class="ru">Услуги</span><span class="zh">服务</span><span class="tr">Hizmetler</span><span class="fa">خدمات</span><span class="ar">الخدمات</span></div>
+        <h2><span class="en">Everything between your factory gate and the Russian buyer</span><span class="ru">Всё, что между вашим складом и покупателем в России</span><span class="zh">从您的工厂大门到俄罗斯买家的全部环节</span><span class="tr">Fabrika kapınızdan Rus alıcısına kadar her şey</span><span class="fa">همه چیز بین دروازه کارخانه شما و خریدار روسی</span><span class="ar">كل ما بين بوابة مصنعك والمشتري الروسي</span></h2>
+        <p><span class="en">One contact for customs, paperwork and the import itself.</span><span class="ru">Один контакт для таможни, документов и самого ввоза.</span><span class="zh">海关、单证和进口本身，只需一个联系人。</span><span class="tr">Gümrük, evrak işleri ve ithalat için tek bir irtibat.</span><span class="fa">یک رابط واحد برای گمرک، اسناد و خود فرآیند واردات.</span><span class="ar">جهة اتصال واحدة للشؤون الجمركية والأوراق والاستيراد نفسه.</span></p>
       </div>
       <div class="services">
         <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
-          <h3><span class="en">Customs clearance</span><span class="ru">Таможенное оформление</span><span class="zh">报关</span></h3>
-          <p><span class="en">Customs declaration, HS classification and communication with Russian customs until release.</span><span class="ru">Декларация, классификация по ТН ВЭД и работа с таможней до выпуска груза.</span><span class="zh">报关单申报、海关编码归类，并与俄罗斯海关沟通直至放行。</span></p></div>
+          <h3><span class="en">Customs clearance</span><span class="ru">Таможенное оформление</span><span class="zh">报关</span><span class="tr">Gümrük işlemleri</span><span class="fa">ترخیص گمرکی</span><span class="ar">التخليص الجمركي</span></h3>
+          <p><span class="en">Customs declaration, HS classification and communication with Russian customs until release.</span><span class="ru">Декларация, классификация по ТН ВЭД и работа с таможней до выпуска груза.</span><span class="zh">报关单申报、海关编码归类，并与俄罗斯海关沟通直至放行。</span><span class="tr">Gümrük beyannamesi, HS sınıflandırması ve serbest bırakılana kadar Rus gümrükleri ile iletişim.</span><span class="fa">ترخیص کالا، طبقه‌بندی HS و ارتباط با گمرک روسیه تا زمان ترخیص.</span><span class="ar">الإجراء الجمركي، تصنيف النظام المنسق والتواصل مع الجمارك الروسية حتى الإفراج.</span></p></div>
         <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
-          <h3><span class="en">Technical importer</span><span class="ru">Технический импортёр</span><span class="zh">技术进口商</span></h3>
-          <p><span class="en">We import the goods on our Russian company — you don't need a legal entity or bank account in Russia.</span><span class="ru">Ввозим товар на нашу российскую компанию — вам не нужны юрлицо и счёт в России.</span><span class="zh">我们以俄罗斯公司名义进口货物——您无需在俄罗斯设立法人或开设银行账户。</span></p></div>
+          <h3><span class="en">Technical importer</span><span class="ru">Технический импортёр</span><span class="zh">技术进口商</span><span class="tr">Teknik ithalatçı</span><span class="fa">واردکننده فنی</span><span class="ar">المستورد الفني</span></h3>
+          <p><span class="en">We import the goods on our Russian company — you don't need a legal entity or bank account in Russia.</span><span class="ru">Ввозим товар на нашу российскую компанию — вам не нужны юрлицо и счёт в России.</span><span class="zh">我们以俄罗斯公司名义进口货物——您无需在俄罗斯设立法人或开设银行账户。</span><span class="tr">Malı Rus şirketimiz üzerinden ithal ediyoruz — Rusya'da tüzel kişiliğe veya banka hesabına ihtiyacınız yok.</span><span class="fa">کالا را با شرکت روسی خود وارد می‌کنیم — نیازی به شخصیت حقوقی یا حساب بانکی در روسیه ندارید.</span><span class="ar">نحن نستورد البضائع باسم شركتنا الروسية — لست بحاجة إلى كيان قانوني أو حساب بنكي في روسيا.</span></p></div>
         <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h2M14 15h2M8 18h2M14 18h2"/></svg></div>
-          <h3><span class="en">Duty &amp; VAT calculation</span><span class="ru">Расчёт пошлин и НДС</span><span class="zh">关税与增值税测算</span></h3>
-          <p><span class="en">A clear landed-cost estimate before shipment: duty, VAT, fees, warehouse and our services.</span><span class="ru">Понятный расчёт до отгрузки: пошлина, НДС, сборы, склад и наши услуги.</span><span class="zh">发货前提供清晰的到岸成本：关税、增值税、规费、仓储及我们的服务费。</span></p></div>
+          <h3><span class="en">Duty &amp; VAT calculation</span><span class="ru">Расчёт пошлин и НДС</span><span class="zh">关税与增值税测算</span><span class="tr">Gümrük vergisi &amp; KDV hesaplaması</span><span class="fa">محاسبه عوارض و مالیات بر ارزش افزوده</span><span class="ar">حساب الرسوم الجمركية وضريبة القيمة المضافة</span></h3>
+          <p><span class="en">A clear landed-cost estimate before shipment: duty, VAT, fees, warehouse and our services.</span><span class="ru">Понятный расчёт до отгрузки: пошлина, НДС, сборы, склад и наши услуги.</span><span class="zh">发货前提供清晰的到岸成本：关税、增值税、规费、仓储及我们的服务费。</span><span class="tr">Sevkiyattan önce net bir varış maliyeti tahmini: gümrük vergisi, KDV, harçlar, depolama ve hizmetlerimiz.</span><span class="fa">برآورد شفاف هزینه‌های تمام‌شده قبل از حمل: عوارض، مالیات بر ارزش افزوده، هزینه‌ها، انبار و خدمات ما.</span><span class="ar">تقدير واضح للتكلفة الإجمالية قبل الشحن: الرسوم الجمركية، ضريبة القيمة المضافة، الرسوم الإدارية، المستودع وخدماتنا.</span></p></div>
         <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21c0-6 4-9 10-10-1 6-4 10-10 10z"/><path d="M7 21c2-4 4-6 7-7"/></svg></div>
-          <h3><span class="en">Phytosanitary control</span><span class="ru">Фитосанитарный контроль</span><span class="zh">植物检疫</span></h3>
-          <p><span class="en">Guidance on phyto certificates and coordination of Rosselkhoznadzor inspection for plant products.</span><span class="ru">Подскажем по фитосертификатам и проведём контроль Россельхознадзора для растительной продукции.</span><span class="zh">指导植物检疫证书办理，并协调俄罗斯联邦兽医和植物检疫监督局对植物产品的查验。</span></p></div>
+          <h3><span class="en">Phytosanitary control</span><span class="ru">Фитосанитарный контроль</span><span class="zh">植物检疫</span><span class="tr">Bitki sağlığı kontrolü</span><span class="fa">کنترل بهداشت نباتی</span><span class="ar">الرقابة الصحية النباتية</span></h3>
+          <p><span class="en">Guidance on phyto certificates and coordination of Rosselkhoznadzor inspection for plant products.</span><span class="ru">Подскажем по фитосертификатам и проведём контроль Россельхознадзора для растительной продукции.</span><span class="zh">指导植物检疫证书办理，并协调俄罗斯联邦兽医和植物检疫监督局对植物产品的查验。</span><span class="tr">Bitki ürünleri için fitosertifikalar konusunda rehberlik ve Rosselkhoznadzor denetim koordinasyonu.</span><span class="fa">راهنمایی برای گواهی‌های بهداشت نباتی و هماهنگی بازرسی سازمان نظارت روسلخوزنادزور برای محصولات گیاهی.</span><span class="ar">توجيه بشأن شهادات الصحة النباتية وتنسيق تفتيش روسيلخوزنادزور للمنتجات النباتية.</span></p></div>
         <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M9 15l2 2 4-4"/></svg></div>
-          <h3><span class="en">Certification &amp; labelling</span><span class="ru">Сертификация и маркировка</span><span class="zh">认证与标签</span></h3>
-          <p><span class="en">EAEU declarations of conformity and Russian-language labelling required for food and consumer goods.</span><span class="ru">Декларации соответствия ЕАЭС и маркировка на русском для продуктов и товаров народного потребления.</span><span class="zh">办理欧亚经济联盟符合性声明，以及食品和消费品所需的俄文标签。</span></p></div>
+          <h3><span class="en">Certification &amp; labelling</span><span class="ru">Сертификация и маркировка</span><span class="zh">认证与标签</span><span class="tr">Belgelendirme &amp; etiketleme</span><span class="fa">صدور گواهی و برچسب‌گذاری</span><span class="ar">الشهادات والوسم</span></h3>
+          <p><span class="en">EAEU declarations of conformity and Russian-language labelling required for food and consumer goods.</span><span class="ru">Декларации соответствия ЕАЭС и маркировка на русском для продуктов и товаров народного потребления.</span><span class="zh">办理欧亚经济联盟符合性声明，以及食品和消费品所需的俄文标签。</span><span class="tr">Gıda ve tüketim malları için gerekli olan EAEC uygunluk beyanları ve Rusça etiketleme.</span><span class="fa">اظهارنامه‌های انطباق اتحادیه اقتصادی اوراسیا و برچسب‌گذاری به زبان روسی مورد نیاز برای مواد غذایی و کالاهای مصرفی.</span><span class="ar">إقرارات المطابقة للاتحاد الاقتصادي الأوروآسيوي والوسم باللغة الروسية المطلوبة للأغذية والسلع الاستهلاكية.</span></p></div>
         <div class="svc reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div>
-          <h3><span class="en">Logistics coordination</span><span class="ru">Логистика</span><span class="zh">物流协调</span></h3>
-          <p><span class="en">Truck, air and sea — temporary storage at the border and delivery to your buyer's warehouse.</span><span class="ru">Авто, авиа и море — склад временного хранения и доставка до склада покупателя.</span><span class="zh">公路、航空和海运——边境临时仓储并送达买家仓库。</span></p></div>
+          <h3><span class="en">Logistics coordination</span><span class="ru">Логистика</span><span class="zh">物流协调</span><span class="tr">Lojistik koordinasyonu</span><span class="fa">هماهنگی لجستیک</span><span class="ar">تنسيق الخدمات اللوجستية</span></h3>
+          <p><span class="en">Truck, air and sea — temporary storage at the border and delivery to your buyer's warehouse.</span><span class="ru">Авто, авиа и море — склад временного хранения и доставка до склада покупателя.</span><span class="zh">公路、航空和海运——边境临时仓储并送达买家仓库。</span><span class="tr">Karayolu, hava ve deniz — sınırda geçici depolama ve alıcınızın deposuna teslimat.</span><span class="fa">حمل جاده‌ای، هوایی و دریایی — نگهداری موقت در مرز و تحویل به انبار خریدار شما.</span><span class="ar">شاحنة، جوًا وبحرًا — التخزين المؤقت عند الحدود والتسليم إلى مستودع المشتري.</span></p></div>
       </div>
     </div>
   </section>
@@ -269,14 +321,14 @@
   <section id="how" class="alt">
     <div class="wrap">
       <div class="head reveal">
-        <div class="kicker"><span class="en">How it works</span><span class="ru">Как работаем</span><span class="zh">合作流程</span></div>
-        <h2><span class="en">From first message to release in four steps</span><span class="ru">От первого письма до выпуска — четыре шага</span><span class="zh">从第一封邮件到放行，只需四步</span></h2>
+        <div class="kicker"><span class="en">How it works</span><span class="ru">Как работаем</span><span class="zh">合作流程</span><span class="tr">Nasıl Çalışır</span><span class="fa">نحوه عملکرد</span><span class="ar">كيف تعمل</span></div>
+        <h2><span class="en">From first message to release in four steps</span><span class="ru">От первого письма до выпуска — четыре шага</span><span class="zh">从第一封邮件到放行，只需四步</span><span class="tr">İlk mesajdan serbest bırakılmaya kadar dört adımda</span><span class="fa">از اولین پیام تا ترخیص در چهار مرحله</span><span class="ar">من أول رسالة إلى الإفراج في أربع خطوات</span></h2>
       </div>
       <div class="steps">
-        <div class="stp reveal"><h3><span class="en">Tell us about the goods</span><span class="ru">Расскажите о товаре</span><span class="zh">介绍您的货物</span></h3><p><span class="en">Product, value, weight, origin and route — or just send your invoice and packing list.</span><span class="ru">Товар, стоимость, вес, страна и маршрут — или просто пришлите инвойс и упаковочный лист.</span><span class="zh">产品、货值、重量、原产国和路线——或直接发送发票和装箱单。</span></p></div>
-        <div class="stp reveal"><h3><span class="en">Get the estimate</span><span class="ru">Получите расчёт</span><span class="zh">获取测算</span></h3><p><span class="en">HS code, duty, VAT, fees and service costs — reviewed by our customs specialist.</span><span class="ru">Код ТН ВЭД, пошлина, НДС, сборы и услуги — проверено нашим специалистом.</span><span class="zh">海关编码、关税、增值税、规费和服务费——由我们的报关专家审核。</span></p></div>
-        <div class="stp reveal"><h3><span class="en">We prepare the import</span><span class="ru">Готовим ввоз</span><span class="zh">准备进口</span></h3><p><span class="en">Contract, certificates, phyto and the checklist of documents for your specific shipment.</span><span class="ru">Контракт, сертификаты, фито и чек-лист документов именно под вашу поставку.</span><span class="zh">合同、证书、植物检疫以及针对您这批货物的单证清单。</span></p></div>
-        <div class="stp reveal"><h3><span class="en">Clearance &amp; delivery</span><span class="ru">Выпуск и доставка</span><span class="zh">清关与交付</span></h3><p><span class="en">We declare the goods, pay duties as importer and hand the cargo over in Russia.</span><span class="ru">Декларируем груз, платим пошлины как импортёр и передаём груз в России.</span><span class="zh">我们申报货物，作为进口商缴纳税费，并在俄罗斯交付货物。</span></p></div>
+        <div class="stp reveal"><h3><span class="en">Tell us about the goods</span><span class="ru">Расскажите о товаре</span><span class="zh">介绍您的货物</span><span class="tr">Bize mal hakkında bilgi verin</span><span class="fa">درباره کالا به ما اطلاع دهید</span><span class="ar">أخبرنا عن البضائع</span></h3><p><span class="en">Product, value, weight, origin and route — or just send your invoice and packing list.</span><span class="ru">Товар, стоимость, вес, страна и маршрут — или просто пришлите инвойс и упаковочный лист.</span><span class="zh">产品、货值、重量、原产国和路线——或直接发送发票和装箱单。</span><span class="tr">Ürün, değer, ağırlık, menşei ve rota — ya da sadece faturanızı ve paket listesini gönderin.</span><span class="fa">محصول، ارزش، وزن، مبدأ و مسیر — یا فقط فاکتور و لیست بسته‌بندی خود را ارسال کنید.</span><span class="ar">المنتج، القيمة، الوزن، المنشأ والمسار — أو فقط أرسل فاتورتك وقائمة التعبئة.</span></p></div>
+        <div class="stp reveal"><h3><span class="en">Get the estimate</span><span class="ru">Получите расчёт</span><span class="zh">获取测算</span><span class="tr">Tahmini alın</span><span class="fa">برآورد را دریافت کنید</span><span class="ar">احصل على التقدير</span></h3><p><span class="en">HS code, duty, VAT, fees and service costs — reviewed by our customs specialist.</span><span class="ru">Код ТН ВЭД, пошлина, НДС, сборы и услуги — проверено нашим специалистом.</span><span class="zh">海关编码、关税、增值税、规费和服务费——由我们的报关专家审核。</span><span class="tr">HS kodu, gümrük vergisi, KDV, harçlar ve hizmet maliyetleri — gümrük uzmanımız tarafından incelenir.</span><span class="fa">کد HS، عوارض، مالیات بر ارزش افزوده، هزینه‌ها و هزینه خدمات — بررسی شده توسط کارشناس گمرکی ما.</span><span class="ar">رمز النظام المنسق، الرسوم الجمركية، ضريبة القيمة المضافة، الرسوم الإدارية وتكاليف الخدمة — تتم مراجعتها من قبل أخصائي الجمارك لدينا.</span></p></div>
+        <div class="stp reveal"><h3><span class="en">We prepare the import</span><span class="ru">Готовим ввоз</span><span class="zh">准备进口</span><span class="tr">İthalatı hazırlıyoruz</span><span class="fa">واردات را آماده می‌کنیم</span><span class="ar">نحن نعد الاستيراد</span></h3><p><span class="en">Contract, certificates, phyto and the checklist of documents for your specific shipment.</span><span class="ru">Контракт, сертификаты, фито и чек-лист документов именно под вашу поставку.</span><span class="zh">合同、证书、植物检疫以及针对您这批货物的单证清单。</span><span class="tr">Sözleşme, sertifikalar, bitki sağlığı belgeleri ve spesifik sevkiyatınız için doküman kontrol listesi.</span><span class="fa">قرارداد، گواهی‌ها، بهداشت نباتی و چک‌لیست مدارک برای محموله خاص شما.</span><span class="ar">العقد، الشهادات، الشهادات الصحية النباتية وقائمة المراجعة للمستندات الخاصة بشحنتك المحددة.</span></p></div>
+        <div class="stp reveal"><h3><span class="en">Clearance &amp; delivery</span><span class="ru">Выпуск и доставка</span><span class="zh">清关与交付</span><span class="tr">Gümrükleme &amp; teslimat</span><span class="fa">ترخیص و تحویل</span><span class="ar">التخليص الجمركي والتسليم</span></h3><p><span class="en">We declare the goods, pay duties as importer and hand the cargo over in Russia.</span><span class="ru">Декларируем груз, платим пошлины как импортёр и передаём груз в России.</span><span class="zh">我们申报货物，作为进口商缴纳税费，并在俄罗斯交付货物。</span><span class="tr">Malları beyan ediyoruz, ithalatçı olarak gümrük vergilerini ödüyoruz ve yükü Rusya'da teslim ediyoruz.</span><span class="fa">کالا را اظهار می‌کنیم، عوارض را به عنوان واردکننده پرداخت می‌کنیم و محموله را در روسیه تحویل می‌دهیم.</span><span class="ar">نقوم بإجراء الإقرار الجمركي، ودفع الرسوم كمستورد وتسليم البضاعة داخل روسيا.</span></p></div>
       </div>
     </div>
   </section>
@@ -284,22 +336,22 @@
   <section id="food">
     <div class="wrap food reveal">
       <div>
-        <div class="kicker"><span class="en">Focus</span><span class="ru">Специализация</span><span class="zh">专注领域</span></div>
-        <h2><span class="en">Food, fresh produce and beverages</span><span class="ru">Продукты, фрукты, овощи и напитки</span><span class="zh">食品、生鲜和饮料</span></h2>
-        <p style="color:var(--ink-2); font-size:17px; margin:0"><span class="en">Perishable and regulated goods need speed and the right paperwork. We know the phyto, certification and labelling rules that apply to food entering Russia.</span><span class="ru">Скоропортящимся и регулируемым товарам нужны скорость и правильные документы. Мы знаем правила фито, сертификации и маркировки для продуктов, ввозимых в Россию.</span><span class="zh">易腐和受监管的商品需要速度和正确的单证。我们熟悉食品进入俄罗斯所适用的植物检疫、认证和标签规定。</span></p>
+        <div class="kicker"><span class="en">Focus</span><span class="ru">Специализация</span><span class="zh">专注领域</span><span class="tr">Odak</span><span class="fa">تمرکز</span><span class="ar">التركيز</span></div>
+        <h2><span class="en">Food, fresh produce and beverages</span><span class="ru">Продукты, фрукты, овощи и напитки</span><span class="zh">食品、生鲜和饮料</span><span class="tr">Gıda, taze ürünler ve içecekler</span><span class="fa">غذا، محصولات تازه و نوشیدنی‌ها</span><span class="ar">الأغذية والمنتجات الطازجة والمشروبات</span></h2>
+        <p style="color:var(--ink-2); font-size:17px; margin:0"><span class="en">Perishable and regulated goods need speed and the right paperwork. We know the phyto, certification and labelling rules that apply to food entering Russia.</span><span class="ru">Скоропортящимся и регулируемым товарам нужны скорость и правильные документы. Мы знаем правила фито, сертификации и маркировки для продуктов, ввозимых в Россию.</span><span class="zh">易腐和受监管的商品需要速度和正确的单证。我们熟悉食品进入俄罗斯所适用的植物检疫、认证和标签规定。</span><span class="tr">Zarar görebilir ve düzenlemeye tabi mallar hız ve doğru evrak gerektirir. Rusya'ya giren gıda için geçerli bitki sağlık, sertifika ve etiketleme kurallarını biliyoruz.</span><span class="fa">کالاهای فاسدشدنی و تحت مقررات به سرعت و مدارک صحیح نیاز دارند. ما قوانین بهداشت نباتی، گواهی‌ها و برچسب‌گذاری مربوط به واردات غذا به روسیه را می‌شناسیم.</span><span class="ar">البضائع سريعة التلف والخاضعة للتنظيم تحتاج إلى السرعة والإجراءات الورقية الصحيحة. نحن نتعرف على القواعد الفنية وشهادات التصدير ولوائح وضع العلامات المطبقة على الأغذية الداخلة إلى روسيا.</span></p>
         <div class="tags">
-          <span class="tag"><span class="en">Fresh fruit &amp; vegetables</span><span class="ru">Фрукты и овощи</span><span class="zh">新鲜水果和蔬菜</span></span>
-          <span class="tag"><span class="en">Dried fruit &amp; nuts</span><span class="ru">Сухофрукты и орехи</span><span class="zh">干果和坚果</span></span>
-          <span class="tag"><span class="en">Canned food</span><span class="ru">Консервы</span><span class="zh">罐头食品</span></span>
-          <span class="tag"><span class="en">Confectionery</span><span class="ru">Кондитерские изделия</span><span class="zh">糖果糕点</span></span>
-          <span class="tag"><span class="en">Juices &amp; beverages</span><span class="ru">Соки и напитки</span><span class="zh">果汁和饮料</span></span>
-          <span class="tag"><span class="en">Other goods</span><span class="ru">Другие товары</span><span class="zh">其他商品</span></span>
+          <span class="tag"><span class="en">Fresh fruit &amp; vegetables</span><span class="ru">Фрукты и овощи</span><span class="zh">新鲜水果和蔬菜</span><span class="tr">Taze meyve &amp; sebze</span><span class="fa">میوه‌ و سبزیجات تازه</span><span class="ar">الفاكهة والخضروات الطازجة</span></span>
+          <span class="tag"><span class="en">Dried fruit &amp; nuts</span><span class="ru">Сухофрукты и орехи</span><span class="zh">干果和坚果</span><span class="tr">Kuru meyve &amp; kuruyemiş</span><span class="fa">میوه‌ خشک و آجیل</span><span class="ar">الفاكهة المجففة والمكسرات</span></span>
+          <span class="tag"><span class="en">Canned food</span><span class="ru">Консервы</span><span class="zh">罐头食品</span><span class="tr">Konserve gıda</span><span class="fa">غذای کنسروی</span><span class="ar">الأغذية المعلبة</span></span>
+          <span class="tag"><span class="en">Confectionery</span><span class="ru">Кондитерские изделия</span><span class="zh">糖果糕点</span><span class="tr">Şekerleme</span><span class="fa">شیرینی‌جات</span><span class="ar">الحلويات</span></span>
+          <span class="tag"><span class="en">Juices &amp; beverages</span><span class="ru">Соки и напитки</span><span class="zh">果汁和饮料</span><span class="tr">Meyve suları &amp; içecekler</span><span class="fa">آبمیوه‌ و نوشیدنی‌ها</span><span class="ar">عصائر ومشروبات</span></span>
+          <span class="tag"><span class="en">Other goods</span><span class="ru">Другие товары</span><span class="zh">其他商品</span><span class="tr">Diğer mallar</span><span class="fa">سایر کالاها</span><span class="ar">بضائع أخرى</span></span>
         </div>
       </div>
       <div class="checks">
-        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Duties checked against the EAEU tariff</span><span class="ru">Ставки — по единому тарифу ЕАЭС</span><span class="zh">按欧亚经济联盟统一税则核对税率</span></b><span><span class="en">Up-to-date rates and fees on the date of your shipment.</span><span class="ru">Актуальные ставки и сборы на дату вашей поставки.</span><span class="zh">以您发货日期的最新税率和规费为准。</span></span></div></div>
-        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Your invoice price stays your price</span><span class="ru">Цена инвойса остаётся вашей</span><span class="zh">发票价格由您决定</span></b><span><span class="en">We check documents for discrepancies before the goods reach the border.</span><span class="ru">Проверяем документы на расхождения ещё до прибытия груза на границу.</span><span class="zh">货物到达边境前，我们先核查单证是否存在差异。</span></span></div></div>
-        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">No surprises at the border</span><span class="ru">Без сюрпризов на границе</span><span class="zh">边境零意外</span></b><span><span class="en">Phyto, certificates and labelling are listed for your goods in advance.</span><span class="ru">Фито, сертификаты и маркировка — заранее, под ваш товар.</span><span class="zh">植物检疫、证书和标签要求，提前为您的货物列明。</span></span></div></div>
+        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Duties checked against the EAEU tariff</span><span class="ru">Ставки — по единому тарифу ЕАЭС</span><span class="zh">按欧亚经济联盟统一税则核对税率</span><span class="tr">EAEU tarifesine karşı kontrol edilen gümrük vergileri</span><span class="fa">حقوق گمرکی بررسی شده بر اساس تعرفه اتحادیه اقتصادی اوراسیا</span><span class="ar">تخضع الرسوم الجمركية لتعريفة الاتحاد الاقتصادي الأوروآسي</span></b><span><span class="en">Up-to-date rates and fees on the date of your shipment.</span><span class="ru">Актуальные ставки и сборы на дату вашей поставки.</span><span class="zh">以您发货日期的最新税率和规费为准。</span><span class="tr">Sevkiyatınızın tarihindeki güncel oranlar ve ücretler.</span><span class="fa">نرخ‌ها و هزینه‌های به‌روز در تاریخ حمل محموله شما.</span><span class="ar">أسعار ورسوم محدثة في تاريخ شحنتك.</span></span></div></div>
+        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">Your invoice price stays your price</span><span class="ru">Цена инвойса остаётся вашей</span><span class="zh">发票价格由您决定</span><span class="tr">Faturanızdaki fiyatınız fiyatınız olarak kalır</span><span class="fa">قیمت فاکتور شما، قیمت شما باقی می‌ماند</span><span class="ar">سعر الفاتورة الخاص بك يبقى كما هو</span></b><span><span class="en">We check documents for discrepancies before the goods reach the border.</span><span class="ru">Проверяем документы на расхождения ещё до прибытия груза на границу.</span><span class="zh">货物到达边境前，我们先核查单证是否存在差异。</span><span class="tr">Mallar sınıra ulaşmadan önce belgelerdeki tutarsızlıkları kontrol ederiz.</span><span class="fa">ما مدارک را قبل از رسیدن کالا به مرز از نظر اختلاف بررسی می‌کنیم.</span><span class="ar">نتحقق من المستندات بحثًا عن أي تناقضات قبل وصول البضائع إلى الحدود.</span></span></div></div>
+        <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><b><span class="en">No surprises at the border</span><span class="ru">Без сюрпризов на границе</span><span class="zh">边境零意外</span><span class="tr">Sınırda sürpriz yok</span><span class="fa">بدون هیچ غافلگیری در مرز</span><span class="ar">لا مفاجآت عند الحدود</span></b><span><span class="en">Phyto, certificates and labelling are listed for your goods in advance.</span><span class="ru">Фито, сертификаты и маркировка — заранее, под ваш товар.</span><span class="zh">植物检疫、证书和标签要求，提前为您的货物列明。</span><span class="tr">Bitki sağlık, sertifikalar ve etiketleme mallarınız için önceden listelenir.</span><span class="fa">مقررات بهداشت نباتی، گواهی‌ها و برچسب‌گذاری برای کالاهای شما از قبل فهرست می‌شوند.</span><span class="ar">يتم إدراج المتطلبات الفنية والشهادات ووضع العلامات لبضائعك مسبقًا.</span></span></div></div>
       </div>
     </div>
   </section>
@@ -308,17 +360,17 @@
     <div class="wrap">
       <div class="head reveal">
         <div class="kicker">FAQ</div>
-        <h2><span class="en">Common questions</span><span class="ru">Частые вопросы</span><span class="zh">常见问题</span></h2>
+        <h2><span class="en">Common questions</span><span class="ru">Частые вопросы</span><span class="zh">常见问题</span><span class="tr">Sıkça sorulan sorular</span><span class="fa">سوالات متداول</span><span class="ar">أسئلة شائعة</span></h2>
       </div>
       <div class="faq">
-        <details class="reveal"><summary><span class="en">What is a technical importer?</span><span class="ru">Что такое технический импортёр?</span><span class="zh">什么是技术进口商？</span></summary>
-          <p><span class="en">A Russian company that signs the contract with you, imports the goods in its name, pays duties and VAT, and sells the goods to your buyer in Russia. You sell abroad as usual — no Russian entity needed.</span><span class="ru">Российская компания, которая заключает с вами контракт, ввозит товар на себя, платит пошлины и НДС и продаёт товар вашему покупателю в России. Вы продаёте как обычно — без своей компании в России.</span><span class="zh">一家俄罗斯公司与您签订合同，以自己的名义进口货物，缴纳关税和增值税，再将货物销售给您在俄罗斯的买家。您照常出口——无需在俄罗斯设立公司。</span></p></details>
-        <details class="reveal"><summary><span class="en">How much does customs clearance cost?</span><span class="ru">Сколько стоит оформление?</span><span class="zh">清关费用是多少？</span></summary>
-          <p><span class="en">It depends on the goods, value, weight and transport. Send us the details or your invoice and packing list — you'll get a free estimate of duties, taxes and our services.</span><span class="ru">Зависит от товара, стоимости, веса и транспорта. Пришлите данные или инвойс с упаковочным листом — бесплатно посчитаем пошлины, налоги и наши услуги.</span><span class="zh">取决于商品、货值、重量和运输方式。发送详情或发票和装箱单——我们免费测算税费和服务费用。</span></p></details>
-        <details class="reveal"><summary><span class="en">Which documents are needed?</span><span class="ru">Какие нужны документы?</span><span class="zh">需要哪些单证？</span></summary>
-          <p><span class="en">Usually a commercial invoice and packing list for the estimate; for clearance — a contract, transport document (CMR, AWB or B/L) and, depending on the goods, phyto and conformity certificates. We send a checklist for your shipment.</span><span class="ru">Для расчёта обычно достаточно инвойса и упаковочного листа; для оформления — контракт, транспортный документ (CMR, AWB или коносамент) и, в зависимости от товара, фито и сертификаты. Пришлём чек-лист под вашу поставку.</span><span class="zh">测算通常只需商业发票和装箱单；清关还需要合同、运输单据（CMR、AWB 或提单），并视商品需要植物检疫证书和符合性证书。我们会为您的货物发送单证清单。</span></p></details>
-        <details class="reveal"><summary><span class="en">Do you work with goods from any country?</span><span class="ru">Работаете с товарами из любых стран?</span><span class="zh">你们处理来自任何国家的货物吗？</span></summary>
-          <p><span class="en">Yes. Goods from EAEU countries (Kazakhstan, Belarus, Armenia, Kyrgyzstan) move to Russia without customs clearance — for everyone else we handle the full import.</span><span class="ru">Да. Товары из стран ЕАЭС (Казахстан, Беларусь, Армения, Киргизия) ввозятся без таможенного оформления — для всех остальных берём на себя весь ввоз.</span><span class="zh">是的。来自欧亚经济联盟国家（哈萨克斯坦、白俄罗斯、亚美尼亚、吉尔吉斯斯坦）的货物进入俄罗斯无需报关——其他国家的货物，我们负责全部进口手续。</span></p></details>
+        <details class="reveal"><summary><span class="en">What is a technical importer?</span><span class="ru">Что такое технический импортёр?</span><span class="zh">什么是技术进口商？</span><span class="tr">Teknik ithalatçı nedir?</span><span class="fa">واردکننده فنی چیست؟</span><span class="ar">ما هو المستورد الفني؟</span></summary>
+          <p><span class="en">A Russian company that signs the contract with you, imports the goods in its name, pays duties and VAT, and sells the goods to your buyer in Russia. You sell abroad as usual — no Russian entity needed.</span><span class="ru">Российская компания, которая заключает с вами контракт, ввозит товар на себя, платит пошлины и НДС и продаёт товар вашему покупателю в России. Вы продаёте как обычно — без своей компании в России.</span><span class="zh">一家俄罗斯公司与您签订合同，以自己的名义进口货物，缴纳关税和增值税，再将货物销售给您在俄罗斯的买家。您照常出口——无需在俄罗斯设立公司。</span><span class="tr">Sizinle sözleşmeyi imzalayan, malları kendi adına ithal eden, gümrük vergilerini ve KDV'yi ödeyen ve malları Rusya'daki alıcınıza satan bir Rus şirketidir. Siz her zamanki gibi yurtdışında satış yaparsınız — Rusya'da bir kuruluşa ihtiyacınız yoktur.</span><span class="fa">یک شرکت روسی که قرارداد را با شما امضا می‌کند، کالا را به نام خود وارد می‌کند، حقوق گمرکی و VAT را پرداخت می‌کند و کالاها را به خریدار شما در روسیه می‌فروشد. شما مانند معمول در خارج از کشور می‌فروشید — بدون نیاز به تشکیلات روسی.</span><span class="ar">شركة روسية توقع العقد معك، وتستورد البضائع باسمها، وتدفع الرسوم الجمركية وضريبة القيمة المضافة، وتبيع البضائع لمشتريك في روسيا. أنت تبيع في الخارج كالمعتاد — لا حاجة إلى كيان روسي.</span></p></details>
+        <details class="reveal"><summary><span class="en">How much does customs clearance cost?</span><span class="ru">Сколько стоит оформление?</span><span class="zh">清关费用是多少？</span><span class="tr">Gümrük takibi ne kadara mal olur?</span><span class="fa">هزینه ترخیص کالا از گمرک چقدر است؟</span><span class="ar">كم تبلغ تكلفة التخليص الجمركي؟</span></summary>
+          <p><span class="en">It depends on the goods, value, weight and transport. Send us the details or your invoice and packing list — you'll get a free estimate of duties, taxes and our services.</span><span class="ru">Зависит от товара, стоимости, веса и транспорта. Пришлите данные или инвойс с упаковочным листом — бесплатно посчитаем пошлины, налоги и наши услуги.</span><span class="zh">取决于商品、货值、重量和运输方式。发送详情或发票和装箱单——我们免费测算税费和服务费用。</span><span class="tr">Bu, mallara, değere, ağırlığa ve nakliyeye bağlıdır. Bize detayları veya faturanızı ve paketleme listenizi gönderin — gümrük vergileri, vergiler ve hizmetlerimiz için ücretsiz bir tahmin alırsınız.</span><span class="fa">این بستگی به کالا، ارزش، وزن و حمل‌ونقل دارد. جزئیات یا فاکتور و لیست بسته‌بندی خود را برای ما بفرستید — برآورد رایگان از حقوق گمرکی، مالیات‌ها و خدمات ما را دریافت خواهید کرد.</span><span class="ar">يعتمد ذلك على البضائع والقيمة والوزن ووسيلة النقل. أرسل لنا التفاصيل أو فاتورتك وقائمة التعبئة — ستحصل على تقدير مجاني للرسوم والضرائب وخدماتنا.</span></p></details>
+        <details class="reveal"><summary><span class="en">Which documents are needed?</span><span class="ru">Какие нужны документы?</span><span class="zh">需要哪些单证？</span><span class="tr">Hangi belgelere ihtiyaç var?</span><span class="fa">برای برآورد هزینه چه مدارکی لازم است؟</span><span class="ar">ما هي المستندات المطلوبة؟</span></summary>
+          <p><span class="en">Usually a commercial invoice and packing list for the estimate; for clearance — a contract, transport document (CMR, AWB or B/L) and, depending on the goods, phyto and conformity certificates. We send a checklist for your shipment.</span><span class="ru">Для расчёта обычно достаточно инвойса и упаковочного листа; для оформления — контракт, транспортный документ (CMR, AWB или коносамент) и, в зависимости от товара, фито и сертификаты. Пришлём чек-лист под вашу поставку.</span><span class="zh">测算通常只需商业发票和装箱单；清关还需要合同、运输单据（CMR、AWB 或提单），并视商品需要植物检疫证书和符合性证书。我们会为您的货物发送单证清单。</span><span class="tr">Genellikle teklif için bir ticari fatura ve paketleme listesi; gümrükleme için — bir sözleşme, taşıma belgesi (CMR, AWB veya B/L) ve ürüne bağlı olarak, fitosaniter ve uygunluk sertifikaları. Sevkiyatınız için bir kontrol listesi göndeririz.</span><span class="fa">برای برآورد معمولا فاکتور تجاری و لیست بسته‌بندی کافی است؛ برای ترخیص – قرارداد، سند حمل (CMR، AWB یا B/L) و بسته به نوع کالا، گواهی بهداشت گیاهی و انطباق. برای هر محموله یک چک‌لیست ارسال می‌کنیم.</span><span class="ar">عادةً ما تكون الفاتورة التجارية وقائمة التعبئة للتقدير؛ للإخلاء الجمركي — عقد، مستند نقل (CMR، أو AWB، أو B/L)، وبحسب البضائع، شهادات الصحة النباتية والمطابقة. نرسل قائمة مراجعة لشحنتك.</span></p></details>
+        <details class="reveal"><summary><span class="en">Do you work with goods from any country?</span><span class="ru">Работаете с товарами из любых стран?</span><span class="zh">你们处理来自任何国家的货物吗？</span><span class="tr">Herhangi bir ülkeden gelen ürünlerle çalışıyor musunuz?</span><span class="fa">آیا با کالاهای تمام کشورها کار می‌کنید؟</span><span class="ar">هل تعملون مع بضائع من أي دولة؟</span></summary>
+          <p><span class="en">Yes. Goods from EAEU countries (Kazakhstan, Belarus, Armenia, Kyrgyzstan) move to Russia without customs clearance — for everyone else we handle the full import.</span><span class="ru">Да. Товары из стран ЕАЭС (Казахстан, Беларусь, Армения, Киргизия) ввозятся без таможенного оформления — для всех остальных берём на себя весь ввоз.</span><span class="zh">是的。来自欧亚经济联盟国家（哈萨克斯坦、白俄罗斯、亚美尼亚、吉尔吉斯斯坦）的货物进入俄罗斯无需报关——其他国家的货物，我们负责全部进口手续。</span><span class="tr">Evet. EAEU ülkelerinden (Kazakistan, Belarus, Ermenistan, Kırgızistan) gelen ürünler Rusya'ya gümrükleme olmadan geçer — diğer tüm ülkeler için tam ithalat işlemlerini yönetiriz.</span><span class="fa">بله. کالاهای کشورهای اتحادیه اقتصادی اوراسیا (قزاقستان، بلاروس، ارمنستان، قرقیزستان) بدون تشریفات گمرکی وارد روسیه می‌شوند – برای سایر کشورها، واردات کامل را انجام می‌دهیم.</span><span class="ar">نعم. البضائع من دول الاتحاد الاقتصادي الأوراسي (كازاخستان، بيلاروسيا، أرمينيا، قيرغيزستان) تنتقل إلى روسيا دون إجراءات جمركية — لكل البقية نتعامل مع الاستيراد الكامل.</span></p></details>
       </div>
     </div>
   </section>
@@ -327,8 +379,8 @@
     <div class="wrap">
       <div class="contact reveal">
         <div>
-          <h2><span class="en">Get a free duty estimate</span><span class="ru">Бесплатный расчёт пошлин</span><span class="zh">免费测算关税</span></h2>
-          <p><span class="en">Send us the product, value, weight and route — or your invoice and packing list. We reply within one business day.</span><span class="ru">Пришлите товар, стоимость, вес и маршрут — или инвойс и упаковочный лист. Ответим в течение рабочего дня.</span><span class="zh">发送产品、货值、重量和路线——或发票和装箱单。我们在一个工作日内回复。</span></p>
+          <h2><span class="en">Get a free duty estimate</span><span class="ru">Бесплатный расчёт пошлин</span><span class="zh">免费测算关税</span><span class="tr">Ücretsiz gümrük vergisi tahmini al</span><span class="fa">دریافت برآورد رایگان از عوارض گمرکی</span><span class="ar">احصل على تقدير مجاني للرسوم الجمركية</span></h2>
+          <p><span class="en">Send us the product, value, weight and route — or your invoice and packing list. We reply within one business day.</span><span class="ru">Пришлите товар, стоимость, вес и маршрут — или инвойс и упаковочный лист. Ответим в течение рабочего дня.</span><span class="zh">发送产品、货值、重量和路线——或发票和装箱单。我们在一个工作日内回复。</span><span class="tr">Ürün, değer, ağırlık ve güzergahı — veya faturanızı ve paketleme listenizi gönderin. Bir iş günü içinde yanıt veririz.</span><span class="fa">نام کالا، ارزش، وزن و مسیر حمل را بفرستید — یا فاکتور و لیست بسته‌بندی شما. در عرض یک روز کاری پاسخ می‌دهیم.</span><span class="ar">أرسل لنا المنتج، القيمة، الوزن، والمسار — أو فاتورتك وقائمة التعبئة. نرد خلال يوم عمل واحد.</span></p>
         </div>
         <div class="channels">
           <a class="channel" href="mailto:cargoclear8@gmail.com?subject=Customs%20estimate%20request">
@@ -336,18 +388,43 @@
             <span><small>E-mail</small><b>cargoclear8@gmail.com</b></span></a>
           <a class="channel" href="https://t.me/customs_ai_agent_bot" target="_blank" rel="noopener">
             <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l12-9"/></svg></span>
-            <span><small><span class="en">Telegram · instant estimate (Russian)</span><span class="ru">Telegram · расчёт за пару минут</span><span class="zh">Telegram · 即时测算（俄语）</span></small><b>@customs_ai_agent_bot</b></span></a>
-          <!-- WhatsApp: добавить, когда будет рабочий номер -->
+            <span><small><span class="en">Telegram · instant estimate (Russian)</span><span class="ru">Telegram · расчёт за пару минут</span><span class="zh">Telegram · 即时测算（俄语）</span><span class="tr">Telegram · anında teklif (Rusça)</span><span class="fa">تلگرام · برآورد فوری (روسی)</span><span class="ar">تيليجرام · تقدير فوري (بالروسية)</span></small><b>@customs_ai_agent_bot</b></span></a>
+          <a class="channel" href="https://wa.me/79137998444" target="_blank" rel="noopener">
+            <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>
+            <span><small>WhatsApp</small><b dir="ltr">+7 913 799-84-44</b></span></a>
+          <a class="channel" href="https://wa.me/79258384522" target="_blank" rel="noopener">
+            <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>
+            <span><small>WhatsApp</small><b dir="ltr">+7 925 838-45-22</b></span></a>
         </div>
+        <form class="quote" id="quote" novalidate>
+          <h3><span class="en">Request an estimate</span><span class="ru">Запрос расчёта</span><span class="zh">获取报价</span><span class="tr">Teklif iste</span><span class="fa">درخواست برآورد هزینه</span><span class="ar">اطلب تقديراً</span></h3>
+          <div class="qgrid">
+            <label><span><span class="en">Company or name</span><span class="ru">Компания или имя</span><span class="zh">公司或姓名</span><span class="tr">Şirket veya ad</span><span class="fa">شرکت یا نام</span><span class="ar">الشركة أو الاسم</span></span><input name="company" autocomplete="organization" required></label>
+            <label><span><span class="en">Country of shipment</span><span class="ru">Страна отправки</span><span class="zh">发货国家</span><span class="tr">Sevkiyat ülkesi</span><span class="fa">کشور مبدأ بارگیری</span><span class="ar">بلد الشحن</span></span><input name="country" autocomplete="country-name" required></label>
+            <label><span><span class="en">Product</span><span class="ru">Товар</span><span class="zh">产品</span><span class="tr">Ürün</span><span class="fa">محصول / کالا</span><span class="ar">المنتج</span></span><input name="product" required></label>
+            <label><span><span class="en">Volume (kg or tonnes)</span><span class="ru">Объём (кг или тонн)</span><span class="zh">数量（公斤或吨）</span><span class="tr">Miktar (kg veya ton)</span><span class="fa">حجم (کیلوگرم یا تن)</span><span class="ar">الحجم (كغ أو طن)</span></span><input name="volume"></label>
+            <label><span><span class="en">Invoice value (USD)</span><span class="ru">Стоимость по инвойсу (USD)</span><span class="zh">发票金额（美元）</span><span class="tr">Fatura değeri (USD)</span><span class="fa">ارزش فاکتور (دلار)</span><span class="ar">قيمة الفاتورة (دولار)</span></span><input name="value" inputmode="decimal"></label>
+            <label><span><span class="en">Your e-mail or WhatsApp</span><span class="ru">Ваша почта или WhatsApp</span><span class="zh">您的电子邮箱或WhatsApp</span><span class="tr">E-posta veya WhatsApp'ınız</span><span class="fa">ایمیل یا واتساپ شما</span><span class="ar">بريدك الإلكتروني أو واتساب</span></span><input name="contact" autocomplete="email" required></label>
+            <label class="wide"><span><span class="en">Comment (route, delivery terms, questions)</span><span class="ru">Комментарий (маршрут, условия поставки, вопросы)</span><span class="zh">备注（路线、交货条款、问题）</span><span class="tr">Yorum (güzergah, teslim koşulları, sorular)</span><span class="fa">توضیحات (مسیر، شرایط تحویل، سوالات)</span><span class="ar">تعليق (المسار، شروط التسليم، استفسارات)</span></span><textarea name="comment"></textarea></label>
+          </div>
+          <label class="consent"><input type="checkbox" name="consent" required> <span><span class="en">I agree to the processing of the data above to receive an estimate — see the</span><span class="ru">Согласен на обработку указанных данных для получения расчёта — см.</span><span class="zh">我同意处理上述数据以接收报价——请参阅</span><span class="tr">Yukarıdaki verilerin bir teklif almak için işlenmesini kabul ediyorum — bkz.</span><span class="fa">من با پردازش اطلاعات فوق جهت دریافت برآورد موافقم — مطالعه</span><span class="ar">أوافق على معالجة البيانات أعلاه لتلقي تقدير — راجع</span> <a href="/privacy.html"><span class="en">privacy policy</span><span class="ru">политику конфиденциальности</span><span class="zh">隐私政策</span><span class="tr">gizlilik politikası</span><span class="fa">خط‌مشی حفظ حریم خصوصی</span><span class="ar">سياسة الخصوصية</span></a></span></label>
+          <div class="qactions">
+            <button class="btn wa" type="submit" data-via="wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span><span class="en">Send via WhatsApp</span><span class="ru">Отправить в WhatsApp</span><span class="zh">通过WhatsApp发送</span><span class="tr">WhatsApp ile gönder</span><span class="fa">ارسال از طریق واتساپ</span><span class="ar">إرسال عبر واتساب</span></span></button>
+            <button class="btn glass" type="submit" data-via="mail"><span><span class="en">Send by e-mail</span><span class="ru">Отправить на почту</span><span class="zh">通过电子邮件发送</span><span class="tr">E-posta ile gönder</span><span class="fa">ارسال از طریق ایمیل</span><span class="ar">إرسال بالبريد الإلكتروني</span></span></button>
+          </div>
+          <div class="qnote" id="qnote" role="status"></div>
+          <template id="qmsg-required"><span class="en">Please fill in company, country, product, contact and tick the consent.</span><span class="ru">Заполните компанию, страну, товар, контакт и отметьте согласие.</span><span class="zh">请填写公司、国家、产品、联系方式并勾选同意。</span><span class="tr">Lütfen şirket, ülke, ürün, iletişim bilgilerini doldurun ve onay kutusunu işaretleyin.</span><span class="fa">لطفاً قسمت‌های شرکت، کشور، محصول، اطلاعات تماس را پر کنید و گزینه موافقت را تیک بزنید.</span><span class="ar">يرجى تعبئة بيانات الشركة، البلد، المنتج، وسيلة الاتصال، ووضع علامة بالموافقة.</span></template>
+        </form>
       </div>
     </div>
   </section>
 </main>
+<a class="wa-float" href="https://wa.me/79137998444" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="year">2026</span> CargoClear</span>
-    <span><span class="en">Customs clearance and import to Russia</span><span class="ru">Таможенное оформление и импорт в Россию</span><span class="zh">俄罗斯报关与进口</span></span>
+    <span>© <span id="year">2026</span> CargoClear · <a href="/privacy.html" style="text-decoration:underline"><span class="en">Privacy policy</span><span class="ru">Политика конфиденциальности</span><span class="zh">隐私政策</span><span class="tr">Gizlilik politikası</span><span class="fa">خط‌مشی حفظ حریم خصوصی</span><span class="ar">سياسة الخصوصية</span></a></span>
+    <span><span class="en">Customs clearance and import to Russia</span><span class="ru">Таможенное оформление и импорт в Россию</span><span class="zh">俄罗斯报关与进口</span><span class="tr">Rusya'ya gümrük ve ithalat hizmetleri</span><span class="fa">ترخیص کالا از گمرک و واردات به روسیه</span><span class="ar">التخليص الجمركي والاستيراد إلى روسيا</span></span>
   </div>
 </footer>
 
@@ -356,22 +433,56 @@
     var saved = null;
     try { saved = localStorage.getItem("cc-lang"); } catch (e) {}
     var nav = (navigator.language || "").toLowerCase();
-    var initial = saved || (nav.indexOf("ru") === 0 ? "ru" : nav.indexOf("zh") === 0 ? "zh" : "en");
+    var LANGS = ["en", "ru", "zh", "tr", "fa", "ar"];
+    var initial = (saved && LANGS.indexOf(saved) >= 0) ? saved : (LANGS.filter(function (l) { return nav.indexOf(l) === 0; })[0] || "en");
     function setLang(lang) {
       document.body.setAttribute("data-lang", lang);
       document.documentElement.lang = lang;
       document.querySelectorAll(".lang button").forEach(function (b) { b.classList.toggle("on", b.dataset.set === lang); });
+      document.querySelector(".lang-select").value = lang;
       document.title = {
         ru: "CargoClear — таможенное оформление и импорт в Россию",
         zh: "CargoClear — 俄罗斯报关与进口",
+        tr: "CargoClear — Rusya'da gümrükleme ve ithalat",
+        fa: "CargoClear — ترخیص گمرکی و واردات به روسیه",
+        ar: "CargoClear — التخليص الجمركي والاستيراد إلى روسيا",
         en: "CargoClear — Customs clearance and import to Russia"
       }[lang];
       document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+      document.documentElement.dir = (lang === "fa" || lang === "ar") ? "rtl" : "ltr";
+      window.dispatchEvent(new Event("resize"));
       try { localStorage.setItem("cc-lang", lang); } catch (e) {}
     }
     document.querySelectorAll(".lang button").forEach(function (b) { b.addEventListener("click", function () { setLang(b.dataset.set); }); });
+    document.querySelector(".lang-select").addEventListener("change", function (e) { setLang(e.target.value); });
     setLang(initial);
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Заявка с сайта: данные не хранятся на сервере — уходят сообщением в WhatsApp или письмом.
+    var form = document.getElementById("quote"), via = "wa";
+    form.querySelectorAll("button[type=submit]").forEach(function (b) { b.addEventListener("click", function () { via = b.dataset.via; }); });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = form.elements, need = ["company", "country", "product", "contact"];
+      var missing = need.some(function (n) { return !f[n].value.trim(); }) || !f.consent.checked;
+      var note = document.getElementById("qnote");
+      if (missing) { note.innerHTML = document.getElementById("qmsg-required").innerHTML; return; }
+      note.textContent = "";
+      var text = [
+        "Estimate request — cargoclear.ru",
+        "Company: " + f.company.value.trim(),
+        "Country: " + f.country.value.trim(),
+        "Product: " + f.product.value.trim(),
+        "Volume: " + (f.volume.value.trim() || "—"),
+        "Invoice value, USD: " + (f.value.value.trim() || "—"),
+        "Contact: " + f.contact.value.trim(),
+        "Comment: " + (f.comment.value.trim() || "—")
+      ].join("\n");
+      var url = via === "mail"
+        ? "mailto:cargoclear8@gmail.com?subject=" + encodeURIComponent("Estimate request: " + f.product.value.trim()) + "&body=" + encodeURIComponent(text)
+        : "https://wa.me/79137998444?text=" + encodeURIComponent(text);
+      window.open(url, "_blank", "noopener");
+    });
   })();
 </script>
 
@@ -464,7 +575,8 @@
     sizeCanvas(canvas); var w = canvas.width, h = canvas.height, mobile = canvas.clientWidth < 960;
     R = mobile ? w * 0.48 : Math.min(w, h) * 0.37;
     // На узком экране планета — фоном справа сверху, приглушённо, чтобы не мешать тексту.
-    cx = mobile ? w * 0.82 : w * 0.76; cy = mobile ? h * 0.24 : h * 0.5;
+    var rtl = document.documentElement.dir === "rtl";  // текст справа — планета слева
+    cx = mobile ? w * (rtl ? 0.18 : 0.82) : w * (rtl ? 0.24 : 0.76); cy = mobile ? h * 0.24 : h * 0.5;
   }
   function draw(t) {
     var w = canvas.width, h = canvas.height, r = window.devicePixelRatio || 1;
@@ -502,7 +614,8 @@
       ctx.beginPath(); ctx.arc(m[0], m[1], (6 + pulse * 18) * r, 0, 6.283); ctx.strokeStyle = "rgba(250,204,21," + (0.8 - pulse * 0.8) + ")"; ctx.lineWidth = 2 * r; ctx.stroke();
       ctx.beginPath(); ctx.arc(m[0], m[1], 4.5 * r, 0, 6.283); ctx.fillStyle = "#facc15"; ctx.fill();
       ctx.font = "600 " + (12 * r) + "px Inter, sans-serif"; ctx.fillStyle = "rgba(255,255,255,.9)";
-      ctx.fillText(document.body.dataset.lang === "ru" ? "Москва" : document.body.dataset.lang === "zh" ? "莫斯科" : "Moscow", m[0] + 10 * r, m[1] - 8 * r);
+      var MOSCOW_NAME = { ru: "Москва", zh: "莫斯科", tr: "Moskova", fa: "مسکو", ar: "موسكو" };
+      ctx.fillText(MOSCOW_NAME[document.body.dataset.lang] || "Moscow", m[0] + 10 * r, m[1] - 8 * r);
     }
   }
   function frame(t) {
