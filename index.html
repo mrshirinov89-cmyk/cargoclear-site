@@ -143,6 +143,16 @@
   [dir="rtl"] .wa-float { right: auto; left: 20px; }
   @media (max-width: 760px) { .qgrid { grid-template-columns: 1fr; } }
 
+  /* --- Видео --- */
+  .promo { display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center; }
+  .promo-text p { color: var(--ink-2); font-size: 17px; margin: 0 0 22px; max-width: 560px; }
+  .phone { position: relative; width: min(330px, 78vw); aspect-ratio: 9 / 16; border-radius: 34px; padding: 10px; background: #0b1d2a;
+           box-shadow: 0 30px 70px rgba(11,34,51,.28), inset 0 0 0 2px rgba(255,255,255,.08); }
+  .phone video { width: 100%; height: 100%; object-fit: cover; border-radius: 26px; display: block; background: #0b1d2a; }
+  .sound { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); border: 0; cursor: pointer; font: inherit; font-size: 13px; font-weight: 600;
+           color: #fff; background: rgba(3,11,18,.6); backdrop-filter: blur(6px); border-radius: 999px; padding: 8px 14px; display: inline-flex; gap: 6px; align-items: center; }
+  @media (max-width: 960px) { .promo { grid-template-columns: 1fr; justify-items: center; text-align: center; } .promo-text p { margin-left: auto; margin-right: auto; } }
+
   footer { padding: 34px 0; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
@@ -377,6 +387,22 @@
     </div>
   </section>
 
+  <section id="video">
+    <div class="wrap promo reveal">
+      <div class="promo-text">
+        <div class="kicker"><span class="en">CargoClear in 10 seconds</span><span class="ru">CargoClear за 10 секунд</span><span class="zh">CargoClear，十秒钟了解</span><span class="tr">CargoClear 10 saniyede</span><span class="fa">کارگوکلیر در 10 ثانیه</span><span class="ar">كارغوكليار في 10 ثوانٍ</span></div>
+        <h2><span class="en">From the port to your buyer in Russia</span><span class="ru">От порта до вашего покупателя в России</span><span class="zh">从港口直达您在俄罗斯的买家</span><span class="tr">Limanınızdan Rusya'daki alıcınıza kadar</span><span class="fa">از بندر تا خریدار شما در روسیه</span><span class="ar">من الميناء إلى مشتريك في روسيا</span></h2>
+        <p><span class="en">Containers, warehouse, customs and delivery — one team takes your goods across the border.</span><span class="ru">Контейнеры, склад, таможня и доставка — одна команда проводит ваш товар через границу.</span><span class="zh">集装箱、仓储、清关及配送——一支团队负责您的货物跨境全程。</span><span class="tr">Konteynerler, depo, gümrük ve teslimat — tek bir ekip mallarınızı sınırdan geçirir.</span><span class="fa">کنتینرها، انبار، گمرک و تحویل — یک تیم کالاهای شما را از مرز عبور می‌دهد.</span><span class="ar">الحاويات، المستودع، الجمارك والتوصيل — فريق واحد ينقل بضائعك عبر الحدود.</span></p>
+        <a class="btn primary" href="#contact"><span class="en">Get a free duty estimate</span><span class="ru">Бесплатный расчёт пошлин</span><span class="zh">获取免费关税估算</span><span class="tr">Ücretsiz gümrük vergisi hesaplatın</span><span class="fa">دریافت برآورد رایگان هزینه گمرکی</span><span class="ar">احصل على تقدير مجاني للرسوم الجمركية</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="phone">
+        <video id="promo" src="promo.mp4" poster="promo-poster.jpg" muted loop playsinline preload="metadata"></video>
+        <button class="sound" type="button" id="promo-sound" aria-label="Sound">🔊 <span><span class="en">Sound on</span><span class="ru">Со звуком</span><span class="zh">开启声音</span><span class="tr">Sesi aç</span><span class="fa">صدا روشن</span><span class="ar">تشغيل الصوت</span></span></button>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
       <div class="contact reveal">
@@ -504,6 +530,19 @@
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  // Видео: играет без звука, только когда видно на экране; звук — по кнопке.
+  var promo = document.getElementById("promo"), soundBtn = document.getElementById("promo-sound");
+  if (promo) {
+    if (!reduce && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) promo.play().catch(function () {}); else promo.pause(); });
+      }, { threshold: 0.35 }).observe(promo);
+    }
+    soundBtn.addEventListener("click", function () {
+      promo.muted = false; promo.currentTime = 0; promo.play().catch(function () {}); soundBtn.hidden = true;
+    });
+  }
 
   // Появление блоков.
   var io = new IntersectionObserver(function (entries) {
