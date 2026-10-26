@@ -51,14 +51,7 @@ mx, my, mz = project(moscow)
 for r in range(0, 9):
     for ang in range(0, 360, 4):
         plot(mx + r * math.cos(ang * DEG), my + r * math.sin(ang * DEG), (250, 204, 21), 2, 1)
-# логотип: квадрат с кубом слева
-for y in range(70, 150):
-    for x in range(80, 160):
-        k = ((x - 80) + (y - 70)) / 160
-        plot(x, y, tuple(round(a + (b - a) * k) for a, b in zip((15, 118, 110), (20, 184, 166))), 1, 1)
-for (x0, y0), (x1, y1) in [((140, 95), (120, 84)), ((120, 84), (100, 95)), ((100, 95), (120, 106)), ((120, 106), (140, 95)), ((100, 95), (100, 117)), ((100, 117), (120, 128)), ((120, 128), (140, 117)), ((140, 117), (140, 95)), ((120, 106), (120, 128))]:
-    for k in range(0, 41):
-        plot(x0 + (x1 - x0) * k / 40 - 2, y0 + (y1 - y0) * k / 40 - 2, (255, 255, 255), 4, 1)
+# логотип и текст накладываются отдельно (brand/og.html) — здесь только фон с планетой
 rows = b"".join(b"\x00" + bytes(img[y * W * 3:(y + 1) * W * 3]) for y in range(H))
 def chunk(t, d): return struct.pack(">I", len(d)) + t + d + struct.pack(">I", zlib.crc32(t + d))
 open(sys.argv[2], "wb").write(b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", W, H, 8, 2, 0, 0, 0)) + chunk(b"IDAT", zlib.compress(rows, 9)) + chunk(b"IEND", b""))
