@@ -123,6 +123,11 @@
   .channels { display: grid; gap: 12px; }
   .channel { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 16px 18px; transition: background .2s; }
   .channel:hover { background: rgba(255,255,255,.14); }
+  .channel.wechat { display: block; padding: 0; margin: 0; }
+  .channel.wechat summary { display: flex; justify-content: flex-start; font-weight: 400; align-items: center; gap: 14px; padding: 16px 18px; cursor: pointer; list-style: none; }
+  .channel.wechat summary::-webkit-details-marker { display: none; }
+  .channel.wechat summary::after { content: none; }
+  .channel.wechat img { display: block; margin: 0 18px 18px; width: 200px; height: 200px; border-radius: 12px; }
   .channel .ci { width: 40px; height: 40px; border-radius: 10px; background: rgba(20,184,166,.18); color: #5eead4; display: grid; place-items: center; flex: none; }
   .channel small { display: block; color: #9fb4bc; font-size: 13px; }
   .channel b { font-weight: 600; }
@@ -437,6 +442,11 @@
           <a class="channel" href="https://t.me/customs_ai_agent_bot" target="_blank" rel="noopener">
             <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l12-9"/></svg></span>
             <span><small><span class="en">Telegram · instant estimate (Russian)</span><span class="ru">Telegram · расчёт за пару минут</span><span class="zh">Telegram · 即时测算（俄语）</span><span class="tr">Telegram · anında teklif (Rusça)</span><span class="fa">تلگرام · برآورد فوری (روسی)</span><span class="ar">تيليجرام · تقدير فوري (بالروسية)</span></small><b>@customs_ai_agent_bot</b></span></a>
+          <details class="channel wechat">
+            <summary><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 4C5.1 4 2 6.6 2 9.9c0 1.9 1 3.5 2.6 4.6L4 16.6l2.4-1.2c.8.2 1.7.4 2.6.4h.5a5.2 5.2 0 01-.2-1.4c0-3.2 3-5.7 6.7-5.7h.4C15.4 6 12.5 4 9 4zm-2.5 3.3a.9.9 0 110 1.8.9.9 0 010-1.8zm5 0a.9.9 0 110 1.8.9.9 0 010-1.8zM16 9.8c-3.3 0-6 2.2-6 4.9s2.7 4.9 6 4.9c.7 0 1.4-.1 2-.3l2 1-.5-1.8c1.5-.9 2.5-2.3 2.5-3.8 0-2.7-2.7-4.9-6-4.9zm-2 2.6a.8.8 0 110 1.6.8.8 0 010-1.6zm4 0a.8.8 0 110 1.6.8.8 0 010-1.6z"/></svg></span>
+              <span><small>WeChat · 微信</small><b>CargoClear1</b></span></summary>
+            <img src="wechat-qr.jpg" width="200" height="200" alt="WeChat QR CargoClear1" loading="lazy">
+          </details>
           <a class="channel" href="https://wa.me/79137998444" target="_blank" rel="noopener">
             <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>
             <span><small>WhatsApp</small><b dir="ltr">+7 913 799-84-44</b></span></a>
