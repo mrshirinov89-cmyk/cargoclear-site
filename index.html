@@ -145,9 +145,20 @@
   .consent { font-size: 13px; color: #9fb4bc; display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; }
   .consent a { color: #5eead4; text-decoration: underline; }
   .qnote { font-size: 13px; color: #fca5a5; min-height: 18px; margin-top: 8px; }
-  .wa-float { position: fixed; z-index: 20; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0,0,0,.25); transition: transform .2s; }
-  .wa-float:hover { transform: scale(1.07); }
-  [dir="rtl"] .wa-float { right: auto; left: 20px; }
+  .float-stack { position: fixed; z-index: 20; right: 20px; bottom: 20px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+  [dir="rtl"] .float-stack { right: auto; left: 20px; align-items: flex-start; }
+  .fbtn { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: #fff; box-shadow: 0 8px 22px rgba(0,0,0,.25); transition: transform .2s; cursor: pointer; list-style: none; }
+  .fbtn::-webkit-details-marker { display: none; }
+  .fbtn:hover { transform: scale(1.07); }
+  .fbtn.wa { width: 56px; height: 56px; background: #25d366; }
+  .fbtn.tg { background: #229ed9; } .fbtn.wc { background: #07c160; } .fbtn.ml { background: #0f766e; }
+  .float-wc { position: relative; background: none; border: 0; padding: 0; margin: 0; }
+  .float-wc summary.fbtn { display: grid; justify-content: initial; }
+  .float-wc summary::after { content: none; }
+  .float-wc .pop { position: absolute; right: 58px; bottom: 0; background: #fff; color: #0b1d2a; border-radius: 14px; padding: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.3); text-align: center; font-size: 13px; width: 180px; }
+  [dir="rtl"] .float-wc .pop { right: auto; left: 58px; }
+  .float-wc .pop img { width: 156px; height: 156px; display: block; margin: 0 auto 6px; border-radius: 8px; }
+  @media (max-width: 560px) { .fbtn { width: 42px; height: 42px; } .fbtn.wa { width: 52px; height: 52px; } }
   @media (max-width: 760px) { .qgrid { grid-template-columns: 1fr; } }
 
   /* --- Видео --- */
@@ -462,22 +473,31 @@
             <label><span><span class="en">Product</span><span class="ru">Товар</span><span class="zh">产品</span><span class="tr">Ürün</span><span class="fa">محصول / کالا</span><span class="ar">المنتج</span></span><input name="product" required></label>
             <label><span><span class="en">Volume (kg or tonnes)</span><span class="ru">Объём (кг или тонн)</span><span class="zh">数量（公斤或吨）</span><span class="tr">Miktar (kg veya ton)</span><span class="fa">حجم (کیلوگرم یا تن)</span><span class="ar">الحجم (كغ أو طن)</span></span><input name="volume"></label>
             <label><span><span class="en">Invoice value (USD)</span><span class="ru">Стоимость по инвойсу (USD)</span><span class="zh">发票金额（美元）</span><span class="tr">Fatura değeri (USD)</span><span class="fa">ارزش فاکتور (دلار)</span><span class="ar">قيمة الفاتورة (دولار)</span></span><input name="value" inputmode="decimal"></label>
-            <label><span><span class="en">Your e-mail or WhatsApp</span><span class="ru">Ваша почта или WhatsApp</span><span class="zh">您的电子邮箱或WhatsApp</span><span class="tr">E-posta veya WhatsApp'ınız</span><span class="fa">ایمیل یا واتساپ شما</span><span class="ar">بريدك الإلكتروني أو واتساب</span></span><input name="contact" autocomplete="email" required></label>
+            <label><span><span class="en">Your e-mail, WhatsApp, Telegram or WeChat</span><span class="ru">Ваша почта, WhatsApp, Telegram или WeChat</span><span class="zh">您的电子邮箱、WhatsApp、Telegram或微信</span><span class="tr">E-posta, WhatsApp, Telegram veya WeChat</span><span class="fa">ایمیل، واتساپ، تلگرام یا وی‌چت شما</span><span class="ar">بريدك الإلكتروني أو واتساب أو تيليجرام أو ويتشات</span></span><input name="contact" autocomplete="email" required></label>
             <label class="wide"><span><span class="en">Comment (route, delivery terms, questions)</span><span class="ru">Комментарий (маршрут, условия поставки, вопросы)</span><span class="zh">备注（路线、交货条款、问题）</span><span class="tr">Yorum (güzergah, teslim koşulları, sorular)</span><span class="fa">توضیحات (مسیر، شرایط تحویل، سوالات)</span><span class="ar">تعليق (المسار، شروط التسليم، استفسارات)</span></span><textarea name="comment"></textarea></label>
           </div>
           <label class="consent"><input type="checkbox" name="consent" required> <span><span class="en">I agree to the processing of the data above to receive an estimate — see the</span><span class="ru">Согласен на обработку указанных данных для получения расчёта — см.</span><span class="zh">我同意处理上述数据以接收报价——请参阅</span><span class="tr">Yukarıdaki verilerin bir teklif almak için işlenmesini kabul ediyorum — bkz.</span><span class="fa">من با پردازش اطلاعات فوق جهت دریافت برآورد موافقم — مطالعه</span><span class="ar">أوافق على معالجة البيانات أعلاه لتلقي تقدير — راجع</span> <a href="/privacy.html"><span class="en">privacy policy</span><span class="ru">политику конфиденциальности</span><span class="zh">隐私政策</span><span class="tr">gizlilik politikası</span><span class="fa">خط‌مشی حفظ حریم خصوصی</span><span class="ar">سياسة الخصوصية</span></a></span></label>
           <div class="qactions">
             <button class="btn wa" type="submit" data-via="wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span><span class="en">Send via WhatsApp</span><span class="ru">Отправить в WhatsApp</span><span class="zh">通过WhatsApp发送</span><span class="tr">WhatsApp ile gönder</span><span class="fa">ارسال از طریق واتساپ</span><span class="ar">إرسال عبر واتساب</span></span></button>
+            <button class="btn glass" type="submit" data-via="tg"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13 1.2 11.5c-1.1-.3-1.1-1.1.2-1.6L20.6 2.5c.9-.3 1.7.2 1.3 1.8z"/></svg><span><span class="en">Send via Telegram</span><span class="ru">Отправить в Telegram</span><span class="zh">通过Telegram发送</span><span class="tr">Telegram ile gönder</span><span class="fa">ارسال از طریق تلگرام</span><span class="ar">إرسال عبر تيليجرام</span></span></button>
+            <button class="btn glass" type="submit" data-via="wechat"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9 4C5.1 4 2 6.6 2 9.9c0 1.9 1 3.5 2.6 4.6L4 16.6l2.4-1.2c.8.2 1.7.4 2.6.4h.5a5.2 5.2 0 01-.2-1.4c0-3.2 3-5.7 6.7-5.7h.4C15.4 6 12.5 4 9 4zm-2.5 3.3a.9.9 0 110 1.8.9.9 0 010-1.8zm5 0a.9.9 0 110 1.8.9.9 0 010-1.8zM16 9.8c-3.3 0-6 2.2-6 4.9s2.7 4.9 6 4.9c.7 0 1.4-.1 2-.3l2 1-.5-1.8c1.5-.9 2.5-2.3 2.5-3.8 0-2.7-2.7-4.9-6-4.9zm-2 2.6a.8.8 0 110 1.6.8.8 0 010-1.6zm4 0a.8.8 0 110 1.6.8.8 0 010-1.6z"/></svg><span><span class="en">Send via WeChat</span><span class="ru">Отправить в WeChat</span><span class="zh">通过微信发送</span><span class="tr">WeChat ile gönder</span><span class="fa">ارسال از طریق وی‌چت</span><span class="ar">إرسال عبر ويتشات</span></span></button>
             <button class="btn glass" type="submit" data-via="mail"><span><span class="en">Send by e-mail</span><span class="ru">Отправить на почту</span><span class="zh">通过电子邮件发送</span><span class="tr">E-posta ile gönder</span><span class="fa">ارسال از طریق ایمیل</span><span class="ar">إرسال بالبريد الإلكتروني</span></span></button>
           </div>
           <div class="qnote" id="qnote" role="status"></div>
+          <template id="qmsg-copied"><span class="en">Request text copied — paste it into the chat (WeChat ID: CargoClear1).</span><span class="ru">Текст заявки скопирован — вставьте его в чат (WeChat ID: CargoClear1).</span><span class="zh">请求内容已复制——请粘贴到聊天中（微信号：CargoClear1）。</span><span class="tr">Talep metni kopyalandı — sohbete yapıştırın (WeChat ID: CargoClear1).</span><span class="fa">متن درخواست کپی شد — آن را در چت جای‌گذاری کنید (شناسه وی‌چت: CargoClear1).</span><span class="ar">تم نسخ نص الطلب — الصقه في المحادثة (معرّف ويتشات: CargoClear1).</span></template>
           <template id="qmsg-required"><span class="en">Please fill in company, country, product, contact and tick the consent.</span><span class="ru">Заполните компанию, страну, товар, контакт и отметьте согласие.</span><span class="zh">请填写公司、国家、产品、联系方式并勾选同意。</span><span class="tr">Lütfen şirket, ülke, ürün, iletişim bilgilerini doldurun ve onay kutusunu işaretleyin.</span><span class="fa">لطفاً قسمت‌های شرکت، کشور، محصول، اطلاعات تماس را پر کنید و گزینه موافقت را تیک بزنید.</span><span class="ar">يرجى تعبئة بيانات الشركة، البلد، المنتج، وسيلة الاتصال، ووضع علامة بالموافقة.</span></template>
         </form>
       </div>
     </div>
   </section>
 </main>
-<a class="wa-float" href="https://wa.me/79137998444" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<div class="float-stack" aria-label="Contacts">
+  <a class="fbtn ml" href="mailto:cargoclear8@gmail.com?subject=Customs%20estimate%20request" aria-label="E-mail" title="cargoclear8@gmail.com"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+  <details class="float-wc"><summary class="fbtn wc" aria-label="WeChat" title="WeChat: CargoClear1"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9 4C5.1 4 2 6.6 2 9.9c0 1.9 1 3.5 2.6 4.6L4 16.6l2.4-1.2c.8.2 1.7.4 2.6.4h.5a5.2 5.2 0 01-.2-1.4c0-3.2 3-5.7 6.7-5.7h.4C15.4 6 12.5 4 9 4zm-2.5 3.3a.9.9 0 110 1.8.9.9 0 010-1.8zm5 0a.9.9 0 110 1.8.9.9 0 010-1.8zM16 9.8c-3.3 0-6 2.2-6 4.9s2.7 4.9 6 4.9c.7 0 1.4-.1 2-.3l2 1-.5-1.8c1.5-.9 2.5-2.3 2.5-3.8 0-2.7-2.7-4.9-6-4.9zm-2 2.6a.8.8 0 110 1.6.8.8 0 010-1.6zm4 0a.8.8 0 110 1.6.8.8 0 010-1.6z"/></svg></summary>
+    <div class="pop"><img src="wechat-qr.jpg" width="156" height="156" alt="WeChat QR CargoClear1" loading="lazy"><b>WeChat · 微信</b><br>ID: CargoClear1</div></details>
+  <a class="fbtn tg" href="https://t.me/customs_ai_agent_bot" target="_blank" rel="noopener" aria-label="Telegram" title="@customs_ai_agent_bot"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13 1.2 11.5c-1.1-.3-1.1-1.1.2-1.6L20.6 2.5c.9-.3 1.7.2 1.3 1.8z"/></svg></a>
+  <a class="fbtn wa" href="https://wa.me/79137998444" target="_blank" rel="noopener" aria-label="WhatsApp" title="+7 913 799-84-44"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+</div>
 
 <footer>
   <div class="wrap">
@@ -536,6 +556,14 @@
         "Contact: " + f.contact.value.trim(),
         "Comment: " + (f.comment.value.trim() || "—")
       ].join("\n");
+      if (via === "tg" || via === "wechat") {
+        // Telegram и WeChat не принимают текст в ссылке на чат: копируем заявку и открываем мессенджер.
+        try { navigator.clipboard.writeText(text); } catch (err) {}
+        note.innerHTML = document.getElementById("qmsg-copied").innerHTML;
+        if (via === "tg") window.open("https://t.me/customs_ai_agent_bot", "_blank", "noopener");
+        else location.href = "weixin://";
+        return;
+      }
       var url = via === "mail"
         ? "mailto:cargoclear8@gmail.com?subject=" + encodeURIComponent("Estimate request: " + f.product.value.trim()) + "&body=" + encodeURIComponent(text)
         : "https://wa.me/79137998444?text=" + encodeURIComponent(text);
