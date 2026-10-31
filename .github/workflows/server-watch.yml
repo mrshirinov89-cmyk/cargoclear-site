@@ -1,0 +1,30 @@
+# Внешняя проверка сервера CargoClear: раз в 10 минут GitHub проверяет, отвечает ли сервер.
+# Не отвечает 3 попытки подряд — сообщение владельцу в Telegram. Адрес и токен — в секретах репо.
+name: server-watch
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          for i in 1 2 3; do
+            if timeout 10 bash -c "</dev/tcp/$SERVER_IP/22" 2>/dev/null; then
+              echo "server is up"; exit 0
+            fi
+            sleep 20
+          done
+          curl -s -m 20 "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TG_CHAT_ID}" \
+            --data-urlencode "text=🚨 CargoClear: сервер не отвечает уже ~1 минуту (проверка GitHub). Бот и панель могут не работать — проверьте Timeweb: баланс и статус сервера." >/dev/null
+          exit 1
