@@ -500,14 +500,21 @@
     </div>
   </section>
   <style>
-    .rates-strip { padding: 22px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
-    .rates-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 12px; }
-    .rates-date, .rates-note { color: var(--muted); font-size: 13px; }
-    .rates-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
-    .rate { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
-    .rate .code { font-weight: 700; font-size: 14px; }
-    .rate .val { font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
-    .rate .chg { font-size: 12px; font-variant-numeric: tabular-nums; }
+    .rates-strip { padding: 14px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
+    .rates-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; font-size: 14px; }
+    .rates-date, .rates-note { color: var(--muted); font-size: 12px; }
+    /* Все валюты в одну строку: равные узкие колонки; на телефоне строка прокручивается. */
+    .rates-list { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 4px; }
+    .rate { min-width: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 4px 2px; line-height: 1.25; text-align: center; white-space: nowrap; overflow: hidden; }
+    .rate .top { display: block; }
+    .rate .code { display: block; font-weight: 700; font-size: 10.5px; color: var(--muted); }
+    .rate .val { display: block; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .rate .chg { font-size: 10px; font-variant-numeric: tabular-nums; }
+    @media (max-width: 1400px) { .rates-strip .wrap { padding-right: 76px; } } /* не под кнопками мессенджеров */
+    @media (max-width: 900px) {
+      .rates-strip .wrap { padding-right: 16px; }
+      .rates-list { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 74px; overflow-x: auto; }
+    }
     .rate .up { color: #b42318; } .rate .down { color: #0f766e; }
   </style>
   <script>
@@ -525,11 +532,12 @@
       const unit = per[code] || 1;
       const now = v.Value / v.Nominal * unit, diff = (v.Value - v.Previous) / v.Nominal * unit;
       const box = document.createElement("div"); box.className = "rate";
-      const c = document.createElement("div"); c.className = "code"; c.textContent = unit.toLocaleString("ru-RU") + " " + code;
-      const val = document.createElement("div"); val.className = "val"; val.textContent = fmt(now) + " ₽";
+      const c = document.createElement("span"); c.className = "code"; c.textContent = (unit > 1 ? unit.toLocaleString("ru-RU") + " " : "") + code;
+      const val = document.createElement("span"); val.className = "val"; val.textContent = fmt(now) + " ₽";
+      const top = document.createElement("div"); top.className = "top"; top.append(c, val);
       const ch = document.createElement("div"); ch.className = "chg " + (diff > 0 ? "up" : diff < 0 ? "down" : "");
       ch.textContent = (diff > 0 ? "▲ +" : diff < 0 ? "▼ " : "") + fmt(diff);
-      box.append(c, val, ch); list.append(box);
+      box.append(top, ch); list.append(box);
     });
     const day = new Date(d.Date);
     document.getElementById("rates-date").textContent = day.toLocaleDateString("ru-RU");
