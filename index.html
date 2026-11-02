@@ -488,6 +488,51 @@
       </div>
     </div>
   </section>
+
+  <section id="rates" class="rates-strip" hidden aria-label="Exchange rates">
+    <div class="wrap">
+      <div class="rates-head">
+        <b><span class="en">Central Bank of Russia rates</span><span class="ru">Курсы валют ЦБ РФ</span><span class="zh">俄罗斯央行汇率</span><span class="tr">Rusya Merkez Bankası kurları</span><span class="fa">نرخ ارز بانک مرکزی روسیه</span><span class="ar">أسعار صرف البنك المركزي الروسي</span></b>
+        <span class="rates-date" id="rates-date"></span>
+        <span class="rates-note"><span class="en">customs payments are calculated at this rate</span><span class="ru">по этому курсу считаются таможенные платежи</span><span class="zh">海关税费按此汇率计算</span><span class="tr">gümrük ödemeleri bu kurla hesaplanır</span><span class="fa">عوارض گمرکی با این نرخ محاسبه می‌شود</span><span class="ar">تُحسب المدفوعات الجمركية بهذا السعر</span></span>
+      </div>
+      <div class="rates-list" id="rates-list"></div>
+    </div>
+  </section>
+  <style>
+    .rates-strip { padding: 22px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
+    .rates-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 12px; }
+    .rates-date, .rates-note { color: var(--muted); font-size: 13px; }
+    .rates-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+    .rate { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+    .rate .code { font-weight: 700; font-size: 14px; }
+    .rate .val { font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .rate .chg { font-size: 12px; font-variant-numeric: tabular-nums; }
+    .rate .up { color: #b42318; } .rate .down { color: #0f766e; }
+  </style>
+  <script>
+  // Официальные курсы ЦБ РФ (зеркало cbr-xml-daily.ru), рублей за 1 единицу валюты.
+  fetch("https://www.cbr-xml-daily.ru/daily_json.js").then(r => r.ok ? r.json() : null).then(d => {
+    if (!d || !d.Valute) return;
+    const codes = ["USD", "EUR", "CNY", "TRY", "AED", "INR", "KZT", "UZS"];
+    const fmt = v => v.toLocaleString("ru-RU", {minimumFractionDigits: v < 1 ? 4 : 2, maximumFractionDigits: v < 1 ? 4 : 2});
+    const list = document.getElementById("rates-list");
+    codes.forEach(code => {
+      const v = d.Valute[code];
+      if (!v) return;
+      const now = v.Value / v.Nominal, diff = (v.Value - v.Previous) / v.Nominal;
+      const box = document.createElement("div"); box.className = "rate";
+      const c = document.createElement("div"); c.className = "code"; c.textContent = "1 " + code;
+      const val = document.createElement("div"); val.className = "val"; val.textContent = fmt(now) + " ₽";
+      const ch = document.createElement("div"); ch.className = "chg " + (diff > 0 ? "up" : diff < 0 ? "down" : "");
+      ch.textContent = (diff > 0 ? "▲ +" : diff < 0 ? "▼ " : "") + fmt(diff);
+      box.append(c, val, ch); list.append(box);
+    });
+    const day = new Date(d.Date);
+    document.getElementById("rates-date").textContent = day.toLocaleDateString("ru-RU");
+    document.getElementById("rates").hidden = false;
+  }).catch(() => {});
+  </script>
 </main>
 <div class="float-stack" aria-label="Contacts">
   <a class="fbtn ml" href="mailto:cargoclear8@gmail.com?subject=Customs%20estimate%20request" aria-label="E-mail" title="cargoclear8@gmail.com"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
