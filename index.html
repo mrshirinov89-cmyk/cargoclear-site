@@ -514,15 +514,18 @@
   // Официальные курсы ЦБ РФ (зеркало cbr-xml-daily.ru), рублей за 1 единицу валюты.
   fetch("https://www.cbr-xml-daily.ru/daily_json.js").then(r => r.ok ? r.json() : null).then(d => {
     if (!d || !d.Valute) return;
-    const codes = ["USD", "EUR", "CNY", "TRY", "AED", "INR", "KZT", "UZS"];
-    const fmt = v => v.toLocaleString("ru-RU", {minimumFractionDigits: v < 1 ? 4 : 2, maximumFractionDigits: v < 1 ? 4 : 2});
+    const codes = ["USD", "EUR", "CNY", "TRY", "AED", "AZN", "INR", "KZT", "UZS", "EGP", "THB", "VND", "IRR"];
+    // Мелкие валюты — за 1 000 – 100 000 единиц, иначе в рублях одни нули.
+    const per = {UZS: 1000, VND: 10000, IRR: 100000};
+    const fmt = v => v.toLocaleString("ru-RU", {minimumFractionDigits: 2, maximumFractionDigits: Math.abs(v) < 1 ? 4 : 2});
     const list = document.getElementById("rates-list");
     codes.forEach(code => {
       const v = d.Valute[code];
       if (!v) return;
-      const now = v.Value / v.Nominal, diff = (v.Value - v.Previous) / v.Nominal;
+      const unit = per[code] || 1;
+      const now = v.Value / v.Nominal * unit, diff = (v.Value - v.Previous) / v.Nominal * unit;
       const box = document.createElement("div"); box.className = "rate";
-      const c = document.createElement("div"); c.className = "code"; c.textContent = "1 " + code;
+      const c = document.createElement("div"); c.className = "code"; c.textContent = unit.toLocaleString("ru-RU") + " " + code;
       const val = document.createElement("div"); val.className = "val"; val.textContent = fmt(now) + " ₽";
       const ch = document.createElement("div"); ch.className = "chg " + (diff > 0 ? "up" : diff < 0 ? "down" : "");
       ch.textContent = (diff > 0 ? "▲ +" : diff < 0 ? "▼ " : "") + fmt(diff);
