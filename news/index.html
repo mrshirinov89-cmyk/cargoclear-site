@@ -11,38 +11,59 @@
 <meta property="og:title" content="Russia customs &amp; import news — CargoClear">
 <meta property="og:description" content="Latest changes in Russian import duties, VAT, restrictions and customs rules.">
 <meta property="og:image" content="https://cargoclear.ru/og-image.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root { --ink:#0b1d2a; --muted:#6b7a86; --line:#e3e8ec; --teal:#0f766e; --bg-2:#f4f7f8; }
   * { box-sizing: border-box; }
   body { margin:0; font:16px/1.65 Inter,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:#fff; }
+  body[data-lang="fa"], body[data-lang="ar"] { font-family: Vazirmatn, Inter, Tahoma, sans-serif; }
   a { color: var(--teal); }
   header { border-bottom:1px solid var(--line); }
   .wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
-  header .wrap { display:flex; justify-content:space-between; align-items:center; height:64px; }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; gap: 12px; min-height:64px; flex-wrap: wrap; }
   .logo { font-weight:700; font-size:20px; color:var(--ink); text-decoration:none; }
+  .langs { display:flex; gap:4px; flex-wrap: wrap; }
+  .langs button { border:1px solid var(--line); background:none; border-radius:999px; padding:3px 10px; font:inherit; font-size:13px; cursor:pointer; color:var(--muted); }
+  .langs button.on { background:var(--ink); color:#fff; border-color:var(--ink); }
   main { padding: 36px 0 60px; }
   h1 { font-size: 28px; line-height:1.25; margin: 6px 0 14px; }
-  h2 { font-size: 20px; margin: 30px 0 8px; }
   .muted { color: var(--muted); font-size: 14px; }
-  .ru { border-top:1px solid var(--line); margin-top: 28px; padding-top: 8px; }
   .item { padding: 18px 0; border-bottom:1px solid var(--line); }
   .item h2 { margin: 4px 0 6px; font-size: 19px; }
   .item h2 a { color: var(--ink); text-decoration:none; }
   .cta { background: var(--bg-2); border-radius: 16px; padding: 18px 20px; margin-top: 30px; }
   footer { border-top:1px solid var(--line); padding: 20px 0; color: var(--muted); font-size: 14px; }
+  body:not([data-lang="en"]) .l-en { display: none !important; }
+  body:not([data-lang="ru"]) .l-ru { display: none !important; }
+  body:not([data-lang="zh"]) .l-zh { display: none !important; }
+  body:not([data-lang="tr"]) .l-tr { display: none !important; }
+  body:not([data-lang="fa"]) .l-fa { display: none !important; }
+  body:not([data-lang="ar"]) .l-ar { display: none !important; }
 </style>
 </head>
-<body>
-<header><div class="wrap"><a class="logo" href="/">CargoClear</a><a href="/news/">News</a></div></header>
+<body data-lang="en">
+<header><div class="wrap"><a class="logo" href="/">CargoClear</a><a href="/news/"><span class="l-en" lang="en">News</span><span class="l-ru" lang="ru">Новости</span><span class="l-zh" lang="zh">新闻</span><span class="l-tr" lang="tr">Haberler</span><span class="l-fa" lang="fa" dir="rtl">اخبار</span><span class="l-ar" lang="ar" dir="rtl">الأخبار</span></a><div class="langs"><button type="button" data-set="en">EN</button><button type="button" data-set="ru">RU</button><button type="button" data-set="zh">中文</button><button type="button" data-set="tr">TR</button><button type="button" data-set="fa">فارسی</button><button type="button" data-set="ar">العربية</button></div></div></header>
 <main><div class="wrap">
-<h1>Russia customs &amp; import news</h1>
-<p class="muted">Duties, VAT, restrictions and customs rules that matter to exporters shipping to Russia.
-Новости таможни и импорта в Россию.</p>
-<div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html">Eurasian Economic Commission extends anti-dumping duties on truck tires from China</a></h2><div>The Eurasian Economic Commission has extended anti-dumping duties on truck tires from China, according to TKS.RU. Exporters of such tires to Russia may need to account for these duties, and should check the current rates.</div><div class="muted" lang="ru">ЕЭК продлила антидемпинговые пошлины на грузовые шины из Китая</div></div>
-<div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-russia-introduces-new-labeling-norms.html">Russia introduces new labeling norms</a></h2><div>Realnoe Vremya reports that Russia has introduced new labeling norms. Exporters should check if their goods require updated labeling for the Russian market.</div><div class="muted" lang="ru">В России введены новые нормы маркировки</div></div>
-<div class="cta"><strong>Shipping goods to Russia?</strong> We calculate duties, VAT and landed cost for free and handle customs clearance. <a href="/#contact">Get an estimate →</a><br><span class="muted">Везёте товар в Россию? Бесплатно посчитаем пошлины и НДС, оформим на таможне.</span></div>
+<div class="l-en" lang="en"><h1>Russia customs &amp; import news</h1><p class="muted">Duties, VAT, restrictions and customs rules that matter to exporters shipping to Russia.</p><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html">Eurasian Economic Commission extends anti-dumping duties on truck tires from China</a></h2><div>The Eurasian Economic Commission has extended anti-dumping duties on truck tires from China, according to TKS.RU. Exporters of such tires to Russia may need to account for these duties, and should check the current rates.</div></div><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-russia-introduces-new-labeling-norms.html">Russia introduces new labeling norms</a></h2><div>Realnoe Vremya reports that Russia has introduced new labeling norms. Exporters should check if their goods require updated labeling for the Russian market.</div></div><div class="cta"><strong>Shipping goods to Russia?</strong> We calculate duties, VAT and landed cost for free and handle customs clearance. <a href="/#contact">Get an estimate →</a></div></div><div class="l-ru" lang="ru"><h1>Новости таможни и импорта в Россию</h1><p class="muted">Пошлины, НДС, ограничения и правила таможни, важные для поставок в Россию.</p><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html">ЕЭК продлила антидемпинговые пошлины на грузовые шины из Китая</a></h2><div>Евразийская экономическая комиссия продлила антидемпинговые пошлины на грузовые шины из Китая, сообщает TKS.RU. Экспортерам таких шин в Россию, возможно, придется учитывать эти пошлины, и им следует уточнить действующие ставки.</div></div><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-russia-introduces-new-labeling-norms.html">В России введены новые нормы маркировки</a></h2><div>Издание &quot;Реальное время&quot; сообщает о введении в России новых норм маркировки. Экспортёрам следует проверить, требуется ли для их товаров обновлённая маркировка для российского рынка.</div></div><div class="cta"><strong>Везёте товар в Россию?</strong> Бесплатно посчитаем пошлины, НДС и полную стоимость, оформим на таможне. <a href="/#contact">Получить расчёт →</a></div></div><div class="l-zh" lang="zh"><h1>俄罗斯海关与进口新闻</h1><p class="muted">关税、增值税、限制措施和海关规则——向俄罗斯出口的企业需要了解的信息。</p><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html">欧亚经济委员会延长对中国卡车轮胎的反倾销税</a></h2><div>据TKS.RU报道，欧亚经济委员会已延长对中国卡车轮胎的反倾销税。向俄罗斯出口此类轮胎的出口商可能需要考虑这些关税，并应核查当前税率。</div></div><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-russia-introduces-new-labeling-norms.html">俄罗斯出台新标签规范</a></h2><div>Realnoe Vremya报道，俄罗斯已出台新的标签规范。出口商应检查其商品是否需要为俄罗斯市场更新标签。</div></div><div class="cta"><strong>要向俄罗斯发货吗？</strong>我们免费测算关税、增值税和到岸成本，并办理清关。 <a href="/#contact">获取测算 →</a></div></div><div class="l-tr" lang="tr"><h1>Rusya gümrük ve ithalat haberleri</h1><p class="muted">Rusya&#x27;ya ihracat yapanlar için gümrük vergileri, KDV, kısıtlamalar ve gümrük kuralları.</p><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html">Avrasya Ekonomik Komisyonu Çin&#x27;den gelen kamyon lastiklerine uygulanan antidamping vergilerini uzattı</a></h2><div>TKS.RU&#x27;ya göre, Avrasya Ekonomik Komisyonu Çin&#x27;den gelen kamyon lastiklerine uygulanan antidamping vergilerini uzattı. Rusya&#x27;ya bu tür lastik ihraç eden ihracatçıların bu vergileri dikkate alması gerekebilir ve mevcut oranları kontrol etmelidir.</div></div><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-russia-introduces-new-labeling-norms.html">Rusya yeni etiketleme normlarını getirdi</a></h2><div>Realnoe Vremya&#x27;nın haberine göre, Rusya yeni etiketleme normlarını uygulamaya koydu. İhracatçılar, ürünlerinin Rusya pazarı için güncellenmiş etiketleme gerektirip gerektirmediğini kontrol etmelidir.</div></div><div class="cta"><strong>Rusya'ya mal mı gönderiyorsunuz?</strong> Gümrük vergisi, KDV ve toplam maliyeti ücretsiz hesaplıyor, gümrükleme işlemlerini yapıyoruz. <a href="/#contact">Hesaplama alın →</a></div></div><div class="l-fa" lang="fa" dir="rtl"><h1>اخبار گمرک و واردات روسیه</h1><p class="muted">عوارض گمرکی، مالیات بر ارزش افزوده، محدودیت‌ها و مقررات گمرکی مهم برای صادرکنندگان به روسیه.</p><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html">کمیسیون اقتصادی اوراسیا تعرفه‌های ضد دامپینگ لاستیک‌های کامیون چین را تمدید کرد</a></h2><div>به گزارش TKS.RU، کمیسیون اقتصادی اوراسیا تعرفه‌های ضد دامپینگ لاستیک‌های کامیون چین را تمدید کرده است. صادرکنندگان این نوع لاستیک‌ها به روسیه ممکن است نیاز داشته باشند این تعرفه‌ها را در نظر بگیرند و باید نرخ‌های فعلی را بررسی کنند.</div></div><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-russia-introduces-new-labeling-norms.html">روسیه قوانین جدید برچسب‌گذاری را معرفی کرد</a></h2><div>Realnoe Vremya گزارش می‌دهد که روسیه قوانین جدید برچسب‌گذاری را معرفی کرده است. صادرکنندگان باید بررسی کنند که آیا کالاهای آن‌ها برای بازار روسیه نیاز به برچسب‌گذاری به‌روزرسانی‌شده دارد یا خیر.</div></div><div class="cta"><strong>کالا به روسیه می‌فرستید؟</strong> عوارض، مالیات و هزینه نهایی را رایگان محاسبه می‌کنیم و ترخیص گمرکی را انجام می‌دهیم. <a href="/#contact">دریافت محاسبه ←</a></div></div><div class="l-ar" lang="ar" dir="rtl"><h1>أخبار الجمارك والاستيراد في روسيا</h1><p class="muted">الرسوم الجمركية وضريبة القيمة المضافة والقيود والقواعد الجمركية المهمة للمصدّرين إلى روسيا.</p><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html">اللجنة الاقتصادية الأوراسية تمدد الرسوم الجمركية المضادة للإغراق على إطارات الشاحنات من الصين</a></h2><div>وفقًا لـ TKS.RU، مددت اللجنة الاقتصادية الأوراسية الرسوم الجمركية المضادة للإغراق على إطارات الشاحنات من الصين. قد يحتاج مصدرو هذه الإطارات إلى روسيا إلى احتساب هذه الرسوم، ويجب عليهم التحقق من الأسعار الحالية.</div></div><div class="item"><div class="muted">02.11.2026</div><h2><a href="/news/2026-11-02-russia-introduces-new-labeling-norms.html">روسيا تقدم معايير جديدة للوسم</a></h2><div>تقرير Realnoe Vremya أن روسيا قد قدمت معايير جديدة للوسم. يجب على المصدرين التحقق مما إذا كانت بضائعهم تتطلب وسمًا محدثًا للسوق الروسية.</div></div><div class="cta"><strong>هل تشحن بضائع إلى روسيا؟</strong> نحسب الرسوم والضرائب والتكلفة الكاملة مجانًا ونتولى التخليص الجمركي. <a href="/#contact">احصل على حساب ←</a></div></div>
 </div></main>
-<footer><div class="wrap">© CargoClear · customs clearance and import to Russia · <a href="/">cargoclear.ru</a></div></footer>
+<footer><div class="wrap">© CargoClear · <a href="/">cargoclear.ru</a></div></footer>
+
+<script>
+(function () {
+  var langs = ["en", "ru", "zh", "tr", "fa", "ar"], saved = null;
+  try { saved = localStorage.getItem("cc-lang"); } catch (e) {}
+  var nav = (navigator.language || "").toLowerCase().slice(0, 2);
+  function set(lang) {
+    if (langs.indexOf(lang) < 0) lang = "en";
+    document.body.dataset.lang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll(".langs button").forEach(function (b) { b.classList.toggle("on", b.dataset.set === lang); });
+    try { localStorage.setItem("cc-lang", lang); } catch (e) {}
+  }
+  document.querySelectorAll(".langs button").forEach(function (b) { b.addEventListener("click", function () { set(b.dataset.set); }); });
+  set(saved || (langs.indexOf(nav) >= 0 ? nav : "en"));
+})();
+</script>
+
 </body>
 </html>
