@@ -428,12 +428,14 @@
     if (!Array.isArray(items) || !items.length) return;
     const list = document.getElementById("news-list");
     const render = () => {
-      const ru = document.body.dataset.lang === "ru";
+      const lang = document.body.dataset.lang || "en", rtl = lang === "fa" || lang === "ar";
       list.replaceChildren(...items.slice(0, 3).map(n => {
+        const text = (n.i18n && n.i18n[lang]) || {title: n.title, summary: n.summary};
         const a = document.createElement("a"); a.className = "news-card"; a.href = n.url;
+        a.lang = lang; a.dir = rtl ? "rtl" : "ltr";
         const t = document.createElement("time"); t.textContent = n.day.split("-").reverse().join(".");
-        const h = document.createElement("h3"); h.textContent = ru && n.title_ru ? n.title_ru : n.title;
-        const p = document.createElement("p"); p.textContent = ru && n.summary_ru ? n.summary_ru : n.summary;
+        const h = document.createElement("h3"); h.textContent = text.title;
+        const p = document.createElement("p"); p.textContent = text.summary;
         a.append(t, h, p); return a;
       }));
     };
