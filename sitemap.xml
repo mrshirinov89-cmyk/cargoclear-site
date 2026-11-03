@@ -3,6 +3,8 @@
   <url><loc>https://cargoclear.ru/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://cargoclear.ru/news/</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://cargoclear.ru/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://cargoclear.ru/news/2026-11-03-russia-may-raise-duties-and-restrict-imports-from-eu-in-resp.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://cargoclear.ru/news/2026-11-03-new-duty-on-parcels-from-china-effective-november-1.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://cargoclear.ru/news/2026-11-02-eurasian-economic-commission-extends-anti-dumping-duties-on.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://cargoclear.ru/news/2026-11-02-russia-introduces-new-labeling-norms.html</loc><changefreq>never</changefreq><priority>0.5</priority></url>
 </urlset>
