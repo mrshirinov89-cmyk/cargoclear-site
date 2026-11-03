@@ -518,8 +518,11 @@
     .rate .up { color: #b42318; } .rate .down { color: #0f766e; }
   </style>
   <script>
-  // Официальные курсы ЦБ РФ (зеркало cbr-xml-daily.ru), рублей за 1 единицу валюты.
-  fetch("https://www.cbr-xml-daily.ru/daily_json.js").then(r => r.ok ? r.json() : null).then(d => {
+  // Официальные курсы ЦБ РФ: rates.json кладёт сервер CargoClear (с cbr.ru), запасной путь — зеркало.
+  const own = () => fetch("/rates.json", {cache: "no-cache"}).then(r => r.ok ? r.json() : Promise.reject())
+    .then(j => ({Date: j.date, Valute: Object.fromEntries(Object.entries(j.rates).map(([k, v]) => [k, {Value: v.value, Previous: v.prev, Nominal: 1}]))}));
+  const mirror = () => fetch("https://www.cbr-xml-daily.ru/daily_json.js").then(r => r.ok ? r.json() : null);
+  own().catch(mirror).then(d => {
     if (!d || !d.Valute) return;
     const codes = ["USD", "EUR", "CNY", "TRY", "AED", "AZN", "INR", "KZT", "UZS", "EGP", "THB", "VND", "IRR"];
     // Мелкие валюты — за 1 000 – 100 000 единиц, иначе в рублях одни нули.
