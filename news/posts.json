@@ -1,5 +1,125 @@
 [
  {
+  "news_id": "819cb80636072936",
+  "slug": "2026-11-08-duties-affect-retail-prices",
+  "day": "2026-11-08",
+  "title_en": "Duties Affect Retail Prices",
+  "summary_en": "The news outlet Bloknot reports that import duties are impacting retail prices. This may indicate that changes in customs duties could affect the final cost of goods for exporters to Russia.",
+  "title_ru": "Пошлины влияют на розничные цены",
+  "summary_ru": "Издание Блокнот сообщает, что импортные пошлины сказываются на розничных ценах. Это может означать, что изменения в таможенных сборах способны повлиять на конечную стоимость товаров для экспортеров в Россию.",
+  "source": "Блокнот Россия",
+  "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RVmhjZEpWU2tOcHdmOUlvMXFRN0JHWkZVZVBVcHI2NkgzN2FHQUhFY1FWZ0xndy1ZdnBDNjJsdHhFSzAwb3B0aGRXdnAybllNemllM3NTcHpMaVFJTXFqV0J2b0NGOVFqcWRjel8wdEVtWm5RYmxMZ01Maw?oc=5",
+  "translations": {
+   "zh": {
+    "title": "关税影响零售价格",
+    "summary": "新闻媒体Bloknot报道，进口关税正在影响零售价格。这可能表明，关税的变化可能会影响对俄罗斯出口商品的最终成本。"
+   },
+   "tr": {
+    "title": "Gümrük Vergileri Perakende Fiyatları Etkiliyor",
+    "summary": "Bloknot haber ajansı, ithalat vergilerinin perakende fiyatları etkilediğini bildiriyor. Bu, gümrük vergilerindeki değişikliklerin Rusya'ya ihracat yapanlar için malların nihai maliyetini etkileyebileceğini gösterebilir."
+   },
+   "fa": {
+    "title": "عوارض گمرکی بر قیمت‌های خرده‌فروشی تأثیر می‌گذارد",
+    "summary": "خبرگزاری Bloknot گزارش می‌دهد که عوارض وارداتی بر قیمت‌های خرده‌فروشی تأثیر می‌گذارد. این ممکن است نشان دهد که تغییرات در عوارض گمرکی می‌تواند بر هزینه نهایی کالاها برای صادرکنندگان به روسیه تأثیر بگذارد."
+   },
+   "ar": {
+    "title": "الرسوم الجمركية تؤثر على أسعار التجزئة",
+    "summary": "تذكر وسيلة الإعلام Bloknot أن الرسوم الجمركية على الواردات تؤثر على أسعار التجزئة. قد يشير هذا إلى أن التغييرات في الرسوم الجمركية يمكن أن تؤثر على التكلفة النهائية للسلع للمصدرين إلى روسيا."
+   }
+  },
+  "topic": "Пошлины и ставки"
+ },
+ {
+  "news_id": "125beda36b814a46",
+  "slug": "2026-11-08-why-parallel-import",
+  "day": "2026-11-08",
+  "title_en": "Why parallel import?",
+  "summary_en": "Avto.ru reports on the topic of parallel import. Exporters should check how this mechanism may affect the import of goods into Russia.",
+  "title_ru": "Почему параллельный импорт?",
+  "summary_ru": "Avto.ru сообщает о теме параллельного импорта. Экспортёрам следует уточнить, как этот механизм может повлиять на ввоз товаров в Россию.",
+  "source": "Авто.ру",
+  "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUHRhVG1wa193ZFMwS2FCelZwNWNiOEZmVmVrZmNBRmwxRkViS1VGeW04VVhnX1FoME4yN0ZsOVhKUEJ1SEVaTjFuSFA0T09DMlpRMTgyTkk2TVlVNFUxcTF3RnVuV0c4S3lPYmcydV80X0RBbkJWVHlzdUNVZnByajd1cHhHRFhtckZ3eUJNTHhPY3FMY3g3VnFZOUJHZnk5SFUwUG9jaUk5MjQ2SEQw?oc=5",
+  "translations": {
+   "zh": {
+    "title": "为何采用平行进口？",
+    "summary": "Avto.ru 报道了平行进口这一主题。出口商应检查这一机制可能如何影响商品进口到俄罗斯。"
+   },
+   "tr": {
+    "title": "Neden paralel ithalat?",
+    "summary": "Avto.ru, paralel ithalat konusunu bildiriyor. İhracatçılar, bu mekanizmanın Rusya'ya mal ithalatını nasıl etkileyebileceğini kontrol etmelidir."
+   },
+   "fa": {
+    "title": "چرا واردات موازی؟",
+    "summary": "Avto.ru در مورد موضوع واردات موازی گزارش می‌دهد. صادرکنندگان باید بررسی کنند که این مکانیسم چگونه ممکن است بر واردات کالا به روسیه تأثیر بگذارد."
+   },
+   "ar": {
+    "title": "لماذا الاستيراد الموازي؟",
+    "summary": "يقدم Avto.ru تقريرًا حول موضوع الاستيراد الموازي. يجب على المصدرين التحقق من كيفية تأثير هذه الآلية على استيراد البضائع إلى روسيا."
+   }
+  },
+  "topic": "Ограничения и санкции"
+ },
+ {
+  "news_id": "ceb36a9c25b42afa",
+  "slug": "2026-11-08-russian-watchdog-monitors-correction-of-violations-by-multic",
+  "day": "2026-11-08",
+  "title_en": "Russian watchdog monitors correction of violations by Multicana",
+  "summary_en": "Rosselkhoznadzor is monitoring the correction of violations by the company Multicana, according to prospect.com.ru. Exporters of similar goods should check their own certification and labeling compliance.",
+  "title_ru": "Россельхознадзор контролирует устранение нарушений компанией \"Мультикана\"",
+  "summary_ru": "Россельхознадзор контролирует устранение нарушений компанией \"Мультикана\", сообщает prospect.com.ru. Экспортерам аналогичной продукции следует проверить собственное соответствие требованиям по сертификации и маркировке.",
+  "source": "prospect.com.ru",
+  "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYk1UQWQtQjdPOG15X3ZLV3JfdWp1WjFZSGZhbXdRa29fTm0wLUU4OG5OUEVEN0FDdTdLOFc2Wi1LQmZ4UWlsaEl6bFpWQU10SmJ5MThaTGs3QU83QXZPOUNvdGJlN29IOFgtSnJvUEpocEVPR3dtMEZQRGc3Sjcxd3VFSmFfeUtSdDV1ZFNEX1hfNGxYWEhGWTlSWFJ3dzV4cWE4ZQ?oc=5",
+  "translations": {
+   "zh": {
+    "title": "俄罗斯监管机构监督Multicana公司违规整改情况",
+    "summary": "据prospect.com.ru报道，俄罗斯联邦兽医和植物卫生监督局正在监督Multicana公司对违规行为的整改情况。出口同类商品的企业应检查自身的认证和标签合规性。"
+   },
+   "tr": {
+    "title": "Rus denetleyici kuruluşu Multicana'nın ihlallerini düzeltmesini izliyor",
+    "summary": "prospect.com.ru'ya göre, Rosselkhoznadzor, Multicana şirketinin ihlallerini düzeltmesini izliyor. Benzer ürünleri ihraç edenler, kendi sertifikasyon ve etiketleme uyumluluklarını kontrol etmelidir."
+   },
+   "fa": {
+    "title": "ناظر روسی اصلاح تخلفات شرکت Multicana را زیر نظر دارد",
+    "summary": "به گزارش prospect.com.ru، سازمان نظارت دامپزشکی و گیاه‌پزشکی روسیه (Rosselkhoznadzor) در حال نظارت بر اصلاح تخلفات شرکت Multicana است. صادرکنندگان کالاهای مشابه باید انطباق گواهی‌ها و برچسب‌گذاری خود را بررسی کنند."
+   },
+   "ar": {
+    "title": "الجهاز الرقابي الروسي يراقب تصحيح المخالفات من قبل شركة Multicana",
+    "summary": "وفقًا لموقع prospect.com.ru، فإن الهيئة الفيدرالية للرقابة البيطرية والنباتية (Rosselkhoznadzor) تراقب تصحيح المخالفات من قبل شركة Multicana. يجب على مصدري السلع المماثلة التحقق من امتثال شهاداتهم ووضع العلامات الخاصة بهم."
+   }
+  },
+  "topic": "Маркировка и сертификация"
+ },
+ {
+  "news_id": "7f0ba5aa6a2e0e13",
+  "slug": "2026-11-08-customs-demands-payment-for-foreign-parcels",
+  "day": "2026-11-08",
+  "title_en": "Customs demands payment for foreign parcels",
+  "summary_en": "TengriNews reports that customs may require payment for parcels arriving from abroad. Exporters should check if their shipments to Russia may be subject to new duty demands.",
+  "title_ru": "Таможня требует оплату за посылки из-за границы",
+  "summary_ru": "TengriNews сообщает, что таможня может требовать оплату за посылки, прибывающие из-за рубежа. Экспортёрам стоит проверить, могут ли их отправления в Россию столкнуться с новыми требованиями по уплате пошлин.",
+  "source": "TengriNews",
+  "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNQlFIY3V3QUJHREliQjF6TE5Bc3g1Q1hPOGNPb2tVbGR4RmJZQ3F0UDJHaUtJSlJsaFZ0dlFnbFhoM0xjVEV6RzNZcVVlTEtLSE5aY3dqSkl1d1dwRmNjYVNlZzhIRDVZeXlvc040ck5jNDJOcUFPNHJGdy1KUXBXZU5Ydi1TZkMtVnNUdm1Ud09oSENhVGx4Y2RyVzRGekZ4eFE?oc=5",
+  "translations": {
+   "zh": {
+    "title": "海关要求为国外包裹支付费用",
+    "summary": "TengriNews报道，海关可能要求为从国外抵达的包裹支付费用。出口商应检查其发往俄罗斯的货物是否可能受到新的关税要求。"
+   },
+   "tr": {
+    "title": "Gümrük, yurtdışından gelen paketler için ödeme talep ediyor",
+    "summary": "TengriNews, gümrüklerin yurtdışından gelen paketler için ödeme talep edebileceğini bildiriyor. İhracatçılar, Rusya'ya gönderdikleri kargoların yeni gümrük vergisi taleplerine tabi olup olmadığını kontrol etmelidir."
+   },
+   "fa": {
+    "title": "گمرک درخواست پرداخت برای مرسولات خارجی می‌کند",
+    "summary": "TengriNews گزارش می‌دهد که گمرک ممکن است برای مرسولات ورودی از خارج درخواست پرداخت کند. صادرکنندگان باید بررسی کنند که آیا محموله‌هایشان به روسیه ممکن است مشمول درخواست‌های جدید عوارض گمرکی شود."
+   },
+   "ar": {
+    "title": "الجمارك تطلب الدفع للطرود الأجنبية",
+    "summary": "تقرير TengriNews أن الجمارك قد تطلب الدفع للطرود القادمة من الخارج. يجب على المصدرين التحقق مما إذا كانت شحناتهم إلى روسيا قد تخضع لمطالبات جمركية جديدة."
+   }
+  },
+  "topic": "Таможня и оформление"
+ },
+ {
   "news_id": "fbb43f5d126aa905",
   "slug": "2026-11-07-duties-impact-retail-prices-in-russia",
   "day": "2026-11-07",
