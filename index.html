@@ -144,6 +144,7 @@
   .qpair { display: grid; grid-template-columns: 1fr 92px; gap: 6px; }
   .qhint { margin: 12px 0 0; font-size: 13px; color: #b9cdd3; }
   .qresult { margin-top: 16px; padding: 18px 20px; border-radius: 14px; background: rgba(3,11,18,.45); border: 1px solid rgba(255,255,255,.18); white-space: pre-line; font-size: 15px; line-height: 1.55; }
+  .consent.need { outline: 2px solid #f59e0b; outline-offset: 4px; border-radius: 6px; }
   .qactions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; }
   .btn.wa { background: #25d366; color: #06301a; }
   .consent { font-size: 13px; color: #9fb4bc; display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; }
@@ -499,6 +500,7 @@
           <template id="qmsg-limit"><span class="en">Too many calculations from your network — try again in an hour or write to us.</span><span class="ru">Слишком много расчётов с вашей сети — попробуйте через час или напишите нам.</span><span class="zh">您的网络计算次数过多——请一小时后再试或联系我们。</span><span class="tr">Ağınızdan çok fazla hesaplama — bir saat sonra deneyin veya bize yazın.</span><span class="fa">تعداد محاسبات از شبکه شما زیاد است — یک ساعت بعد دوباره تلاش کنید یا به ما پیام دهید.</span><span class="ar">عدد كبير من الحسابات من شبكتك — حاول بعد ساعة أو راسلنا.</span></template>
           <template id="qmsg-email"><span class="en">Check the e-mail address.</span><span class="ru">Проверьте адрес почты.</span><span class="zh">请检查邮箱地址。</span><span class="tr">E-posta adresini kontrol edin.</span><span class="fa">آدرس ایمیل را بررسی کنید.</span><span class="ar">تحقق من البريد الإلكتروني.</span></template>
           <template id="qmsg-phone"><span class="en">Enter the phone with country code, at least 10 digits.</span><span class="ru">Укажите телефон с кодом страны, не меньше 10 цифр.</span><span class="zh">请输入带国家代码的电话，至少10位数字。</span><span class="tr">Telefonu ülke koduyla, en az 10 haneli girin.</span><span class="fa">تلفن را با کد کشور و حداقل ۱۰ رقم وارد کنید.</span><span class="ar">أدخل الهاتف مع رمز الدولة، 10 أرقام على الأقل.</span></template>
+          <template id="qmsg-consent"><span class="en">Tick the consent to the processing of data — the box above the buttons.</span><span class="ru">Отметьте галочку согласия на обработку данных — над кнопками.</span><span class="zh">请勾选按钮上方的数据处理同意框。</span><span class="tr">Butonların üstündeki veri işleme onay kutusunu işaretleyin.</span><span class="fa">تیک موافقت با پردازش اطلاعات را بزنید — بالای دکمه‌ها.</span><span class="ar">ضع علامة الموافقة على معالجة البيانات — فوق الأزرار.</span></template>
           <template id="qmsg-required"><span class="en">Fill in company, country, product, weight, e-mail and phone, and tick the consent.</span><span class="ru">Заполните компанию, страну, товар, вес, почту и телефон и отметьте согласие.</span><span class="zh">请填写公司、国家、产品、重量、邮箱和电话，并勾选同意。</span><span class="tr">Şirket, ülke, ürün, ağırlık, e-posta ve telefonu doldurun ve onayı işaretleyin.</span><span class="fa">شرکت، کشور، کالا، وزن، ایمیل و تلفن را پر کنید و موافقت را تیک بزنید.</span><span class="ar">املأ الشركة والبلد والمنتج والوزن والبريد والهاتف وضع علامة الموافقة.</span></template>
         </form>
       </div>
@@ -618,7 +620,9 @@
       e.preventDefault();
       var f = form.elements, need = ["company", "country", "product", "weight", "email", "phone"];
       var result = document.getElementById("qresult");
-      if (need.some(function (n) { return !f[n].value.trim(); }) || !f.consent.checked) return show("qmsg-required");
+      if (need.some(function (n) { return !f[n].value.trim(); })) return show("qmsg-required");
+      if (!f.consent.checked) { f.consent.focus(); f.consent.parentNode.classList.add("need"); return show("qmsg-consent"); }
+      f.consent.parentNode.classList.remove("need");
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) return show("qmsg-email");
       if (f.phone.value.replace(/\D/g, "").length < 10) return show("qmsg-phone");
       var lang = document.body.dataset.lang || "en";
