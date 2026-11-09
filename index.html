@@ -144,7 +144,8 @@
   .qpair { display: grid; grid-template-columns: 1fr 92px; gap: 6px; }
   .qhint { margin: 12px 0 0; font-size: 13px; color: #b9cdd3; }
   .qresult { margin-top: 16px; padding: 18px 20px; border-radius: 14px; background: rgba(3,11,18,.45); border: 1px solid rgba(255,255,255,.18); white-space: pre-line; font-size: 15px; line-height: 1.55; }
-  .consent.need { outline: 2px solid #f59e0b; outline-offset: 4px; border-radius: 6px; }
+  .consent.need { outline: 2px solid #ef4444; outline-offset: 4px; border-radius: 6px; color: #fecaca; }
+  .qgrid input.bad { border-color: #ef4444; box-shadow: 0 0 0 1px #ef4444; background: rgba(239,68,68,.12); }
   .qactions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; }
   .btn.wa { background: #25d366; color: #06301a; }
   .consent { font-size: 13px; color: #9fb4bc; display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; }
@@ -615,16 +616,27 @@
     // Заявка с сайта: уходит в систему заявок CargoClear (панель) и сообщением в мессенджер или письмом.
     var form = document.getElementById("quote"), via = "calc";
     form.querySelectorAll("button[type=submit]").forEach(function (b) { b.addEventListener("click", function () { via = b.dataset.via; }); });
+    // Поле исправили — красная рамка уходит сразу.
+    form.addEventListener("input", function (e) { if (e.target.classList) e.target.classList.remove("bad"); });
+    form.addEventListener("change", function (e) { if (e.target.name === "consent" && e.target.checked) e.target.parentNode.classList.remove("need"); });
     function show(id) { document.getElementById("qnote").innerHTML = id ? document.getElementById(id).innerHTML : ""; }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var f = form.elements, need = ["company", "country", "product", "weight", "email", "phone"];
       var result = document.getElementById("qresult");
-      if (need.some(function (n) { return !f[n].value.trim(); })) return show("qmsg-required");
-      if (!f.consent.checked) { f.consent.focus(); f.consent.parentNode.classList.add("need"); return show("qmsg-consent"); }
-      f.consent.parentNode.classList.remove("need");
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) return show("qmsg-email");
-      if (f.phone.value.replace(/\D/g, "").length < 10) return show("qmsg-phone");
+      // Что не заполнено или заполнено неверно — подсвечиваем красным, курсор — в первое такое поле.
+      var bad = need.filter(function (n) { return !f[n].value.trim(); });
+      var badEmail = f.email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim());
+      var badPhone = f.phone.value.trim() && f.phone.value.replace(/\D/g, "").length < 10;
+      if (badEmail) bad.push("email");
+      if (badPhone) bad.push("phone");
+      need.forEach(function (n) { f[n].classList.toggle("bad", bad.indexOf(n) >= 0); });
+      f.consent.parentNode.classList.toggle("need", !f.consent.checked);
+      if (bad.length) {
+        f[bad[0]].focus();
+        return show(bad.some(function (n) { return !f[n].value.trim(); }) ? "qmsg-required" : (badEmail ? "qmsg-email" : "qmsg-phone"));
+      }
+      if (!f.consent.checked) { f.consent.focus(); return show("qmsg-consent"); }
       var lang = document.body.dataset.lang || "en";
       var data = {
         company: f.company.value, country: f.country.value, product: f.product.value,
