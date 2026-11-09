@@ -27,7 +27,8 @@
     "summary": "تقرير TKS.RU أن رسوم الاستيراد على الأنابيب الصينية لآبار النفط والغاز تم تمديدها حتى عام 2031. قد يحتاج مصدرو هذه السلع إلى روسيا إلى أخذ هذه الرسوم الممتدة في الاعتبار في حساباتهم للتكلفة طويلة الأجل."
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "0777277b404606e9",
@@ -57,7 +58,8 @@
     "summary": "وفقًا لـ Klerk.ru، وافقت وزارة الصناعة والتجارة على عقد قياسي لإصدار رموز وضع العلامات على الأسمدة. قد يحتاج مصدرو الأسمدة إلى روسيا إلى استخدام هذا النموذج من العقد للامتثال لوضع العلامات."
    }
   },
-  "topic": "Маркировка и сертификация"
+  "topic": "Маркировка и сертификация",
+  "photo": ""
  },
  {
   "news_id": "d68209529eaad630",
@@ -87,67 +89,8 @@
     "summary": "تقرير TKS.RU أن الخدمات الجمركية الفيدرالية وجهاز الأمن الفيدرالي قد وافقا على إجراء جديد لتبادل المعلومات بشأن البضائع المحتجزة. قد يؤدي هذا إلى تغييرات في كيفية تعامل السلطات الجمركية مع الشحنات، لذلك يجب على المصدرين التحقق من التحديثات المتعلقة ببروتوكولات الاحتجاز."
    }
   },
-  "topic": "Таможня и оформление"
- },
- {
-  "news_id": "819cb80636072936",
-  "slug": "2026-11-08-duties-affect-retail-prices",
-  "day": "2026-11-08",
-  "title_en": "Duties Affect Retail Prices",
-  "summary_en": "The news outlet Bloknot reports that import duties are impacting retail prices. This may indicate that changes in customs duties could affect the final cost of goods for exporters to Russia.",
-  "title_ru": "Пошлины влияют на розничные цены",
-  "summary_ru": "Издание Блокнот сообщает, что импортные пошлины сказываются на розничных ценах. Это может означать, что изменения в таможенных сборах способны повлиять на конечную стоимость товаров для экспортеров в Россию.",
-  "source": "Блокнот Россия",
-  "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RVmhjZEpWU2tOcHdmOUlvMXFRN0JHWkZVZVBVcHI2NkgzN2FHQUhFY1FWZ0xndy1ZdnBDNjJsdHhFSzAwb3B0aGRXdnAybllNemllM3NTcHpMaVFJTXFqV0J2b0NGOVFqcWRjel8wdEVtWm5RYmxMZ01Maw?oc=5",
-  "translations": {
-   "zh": {
-    "title": "关税影响零售价格",
-    "summary": "新闻媒体Bloknot报道，进口关税正在影响零售价格。这可能表明，关税的变化可能会影响对俄罗斯出口商品的最终成本。"
-   },
-   "tr": {
-    "title": "Gümrük Vergileri Perakende Fiyatları Etkiliyor",
-    "summary": "Bloknot haber ajansı, ithalat vergilerinin perakende fiyatları etkilediğini bildiriyor. Bu, gümrük vergilerindeki değişikliklerin Rusya'ya ihracat yapanlar için malların nihai maliyetini etkileyebileceğini gösterebilir."
-   },
-   "fa": {
-    "title": "عوارض گمرکی بر قیمت‌های خرده‌فروشی تأثیر می‌گذارد",
-    "summary": "خبرگزاری Bloknot گزارش می‌دهد که عوارض وارداتی بر قیمت‌های خرده‌فروشی تأثیر می‌گذارد. این ممکن است نشان دهد که تغییرات در عوارض گمرکی می‌تواند بر هزینه نهایی کالاها برای صادرکنندگان به روسیه تأثیر بگذارد."
-   },
-   "ar": {
-    "title": "الرسوم الجمركية تؤثر على أسعار التجزئة",
-    "summary": "تذكر وسيلة الإعلام Bloknot أن الرسوم الجمركية على الواردات تؤثر على أسعار التجزئة. قد يشير هذا إلى أن التغييرات في الرسوم الجمركية يمكن أن تؤثر على التكلفة النهائية للسلع للمصدرين إلى روسيا."
-   }
-  },
-  "topic": "Пошлины и ставки"
- },
- {
-  "news_id": "125beda36b814a46",
-  "slug": "2026-11-08-why-parallel-import",
-  "day": "2026-11-08",
-  "title_en": "Why parallel import?",
-  "summary_en": "Avto.ru reports on the topic of parallel import. Exporters should check how this mechanism may affect the import of goods into Russia.",
-  "title_ru": "Почему параллельный импорт?",
-  "summary_ru": "Avto.ru сообщает о теме параллельного импорта. Экспортёрам следует уточнить, как этот механизм может повлиять на ввоз товаров в Россию.",
-  "source": "Авто.ру",
-  "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUHRhVG1wa193ZFMwS2FCelZwNWNiOEZmVmVrZmNBRmwxRkViS1VGeW04VVhnX1FoME4yN0ZsOVhKUEJ1SEVaTjFuSFA0T09DMlpRMTgyTkk2TVlVNFUxcTF3RnVuV0c4S3lPYmcydV80X0RBbkJWVHlzdUNVZnByajd1cHhHRFhtckZ3eUJNTHhPY3FMY3g3VnFZOUJHZnk5SFUwUG9jaUk5MjQ2SEQw?oc=5",
-  "translations": {
-   "zh": {
-    "title": "为何采用平行进口？",
-    "summary": "Avto.ru 报道了平行进口这一主题。出口商应检查这一机制可能如何影响商品进口到俄罗斯。"
-   },
-   "tr": {
-    "title": "Neden paralel ithalat?",
-    "summary": "Avto.ru, paralel ithalat konusunu bildiriyor. İhracatçılar, bu mekanizmanın Rusya'ya mal ithalatını nasıl etkileyebileceğini kontrol etmelidir."
-   },
-   "fa": {
-    "title": "چرا واردات موازی؟",
-    "summary": "Avto.ru در مورد موضوع واردات موازی گزارش می‌دهد. صادرکنندگان باید بررسی کنند که این مکانیسم چگونه ممکن است بر واردات کالا به روسیه تأثیر بگذارد."
-   },
-   "ar": {
-    "title": "لماذا الاستيراد الموازي؟",
-    "summary": "يقدم Avto.ru تقريرًا حول موضوع الاستيراد الموازي. يجب على المصدرين التحقق من كيفية تأثير هذه الآلية على استيراد البضائع إلى روسيا."
-   }
-  },
-  "topic": "Ограничения и санкции"
+  "topic": "Таможня и оформление",
+  "photo": ""
  },
  {
   "news_id": "ceb36a9c25b42afa",
@@ -177,127 +120,8 @@
     "summary": "وفقًا لموقع prospect.com.ru، فإن الهيئة الفيدرالية للرقابة البيطرية والنباتية (Rosselkhoznadzor) تراقب تصحيح المخالفات من قبل شركة Multicana. يجب على مصدري السلع المماثلة التحقق من امتثال شهاداتهم ووضع العلامات الخاصة بهم."
    }
   },
-  "topic": "Маркировка и сертификация"
- },
- {
-  "news_id": "7f0ba5aa6a2e0e13",
-  "slug": "2026-11-08-customs-demands-payment-for-foreign-parcels",
-  "day": "2026-11-08",
-  "title_en": "Customs demands payment for foreign parcels",
-  "summary_en": "TengriNews reports that customs may require payment for parcels arriving from abroad. Exporters should check if their shipments to Russia may be subject to new duty demands.",
-  "title_ru": "Таможня требует оплату за посылки из-за границы",
-  "summary_ru": "TengriNews сообщает, что таможня может требовать оплату за посылки, прибывающие из-за рубежа. Экспортёрам стоит проверить, могут ли их отправления в Россию столкнуться с новыми требованиями по уплате пошлин.",
-  "source": "TengriNews",
-  "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNQlFIY3V3QUJHREliQjF6TE5Bc3g1Q1hPOGNPb2tVbGR4RmJZQ3F0UDJHaUtJSlJsaFZ0dlFnbFhoM0xjVEV6RzNZcVVlTEtLSE5aY3dqSkl1d1dwRmNjYVNlZzhIRDVZeXlvc040ck5jNDJOcUFPNHJGdy1KUXBXZU5Ydi1TZkMtVnNUdm1Ud09oSENhVGx4Y2RyVzRGekZ4eFE?oc=5",
-  "translations": {
-   "zh": {
-    "title": "海关要求为国外包裹支付费用",
-    "summary": "TengriNews报道，海关可能要求为从国外抵达的包裹支付费用。出口商应检查其发往俄罗斯的货物是否可能受到新的关税要求。"
-   },
-   "tr": {
-    "title": "Gümrük, yurtdışından gelen paketler için ödeme talep ediyor",
-    "summary": "TengriNews, gümrüklerin yurtdışından gelen paketler için ödeme talep edebileceğini bildiriyor. İhracatçılar, Rusya'ya gönderdikleri kargoların yeni gümrük vergisi taleplerine tabi olup olmadığını kontrol etmelidir."
-   },
-   "fa": {
-    "title": "گمرک درخواست پرداخت برای مرسولات خارجی می‌کند",
-    "summary": "TengriNews گزارش می‌دهد که گمرک ممکن است برای مرسولات ورودی از خارج درخواست پرداخت کند. صادرکنندگان باید بررسی کنند که آیا محموله‌هایشان به روسیه ممکن است مشمول درخواست‌های جدید عوارض گمرکی شود."
-   },
-   "ar": {
-    "title": "الجمارك تطلب الدفع للطرود الأجنبية",
-    "summary": "تقرير TengriNews أن الجمارك قد تطلب الدفع للطرود القادمة من الخارج. يجب على المصدرين التحقق مما إذا كانت شحناتهم إلى روسيا قد تخضع لمطالبات جمركية جديدة."
-   }
-  },
-  "topic": "Таможня и оформление"
- },
- {
-  "news_id": "fbb43f5d126aa905",
-  "slug": "2026-11-07-duties-impact-retail-prices-in-russia",
-  "day": "2026-11-07",
-  "title_en": "Duties Impact Retail Prices in Russia",
-  "summary_en": "The news outlet Bloknot Rossiya reports that duties are affecting retail prices. This may indicate changes in import costs that exporters to Russia should check.",
-  "title_ru": "Пошлины влияют на розничные цены в России",
-  "summary_ru": "Издание Блокнот Россия сообщает, что пошлины сказываются на розничных ценах. Это может означать изменения в стоимости импорта, которые экспортерам в Россию стоит проверить.",
-  "source": "Блокнот Россия",
-  "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RVmhjZEpWU2tOcHdmOUlvMXFRN0JHWkZVZVBVcHI2NkgzN2FHQUhFY1FWZ0xndy1ZdnBDNjJsdHhFSzAwb3B0aGRXdnAybllNemllM3NTcHpMaVFJTXFqV0J2b0NGOVFqcWRjel8wdEVtWm5RYmxMZ01Maw?oc=5",
-  "translations": {
-   "zh": {
-    "title": "关税影响俄罗斯零售价格",
-    "summary": "新闻媒体Bloknot Rossiya报道称，关税正在影响零售价格。这可能意味着进口成本发生变化，出口商应予以核查。"
-   },
-   "tr": {
-    "title": "Gümrük Vergileri Rusya'da Perakende Fiyatlarına Etki Ediyor",
-    "summary": "Bloknot Rossiya haber ajansı, gümrük vergilerinin perakende fiyatları etkilediğini bildiriyor. Bu, Rusya'ya ihracat yapanların kontrol etmesi gereken ithalat maliyetlerindeki değişikliklere işaret ediyor olabilir."
-   },
-   "fa": {
-    "title": "عوارض گمرکی بر قیمت‌های خرده‌فروشی در روسیه تأثیر می‌گذارد",
-    "summary": "خبرگزاری Bloknot Rossiya گزارش می‌دهد که عوارض گمرکی بر قیمت‌های خرده‌فروشی تأثیر می‌گذارد. این ممکن است نشان‌دهنده تغییرات در هزینه‌های وارداتی باشد که صادرکنندگان به روسیه باید بررسی کنند."
-   },
-   "ar": {
-    "title": "تأثير الرسوم الجمركية على أسعار التجزئة في روسيا",
-    "summary": "تذكر وكالة الأنباء Bloknot Rossiya أن الرسوم الجمركية تؤثر على أسعار التجزئة. قد يشير هذا إلى تغييرات في تكاليف الاستيراد التي يجب على المصدرين إلى روسيا التحقق منها."
-   }
-  },
-  "topic": "Пошлины и ставки"
- },
- {
-  "news_id": "b3790eb4b6788b10",
-  "slug": "2026-11-07-what-can-be-brought-by-plane-duty-free-to-kazakhstan",
-  "day": "2026-11-07",
-  "title_en": "What can be brought by plane duty-free to Kazakhstan",
-  "summary_en": "NUR.KZ reports on duty-free allowances for goods brought by air into Kazakhstan. Exporters should check the specific rules for air shipments to the EAEU.",
-  "title_ru": "Что можно ввезти самолетом в Казахстан без пошлин",
-  "summary_ru": "NUR.KZ сообщает о беспошлинных нормах ввоза товаров воздушным транспортом в Казахстан. Экспортерам следует уточнить правила для авиапоставок в ЕАЭС.",
-  "source": "NUR.KZ",
-  "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVG4tNmc3bTlrNmdWTEZ3ZnhKSVhrMTZkOHpodWQ2MHZQT1M5aVRfcW5VbGZtZkNTUnU5VHV4NkJXdXhVWDRlejRHSnlJeXBPQ0hka1ZkYjR4WklpZGVwWEt1YUtES0psODh0WWpZaVMxRGkyTVJOa0YwbmxNZkdTa202bkZyRTNWRGtQa3Y1bXZPLV9FRkFpbkQ1M3pqU0VWSkg3NFRscV9IUlh2a2R5VXJZYzBBZVJN?oc=5",
-  "translations": {
-   "zh": {
-    "title": "乘飞机可免税携带哪些物品进入哈萨克斯坦",
-    "summary": "NUR.KZ 报道了乘飞机进入哈萨克斯坦的货物免税额度。出口商应检查针对欧亚经济联盟空运货物的具体规定。"
-   },
-   "tr": {
-    "title": "Kazakistan'a uçakla ne kadar gümrüksüz mal getirilebilir?",
-    "summary": "NUR.KZ, Kazakistan'a hava yoluyla getirilen mallar için gümrük muafiyeti limitlerini bildiriyor. İhracatçılar, AEB için hava kargo gönderimlerine ilişkin özel kuralları kontrol etmelidir."
-   },
-   "fa": {
-    "title": "چه چیزهایی را می‌توان به صورت معاف از مالیات با هواپیما به قزاقستان آورد؟",
-    "summary": "NUR.KZ در مورد سقف معافیت مالیاتی کالاهای وارد شده به قزاقستان از طریق هوا گزارش می‌دهد. صادرکنندگان باید قوانین خاص حمل‌ونقل هوایی به اتحادیه اقتصادی اوراسیا را بررسی کنند."
-   },
-   "ar": {
-    "title": "ما الذي يمكن إحضاره معفى من الرسوم الجوية إلى كازاخستان؟",
-    "summary": "تقدم NUR.KZ تقريرًا عن حدود الإعفاء الجمركي للبضائع التي تُحضر جواً إلى كازاخستان. يجب على المصدرين التحقق من القواعد المحددة لشحنات الطيران إلى الاتحاد الاقتصادي الأوراسي."
-   }
-  },
-  "topic": "Пошлины и ставки"
- },
- {
-  "news_id": "240a7fe36a87fd4a",
-  "slug": "2026-11-07-import-duty-rates-raised-on-alcohol-from-unfriendly-countrie",
-  "day": "2026-11-07",
-  "title_en": "Import duty rates raised on alcohol from unfriendly countries",
-  "summary_en": "Rates for import duties on alcohol from unfriendly countries have been increased, according to Alfa-Soft. Exporters of such goods to Russia may face higher costs and should check the new tariff rates.",
-  "title_ru": "Повышены ставки ввозных пошлин на алкоголь из недружественных стран",
-  "summary_ru": "Ставки ввозных пошлин на алкоголь из недружественных стран были повышены, сообщает Альта-Софт. Экспортерам таких товаров в Россию, возможно, придется учитывать возросшие расходы и следует проверить новые тарифные ставки.",
-  "source": "Альта-Софт",
-  "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1IWmgzZVFwTEc2a1Z6QXptczRJMFhONVFZaUJHTnpEWnRaNERicDdqOHV6SGhhcnlremNpU3Bkb0wxTGlMY0pWOFlYMjd0Zw?oc=5",
-  "translations": {
-   "zh": {
-    "title": "对不友好国家酒精饮料的进口关税税率提高",
-    "summary": "据Alfa-Soft称，对来自不友好国家的酒精饮料的进口关税税率已提高。向俄罗斯出口此类商品的出口商可能面临更高的成本，应核查新的关税税率。"
-   },
-   "tr": {
-    "title": "Dost olmayan ülkelerden alkol ithalatına uygulanan gümrük vergisi oranları yükseltildi",
-    "summary": "Alfa-Soft'a göre, dost olmayan ülkelerden gelen alkollü içeceklere uygulanan ithalat gümrük vergisi oranları artırıldı. Rusya'ya bu tür malları ihraç eden ihracatçılar daha yüksek maliyetlerle karşılaşabilir ve yeni tarife oranlarını kontrol etmelidir."
-   },
-   "fa": {
-    "title": "نرخ تعرفه‌های واردات نوشیدنی‌های الکلی از کشورهای غیردوست افزایش یافت",
-    "summary": "به گزارش Alfa-Soft، نرخ تعرفه‌های واردات نوشیدنی‌های الکلی از کشورهای غیردوست افزایش یافته است. صادرکنندگان این کالاها به روسیه ممکن است با هزینه‌های بالاتری مواجه شوند و باید نرخ‌های تعرفه جدید را بررسی کنند."
-   },
-   "ar": {
-    "title": "زيادة معدلات الرسوم الجمركية على استيراد الكحول من الدول غير الصديقة",
-    "summary": "وفقًا لـ Alfa-Soft، تم زيادة معدلات الرسوم الجمركية على استيراد المشروبات الكحولية من الدول غير الصديقة. قد يواجه مصدرو هذه السلع إلى روسيا تكاليف أعلى ويجب عليهم التحقق من معدلات التعريفة الجديدة."
-   }
-  },
-  "topic": "Пошлины и ставки"
+  "topic": "Маркировка и сертификация",
+  "photo": ""
  },
  {
   "news_id": "965d466032a8930c",
@@ -327,7 +151,8 @@
     "summary": "وفقًا لتقرير VKontakte، وصف وزير الاقتصاد الأرميني القيود التي فرضتها هيئة الرقابة الزراعية الروسية على واردات السلع الأرمينية بأنها 'نزاع اقتصادي'. يجب على المصدرين إلى روسيا التحقق مما إذا كانت القيود المماثلة يمكن أن تؤثر على شحناتهم."
    }
   },
-  "topic": "ЕАЭС и ЕЭК"
+  "topic": "ЕАЭС и ЕЭК",
+  "photo": ""
  },
  {
   "news_id": "83ced1da56862b1c",
@@ -357,7 +182,8 @@
     "summary": "يُفيد Privet-Rostov.ru بأنه يُسمح الآن باستيراد الحمضيات الأبخازية إلى سوتشي دون رسوم جمركية. يجب على المصدرين التحقق مما إذا كان هذا الإعفاء الجمركي ينطبق على شحناتهم إلى روسيا."
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "270d475dbc814975",
@@ -387,7 +213,8 @@
     "summary": "أفادت TKS.RU بإجراءات الإعلان عن الطرود من منطقة كالينينغراد التي تتجاوز الحدود المعفاة من الرسوم. قد يحتاج المصدرون الذين يشحنون البضائع إلى روسيا إلى التحقق من المتطلبات الجمركية لمثل هذه الشحنات."
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "d69555f5d828478b",
@@ -417,7 +244,8 @@
     "summary": "وفقاً لـ prospect.com.ru، فرضت روسيا رسوماً على واردات فتات المطاط من الدول غير الصديقة. يجب على مصدري هذا المنتج التحقق مما إذا كانت الرسوم الجديدة تنطبق على شحناتهم."
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "8922eeaf45ba9312",
@@ -447,7 +275,8 @@
     "summary": "تقرير TKS.RU أن الرسوم الجمركية على واردات الملابس والإلكترونيات والمعدات في الاتحاد الاقتصادي الأوراسي قد زادت اعتبارًا من 1 نوفمبر. يجب على المصدرين الذين يشحنون هذه البضائع إلى روسيا التحقق من أسعار التعريفة الجديدة."
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "2381596c7f8da652",
@@ -477,7 +306,8 @@
     "summary": "أشارت وزارة الخارجية الروسية إلى أنها قد ترفع الرسوم الجمركية وتقيد الواردات من الاتحاد الأوروبي ردًا على العقوبات، وفقًا لـ Life.ru. يجب على المصدرين إلى روسيا التحقق من الرسوم الجمركية الجديدة المحتملة أو قيود الاستيراد التي قد تؤثر على الشحنات."
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "ba3bf7c193a780e5",
@@ -507,7 +337,8 @@
     "summary": "Baltija.eu报道，对来自中国的包裹征收的新关税将于11月1日生效。向俄罗斯出口服装等商品的出口商可能面临更高的成本，应查看更新的海关规定。"
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "36c3a294d6cdbddf",
@@ -537,7 +368,8 @@
     "summary": "وفقًا لـ TKS.RU، مددت اللجنة الاقتصادية الأوراسية الرسوم الجمركية المضادة للإغراق على إطارات الشاحنات من الصين. قد يحتاج مصدرو هذه الإطارات إلى روسيا إلى احتساب هذه الرسوم، ويجب عليهم التحقق من الأسعار الحالية."
    }
   },
-  "topic": "Пошлины и ставки"
+  "topic": "Пошлины и ставки",
+  "photo": ""
  },
  {
   "news_id": "08608d87c4ddc5d2",
@@ -567,6 +399,7 @@
     "summary": "تقرير Realnoe Vremya أن روسيا قد قدمت معايير جديدة للوسم. يجب على المصدرين التحقق مما إذا كانت بضائعهم تتطلب وسمًا محدثًا للسوق الروسية."
    }
   },
-  "topic": "Маркировка и сертификация"
+  "topic": "Маркировка и сертификация",
+  "photo": ""
  }
 ]
