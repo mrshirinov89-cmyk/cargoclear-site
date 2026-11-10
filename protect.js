@@ -4,6 +4,7 @@
   var css = document.createElement("style");
   css.textContent =
     "body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}" +
+    ".allow-copy,.allow-copy *{-webkit-touch-callout:default}" +
     "input,textarea,select,[contenteditable],a[href^='mailto:'],a[href^='tel:'],.allow-copy" +
     "{-webkit-user-select:text;user-select:text}" +
     "img,video,svg{-webkit-user-drag:none;user-drag:none}" +
