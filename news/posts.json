@@ -1,5 +1,36 @@
 [
  {
+  "news_id": "392fb93580e2a319",
+  "slug": "2026-11-15-moscow-introduces-new-import-restrictions-in-response-to-wes",
+  "day": "2026-11-15",
+  "title_en": "Moscow introduces new import restrictions in response to Western sanctions",
+  "summary_en": "Vesti.az reports that Moscow has introduced new restrictions on imports in response to Western sanctions. Exporters to Russia may need to check if their goods are affected by these new measures.",
+  "title_ru": "Москва вводит новые ограничения на импорт в ответ на санкции Запада",
+  "summary_ru": "Как сообщает Vesti.az, Москва ввела новые ограничения на импорт в ответ на западные санкции. Экспортёрам в Россию следует проверить, затронуты ли их товары этими новыми мерами.",
+  "source": "Vesti.az",
+  "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNOGRtMUtNd3hyZ3diTmhFeVFJRzhURDVnclllVWkzVzlSUUVEejladjZMU21EODN3ekd6SXEzS3ZnaTV5WHQtYmcwcFBJSkxldEF6UUxFVEZQT3RVQ0E5dEh5RF9KbHJYQmljMnNyT1dMUGRBUkFYb3ZXOUtnRjRUQ24yYnRoUGFOYkNXbmhZLWViM19fY0Z0LUpfTnQ1bl9n?oc=5",
+  "translations": {
+   "zh": {
+    "title": "莫斯科出台新进口限制以回应西方制裁",
+    "summary": "Vesti.az报道，莫斯科已出台新的进口限制以回应西方制裁。对俄出口商可能需要检查其货物是否受这些新措施影响。"
+   },
+   "tr": {
+    "title": "Moskova, Batı yaptırımlarına yanıt olarak yeni ithalat kısıtlamaları getirdi",
+    "summary": "Vesti.az'ın haberine göre, Moskova Batı yaptırımlarına yanıt olarak yeni ithalat kısıtlamaları getirdi. Rusya'ya ihracat yapanlar, mallarının bu yeni önlemlerden etkilenip etkilenmediğini kontrol etmeleri gerekebilir."
+   },
+   "fa": {
+    "title": "مسکو در پاسخ به تحریم‌های غرب محدودیت‌های جدید وارداتی اعمال کرد",
+    "summary": "Vesti.az گزارش می‌دهد که مسکو در پاسخ به تحریم‌های غرب محدودیت‌های جدید وارداتی اعمال کرده است. صادرکنندگان به روسیه ممکن است نیاز داشته باشند بررسی کنند که کالاهایشان تحت تأثیر این اقدامات جدید قرار می‌گیرد یا خیر."
+   },
+   "ar": {
+    "title": "موسكو تفرض قيودًا جديدة على الواردات ردًا على العقوبات الغربية",
+    "summary": "تقرير Vesti.az أن موسكو فرضت قيودًا جديدة على الواردات ردًا على العقوبات الغربية. قد يحتاج المصدرون إلى روسيا للتحقق مما إذا كانت بضائعهم متأثرة بهذه الإجراءات الجديدة."
+   }
+  },
+  "topic": "Ограничения и санкции",
+  "photo": "customs restrictions"
+ },
+ {
   "news_id": "488443291ea96727",
   "slug": "2026-11-15-eaec-extends-anti-dumping-duties-on-ukrainian-steel-pipes",
   "day": "2026-11-15",
