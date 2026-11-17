@@ -1,5 +1,129 @@
 [
  {
+  "news_id": "418033fcb8cfe2b2",
+  "slug": "2026-11-17-russia-allows-imports-from-glubokoye-meat-plant",
+  "day": "2026-11-17",
+  "title_en": "Russia allows imports from Glubokoye Meat Plant",
+  "summary_en": "Rosselkhoznadzor has permitted supplies of products from the Glubokoye Meat Plant into Russia, according to PrimePress. Exporters of similar goods should check if their products are now eligible for import.",
+  "title_ru": "Россельхознадзор разрешил поставки продукции Глубокского мясокомбината в РФ",
+  "summary_ru": "Россельхознадзор разрешил поставки продукции Глубокского мясокомбината в Россию, сообщает ПраймПресс. Экспортерам аналогичных товаров следует проверить, соответствуют ли их продукты новым требованиям для ввоза.",
+  "source": "ПраймПресс",
+  "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdVdGYzkwV09Hb21NRVBOYW1tbDlnWEg4N2I4SUxKMzhEN3F6clZJYkpHcmlpUEducktlcGhPZ0tpblY4YW5TeVVEYm1hRFR2dlJMSW13MGY1cDMtR3lLcWlVRk1sd0kxOEE5c04wOEI5U3JteVQxckd5ZnRLdXVROXYwVEZKOEJlSHR3ajkyVWdBcFZjeV80MlctUHB1RlB3bDVXMFNNNlc1Y3YyamJOVUJMcDZDSzAxMkJWLUh3?oc=5",
+  "translations": {
+   "zh": {
+    "title": "俄罗斯允许进口格卢博科耶肉类加工厂产品",
+    "summary": "据PrimePress报道，俄罗斯联邦兽医和植物卫生监督局已批准格卢博科耶肉类加工厂的产品进入俄罗斯。类似产品的出口商应检查其产品是否符合进口资格。"
+   },
+   "tr": {
+    "title": "Rusya, Glubokoye Et İşleme Tesisi'nden ithalata izin verdi",
+    "summary": "PrimePress'e göre, Rosselkhoznadzor, Glubokoye Et İşleme Tesisi'nin ürünlerinin Rusya'ya tedarik edilmesine izin verdi. Benzer ürünlerin ihracatçıları, ürünlerinin artık ithalata uygun olup olmadığını kontrol etmelidir."
+   },
+   "fa": {
+    "title": "روسیه واردات از کارخانه گوشت گلوبوکوی را مجاز کرد",
+    "summary": "به گزارش PrimePress، سازمان نظارت دامپزشکی و گیاه‌پزشکی روسیه (Rosselkhoznadzor) عرضه محصولات کارخانه گوشت گلوبوکوی به روسیه را مجاز کرده است. صادرکنندگان کالاهای مشابه باید بررسی کنند که آیا محصولات آنها اکنون واجد شرایط واردات هستند یا خیر."
+   },
+   "ar": {
+    "title": "روسيا تسمح بالاستيراد من مصنع جلوبوكوي للحوم",
+    "summary": "وفقًا لـ PrimePress، سمحت الهيئة الفيدرالية للرقابة البيطرية والنباتية (Rosselkhoznadzor) بتوريد منتجات مصنع جلوبوكوي للحوم إلى روسيا. يجب على مصدري السلع المماثلة التحقق مما إذا كانت منتجاتهم مؤهلة الآن للاستيراد."
+   }
+  },
+  "topic": "Пошлины и ставки",
+  "photo": "meat products inspection"
+ },
+ {
+  "news_id": "2dda2b8850cf845f",
+  "slug": "2026-11-17-russian-watchdog-bans-import-of-peanuts-from-brazil",
+  "day": "2026-11-17",
+  "title_en": "Russian watchdog bans import of peanuts from Brazil",
+  "summary_en": "Rosselkhoznadzor has prohibited the import of peanuts from Brazil into St. Petersburg, according to Business FM St. Petersburg. Exporters of agricultural goods to Russia should verify that their shipments comply with phytosanitary requirements.",
+  "title_ru": "Россельхознадзор запретил ввоз арахиса из Бразилии в Петербург",
+  "summary_ru": "Россельхознадзор запретил ввоз партии арахиса из Бразилии в Санкт-Петербург, сообщает Business FM Санкт-Петербург. Экспортерам сельхозпродукции в Россию следует проверять соответствие своих грузов фитосанитарным требованиям.",
+  "source": "Business FM Санкт-Петербург",
+  "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPakppNW52X0txc0VGbWNiM0RpOGxoTGdOemVVVkstejgxM1BHQnBUQ0hPTnRqTmhxQWxhUjdJWkV0eHgwMzdudTc0Sm45cEFEYVVyTmJ2Mmw2ODIxQk9wdzYwcERnclVMQ25vRUhPa1JtQlVFei03NFdmRm03YXVGRGxaSzFqRXYyVFZGYjdPc2hvN000QTg2N3Y0XzhWOFUtNkUzQUYzTXk?oc=5",
+  "translations": {
+   "zh": {
+    "title": "俄罗斯监管机构禁止从巴西进口花生",
+    "summary": "据圣彼得堡商业调频电台报道，俄罗斯联邦兽医和植物卫生监督局已禁止从巴西向圣彼得堡进口花生。向俄罗斯出口农产品的企业应确保其货物符合植物检疫要求。"
+   },
+   "tr": {
+    "title": "Rusya denetleyici kurumu Brezilya'dan fıstık ithalatını yasakladı",
+    "summary": "Business FM St. Petersburg'a göre, Rosselkhoznadzor, Brezilya'dan St. Petersburg'a fıstık ithalatını yasakladı. Rusya'ya tarım ürünleri ihraç eden firmalar, sevkiyatlarının bitki sağlığı gerekliliklerine uygun olduğunu doğrulamalıdır."
+   },
+   "fa": {
+    "title": "نهاد نظارتی روسیه واردات بادام‌زمینی از برزیل را ممنوع کرد",
+    "summary": "به گزارش بیزینس اف‌ام سنت پترزبورگ، روس‌سلخوزنادزور واردات بادام‌زمینی از برزیل به سنت پترزبورگ را ممنوع کرده است. صادرکنندگان محصولات کشاورزی به روسیه باید اطمینان حاصل کنند که محموله‌های آن‌ها با الزامات بهداشت گیاهی مطابقت دارد."
+   },
+   "ar": {
+    "title": "الجهة الرقابية الروسية تحظر استيراد الفول السوداني من البرازيل",
+    "summary": "وفقًا لتقرير إذاعة بيزنس إف إم سانت بطرسبرغ، حظرت روس‌سلخوزنادزور استيراد الفول السوداني من البرازيل إلى سانت بطرسبرغ. يجب على مصدري المنتجات الزراعية إلى روسيا التحقق من أن شحناتهم تتوافق مع متطلبات الصحة النباتية."
+   }
+  },
+  "topic": "Ограничения и санкции",
+  "photo": "peanuts shipment"
+ },
+ {
+  "news_id": "3bdc75736f68ba19",
+  "slug": "2026-11-17-new-labeling-rules-for-clothing-take-effect-in-kazakhstan",
+  "day": "2026-11-17",
+  "title_en": "New labeling rules for clothing take effect in Kazakhstan",
+  "summary_en": "PROFIT.kz reports that new labeling rules for clothing have come into force in Kazakhstan. Exporters shipping garments to Kazakhstan should check the updated requirements.",
+  "title_ru": "В Казахстане вступили в силу новые правила маркировки одежды",
+  "summary_ru": "PROFIT.kz сообщает, что в Казахстане вступили в силу новые правила маркировки одежды. Экспортёрам, поставляющим одежду в Казахстан, следует ознакомиться с обновлёнными требованиями.",
+  "source": "PROFIT.kz",
+  "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcWlSZ3NwUDhNdE9rNmpSTm9XVWlNVm9sMXJXWjZEaWsxSkxjWmZ3cHVSSGRJaUdwc21Ya3dUNWtwNGsxOE1IVnhhNmQ4S3IyMS1tSUJYdkxZWHRuTktnUmpjVl9TbEFmZy1FcTZ0dVJwUTlUR2JOV1V1V1lsWTREUTRmSWlwekZYY1J4dQ?oc=5",
+  "translations": {
+   "zh": {
+    "title": "哈萨克斯坦服装新标签规定生效",
+    "summary": "PROFIT.kz 报道，哈萨克斯坦新的服装标签规定已生效。向哈萨克斯坦出口服装的出口商应检查更新后的要求。"
+   },
+   "tr": {
+    "title": "Kazakistan'da yeni giyim etiketleme kuralları yürürlüğe girdi",
+    "summary": "PROFIT.kz, Kazakistan'da yeni giyim etiketleme kurallarının yürürlüğe girdiğini bildiriyor. Kazakistan'a giyim ihracatı yapan ihracatçıların güncellenmiş gereksinimleri kontrol etmeleri gerekiyor."
+   },
+   "fa": {
+    "title": "قوانین جدید برچسب‌گذاری پوشاک در قزاقستان اجرایی شد",
+    "summary": "PROFIT.kz گزارش می‌دهد که قوانین جدید برچسب‌گذاری پوشاک در قزاقستان اجرایی شده است. صادرکنندگانی که پوشاک به قزاقستان صادر می‌کنند باید الزامات به‌روز شده را بررسی کنند."
+   },
+   "ar": {
+    "title": "قواعد وضع العلامات الجديدة للملابس تدخل حيز التنفيذ في كازاخستان",
+    "summary": "تقرير PROFIT.kz أن قواعد وضع العلامات الجديدة للملابس قد دخلت حيز التنفيذ في كازاخستان. يجب على المصدرين الذين يشحنون الملابس إلى كازاخستان التحقق من المتطلبات المحدثة."
+   }
+  },
+  "topic": "Маркировка и сертификация",
+  "photo": "clothing labels"
+ },
+ {
+  "news_id": "4e321478a0c54e5f",
+  "slug": "2026-11-17-russian-veterinary-service-blocks-import-shipment-over-viola",
+  "day": "2026-11-17",
+  "title_en": "Russian veterinary service blocks import shipment over violations",
+  "summary_en": "Rosselkhoznadzor has refused entry to a shipment due to violations, according to Magnitogorsky Rabochiy. Exporters should ensure their goods comply with Russian veterinary and phytosanitary requirements to avoid similar rejections.",
+  "title_ru": "Россельхознадзор не допустил груз из-за нарушений",
+  "summary_ru": "Россельхознадзор отказал во ввозе груза из-за нарушений, сообщает «Магнитогорский рабочий». Экспортерам следует проверять соответствие своей продукции ветеринарным и фитосанитарным требованиям России, чтобы избежать подобных инцидентов.",
+  "source": "Магнитогорский рабочий",
+  "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbFdCazFlV3J4QlNram5kWGNIMnF1WWItb2tRY0FzUnlMODFvcUtMUVNCVFdRVGh4bVpKd0NBYUI5enlwdkJMdVFrTTBTQnBwRURVb0pYX1VfZWs4eC13Wlk5M05oanFFWEZUY2xkTDZVZ1d2Ry1NTmFZWVQ0UlhiRGYwSWxzNmN0OHA3ZEpUSm5rOHpNbUhjaVhoRXl6dmhZNFoySFFmM0U?oc=5",
+  "translations": {
+   "zh": {
+    "title": "俄罗斯兽医部门因违规行为阻止进口货物",
+    "summary": "据《马格尼托戈尔斯克工人报》报道，俄罗斯联邦兽医与植物卫生监督局因违规行为拒绝了一批货物的入境。出口商应确保其商品符合俄罗斯的兽医和植物检疫要求，以避免类似拒收情况。"
+   },
+   "tr": {
+    "title": "Rus veteriner hizmeti ihlaller nedeniyle ithal sevkiyatını engelledi",
+    "summary": "Magnitogorsky Rabochiy'e göre, Rosselkhoznadzor ihlaller nedeniyle bir sevkiyatın girişini reddetti. İhracatçılar, benzer reddedilmelerden kaçınmak için ürünlerinin Rus veteriner ve fitosaniter gerekliliklerine uygun olduğundan emin olmalıdır."
+   },
+   "fa": {
+    "title": "خدمات دامپزشکی روسیه به دلیل تخلفات، محموله وارداتی را مسدود کرد",
+    "summary": "به گزارش مگنیتوگورسکی رابوچی، روسلخوزنادزور به دلیل تخلفات، ورود یک محموله را رد کرده است. صادرکنندگان باید اطمینان حاصل کنند که کالاهای آنها با الزامات دامپزشکی و بهداشت گیاهی روسیه مطابقت دارد تا از رد مشابه جلوگیری شود."
+   },
+   "ar": {
+    "title": "الخدمات البيطرية الروسية تمنع شحنة استيراد بسبب مخالفات",
+    "summary": "رفضت روسلخوزنادزور دخول شحنة بسبب مخالفات، وفقًا لما أوردته مجنيتوغورسكي رابوتشي. يجب على المصدرين التأكد من أن بضائعهم تتوافق مع المتطلبات البيطرية والصحة النباتية الروسية لتجنب الرفض المماثل."
+   }
+  },
+  "topic": "Маркировка и сертификация",
+  "photo": "cargo inspection"
+ },
+ {
   "news_id": "b27a14867fdd0c47",
   "slug": "2026-11-16-russia-responds-to-west-with-duties",
   "day": "2026-11-16",
