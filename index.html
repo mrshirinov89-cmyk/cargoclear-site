@@ -193,6 +193,30 @@
   .guides { margin-top: 18px; font-size: 14px; color: var(--ink-2); }
   .guides a { display: inline-block; margin: 6px 12px 0 0; color: var(--teal, #0f766e); font-weight: 600; }
   @media (max-width: 860px) { .price { grid-template-columns: 1fr; padding: 28px 20px; gap: 24px; } .price .big { font-size: 44px; } }
+  .hs-box { max-width: 980px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: 0 18px 40px rgba(11,29,42,.07); }
+  .hs-form { display: flex; gap: 10px; }
+  .hs-form input { flex: 1; min-width: 0; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; font: inherit; font-size: 16px; color: var(--ink); background: #fff; }
+  .hs-form input:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); }
+  .hs-form .btn { flex: none; }
+  .hs-examples { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+  .hs-examples button { font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--teal-soft); color: var(--teal); cursor: pointer; }
+  .hs-note { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+  .hs-note:empty { display: none; }
+  .hs-list { display: grid; gap: 12px; margin-top: 16px; }
+  .hs-list:empty { display: none; }
+  .hs-item { border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; display: grid; gap: 8px; animation: clIn .35s both; }
+  .hs-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+  .hs-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 20px; font-weight: 700; color: var(--teal); letter-spacing: .02em; white-space: nowrap; }
+  .hs-title { font-weight: 600; font-size: 15px; }
+  .hs-path { font-size: 13px; color: var(--muted); }
+  .hs-why { font-size: 14px; }
+  .hs-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .hs-tag { font-size: 13px; font-weight: 600; border-radius: 999px; padding: 4px 10px; background: #f1f5f9; color: var(--ink); }
+  .hs-tag.vat { background: #ecfdf5; color: #065f46; }
+  .hs-calc { margin-inline-start: auto; font: inherit; font-size: 13px; font-weight: 600; color: var(--teal); background: none; border: 1px solid var(--teal); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+  .hs-calc:hover { background: var(--teal); color: #fff; }
+  .hs-disclaimer { margin: 18px 0 0; font-size: 13px; color: var(--muted); }
+  @media (max-width: 640px) { .hs-box { padding: 18px; } .hs-form { flex-direction: column; } .hs-calc { margin-inline-start: 0; } }
   .cl-box { display: grid; grid-template-columns: minmax(300px, 420px) 1fr; gap: 28px; background: linear-gradient(135deg, var(--teal-soft), #fff 70%); border: 1px solid var(--line); border-radius: 24px; padding: 28px; }
   .cl-label { display: block; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; }
   .cl-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
@@ -359,6 +383,7 @@
       <a href="#services"><span class="en">Services</span><span class="ru">Услуги</span><span class="zh">服务</span><span class="tr">Hizmetler</span><span class="fa">خدمات</span><span class="ar">الخدمات</span></a>
       <a href="#price"><span class="en">Price</span><span class="ru">Цена</span><span class="zh">价格</span><span class="tr">Fiyat</span><span class="fa">قیمت</span><span class="ar">السعر</span></a><a href="#how"><span class="en">How it works</span><span class="ru">Как работаем</span><span class="zh">合作流程</span><span class="tr">Nasıl Çalışır</span><span class="fa">نحوه عملکرد</span><span class="ar">كيف تعمل</span></a>
       <a href="#food"><span class="en">Food import</span><span class="ru">Продукты</span><span class="zh">食品进口</span><span class="tr">Gıda İthalatı</span><span class="fa">واردات مواد غذایی</span><span class="ar">استيراد الأغذية</span></a>
+      <a href="#hs"><span class="en">HS code</span><span class="ru">Код ТН ВЭД</span><span class="zh">海关编码</span><span class="tr">GTİP</span><span class="fa">کد تعرفه</span><span class="ar">رمز HS</span></a>
       <a href="#faq">FAQ</a>
       <a href="/news/" id="nav-news"><span class="en">News</span><span class="ru">Новости</span><span class="zh">新闻</span><span class="tr">Haberler</span><span class="fa">اخبار</span><span class="ar">الأخبار</span></a>
     </nav>
@@ -529,6 +554,26 @@
           <a class="btn primary" href="#quote"><span class="en">Get an estimate</span><span class="ru">Получить расчёт</span><span class="zh">获取测算</span><span class="tr">Tahmin al</span><span class="fa">دریافت برآورد</span><span class="ar">احصل على تقدير</span></a>
         </div>
         <div class="cl-out" id="cl-out" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hs" class="alt">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="kicker"><span class="en">HS code</span><span class="ru">Код ТН ВЭД</span><span class="zh">海关编码</span><span class="tr">GTİP kodu</span><span class="fa">کد تعرفه</span><span class="ar">رمز HS</span></div>
+        <h2><span class="en">Find the HS code and duty for your product</span><span class="ru">Найдите код ТН ВЭД и пошлину на товар</span><span class="zh">查询商品的海关编码和关税</span><span class="tr">Ürününüzün GTİP kodunu ve gümrük vergisini bulun</span><span class="fa">کد تعرفه و حقوق گمرکی کالای خود را پیدا کنید</span><span class="ar">اعثر على رمز HS والرسوم الجمركية لمنتجك</span></h2>
+        <p><span class="en">Describe the product in your own words or enter a code — we show matching codes of the EAEU tariff with the import duty and VAT in Russia.</span><span class="ru">Опишите товар своими словами или введите код — покажем подходящие коды ТН ВЭД ЕАЭС с пошлиной и НДС при ввозе в Россию.</span><span class="zh">用您自己的话描述商品或输入编码——我们会显示匹配的欧亚经济联盟海关编码及进口俄罗斯的关税和增值税。</span><span class="tr">Ürünü kendi ifadenizle tanımlayın veya bir kod girin — Rusya'ya ithalatta gümrük vergisi ve KDV ile uygun AEB GTİP kodlarını gösteririz.</span><span class="fa">کالا را با کلمات خودتان توصیف کنید یا کد را وارد کنید — کدهای مناسب تعرفه اوراسیا را همراه با حقوق ورودی و مالیات بر ارزش افزوده روسیه نشان می‌دهیم.</span><span class="ar">صِف المنتج بكلماتك أو أدخل رمزاً — نعرض رموز التعريفة الأوراسية المناسبة مع رسوم الاستيراد وضريبة القيمة المضافة في روسيا.</span></p>
+      </div>
+      <div class="hs-box reveal">
+        <form class="hs-form" id="hs-form" role="search">
+          <input id="hs-q" name="q" type="search" maxlength="200" autocomplete="off" required>
+          <button class="btn primary" type="submit" id="hs-go"><span class="en">Find code</span><span class="ru">Найти код</span><span class="zh">查询编码</span><span class="tr">Kodu bul</span><span class="fa">یافتن کد</span><span class="ar">ابحث عن الرمز</span></button>
+        </form>
+        <div class="hs-examples" id="hs-examples"></div>
+        <div class="hs-note" id="hs-note" role="status" aria-live="polite"></div>
+        <div class="hs-list allow-copy" id="hs-list"></div>
+        <p class="hs-disclaimer"><span class="en">The result is preliminary. The final code is confirmed by our broker against the documents and the product composition.</span><span class="ru">Результат предварительный. Окончательный код подтверждает наш брокер по документам и составу товара.</span><span class="zh">结果仅供参考。最终编码由我们的报关员根据单证和商品成分确认。</span><span class="tr">Sonuç ön bilgidir. Kesin kodu brokerimiz belgelere ve ürün bileşimine göre onaylar.</span><span class="fa">نتیجه مقدماتی است. کد نهایی را کارگزار ما بر اساس مدارک و ترکیب کالا تأیید می‌کند.</span><span class="ar">النتيجة أولية. يؤكد وسيطنا الجمركي الرمز النهائي وفق المستندات وتركيبة المنتج.</span></p>
       </div>
     </div>
   </section>
@@ -1077,6 +1122,90 @@ function ccSend(path, data) {
   function all() { drawChips(); drawCountries(); render(); }
   new MutationObserver(all).observe(document.body, { attributes: true, attributeFilter: ["data-lang"] });
   all();
+})();
+</script>
+<script>
+// Код ТН ВЭД: запрос уходит в панель CargoClear, ответ — коды из справочника ЕТТ ЕАЭС.
+(function () {
+  var T = {
+    ph: {en: "e.g. fresh oranges, LED lamps, 8471 30", ru: "например: апельсины свежие, светодиодные лампы, 8471 30", zh: "例如：新鲜橙子、LED灯、8471 30", tr: "örn. taze portakal, LED lamba, 8471 30", fa: "مثلاً: پرتقال تازه، لامپ LED، 8471 30", ar: "مثلاً: برتقال طازج، مصابيح LED، 8471 30"},
+    ex: {en: ["fresh roses", "dried apricots", "tomato paste", "8708"], ru: ["розы свежие", "курага", "томатная паста", "8708"], zh: ["鲜玫瑰", "杏干", "番茄酱", "8708"], tr: ["taze gül", "kuru kayısı", "domates salçası", "8708"], fa: ["گل رز تازه", "برگه زردآلو", "رب گوجه", "8708"], ar: ["ورد طازج", "مشمش مجفف", "معجون الطماطم", "8708"]},
+    wait: {en: "Searching… with a description it takes 10–30 seconds.", ru: "Ищем… по описанию это 10–30 секунд.", zh: "查询中……按描述查询约需10–30秒。", tr: "Aranıyor… açıklamayla 10–30 saniye sürer.", fa: "در حال جستجو… با توصیف ۱۰ تا ۳۰ ثانیه طول می‌کشد.", ar: "جارٍ البحث… بالوصف يستغرق 10–30 ثانية."},
+    none: {en: "Nothing found. Describe the product in more detail (material, purpose) or send us a request — we will pick the code.", ru: "Ничего не нашли. Опишите товар подробнее (материал, назначение) или отправьте заявку — подберём код сами.", zh: "未找到。请更详细地描述商品（材质、用途），或发送请求——我们来确定编码。", tr: "Sonuç yok. Ürünü daha ayrıntılı tanımlayın (malzeme, kullanım) veya talep gönderin — kodu biz buluruz.", fa: "چیزی پیدا نشد. کالا را دقیق‌تر توصیف کنید (جنس، کاربرد) یا درخواست بفرستید — کد را خودمان پیدا می‌کنیم.", ar: "لم يُعثر على شيء. صِف المنتج بتفصيل أكثر (المادة، الاستخدام) أو أرسل طلباً — وسنحدد الرمز."},
+    limit: {en: "Too many searches from your network — try again in an hour.", ru: "Слишком много запросов с вашей сети — попробуйте через час.", zh: "您的网络查询次数过多——请一小时后再试。", tr: "Ağınızdan çok fazla arama — bir saat sonra deneyin.", fa: "جستجوهای زیادی از شبکه شما — یک ساعت بعد امتحان کنید.", ar: "عمليات بحث كثيرة من شبكتك — حاول بعد ساعة."},
+    fail: {en: "The search is unavailable right now — write to us and we will pick the code.", ru: "Поиск сейчас недоступен — напишите нам, подберём код.", zh: "查询暂不可用——请联系我们，我们来确定编码。", tr: "Arama şu anda kullanılamıyor — bize yazın, kodu bulalım.", fa: "جستجو اکنون در دسترس نیست — به ما پیام دهید تا کد را پیدا کنیم.", ar: "البحث غير متاح الآن — راسلنا وسنحدد الرمز."},
+    ai: {en: "Most likely codes for your description:", ru: "Наиболее подходящие коды по описанию:", zh: "与您描述最匹配的编码：", tr: "Açıklamanıza en uygun kodlar:", fa: "مناسب‌ترین کدها برای توصیف شما:", ar: "الرموز الأنسب لوصفك:"},
+    words: {en: "Codes whose name contains your words:", ru: "Коды, в названии которых есть ваши слова:", zh: "名称中包含您所输入词语的编码：", tr: "Adında kelimeleriniz geçen kodlar:", fa: "کدهایی که نامشان شامل کلمات شماست:", ar: "رموز تحتوي أسماؤها على كلماتك:"},
+    code: {en: "Codes in this group:", ru: "Коды в этой группе:", zh: "该类别下的编码：", tr: "Bu gruptaki kodlar:", fa: "کدهای این گروه:", ar: "الرموز في هذه المجموعة:"},
+    ru: {en: "Names are in Russian, as in the official tariff.", ru: "", zh: "名称为俄文，与官方税则一致。", tr: "Adlar resmi tarifedeki gibi Rusçadır.", fa: "نام‌ها مانند تعرفه رسمی به روسی است.", ar: "الأسماء بالروسية كما في التعريفة الرسمية."},
+    duty: {en: "Duty", ru: "Пошлина", zh: "关税", tr: "Gümrük vergisi", fa: "حقوق گمرکی", ar: "الرسوم"},
+    noduty: {en: "rate on request", ru: "ставку уточним", zh: "税率待确认", tr: "oran sorulmalı", fa: "نرخ استعلام شود", ar: "السعر عند الطلب"},
+    vat: {en: "VAT", ru: "НДС", zh: "增值税", tr: "KDV", fa: "مالیات بر ارزش افزوده", ar: "ضريبة القيمة المضافة"},
+    cond: {en: "if conditions are met", ru: "при условии", zh: "需满足条件", tr: "koşullu", fa: "به شرط", ar: "بشروط"},
+    calc: {en: "Calculate payments", ru: "Рассчитать платежи", zh: "计算费用", tr: "Ödemeleri hesapla", fa: "محاسبه پرداخت‌ها", ar: "احسب المدفوعات"}
+  };
+  function L() { return document.body.dataset.lang || "en"; }
+  function t(k) { var v = T[k][L()]; return v === undefined ? T[k].en : v; }
+  var form = document.getElementById("hs-form"), q = document.getElementById("hs-q");
+  var note = document.getElementById("hs-note"), list = document.getElementById("hs-list");
+  var go = document.getElementById("hs-go"), examples = document.getElementById("hs-examples");
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+  function localize() {
+    q.placeholder = t("ph");
+    examples.innerHTML = "";
+    t("ex").forEach(function (word) {
+      var b = el("button", "", word); b.type = "button";
+      b.addEventListener("click", function () { q.value = word; search(); });
+      examples.appendChild(b);
+    });
+  }
+  localize();
+  new MutationObserver(localize).observe(document.body, {attributes: true, attributeFilter: ["data-lang"]});
+
+  function toQuote(item) {
+    var f = document.getElementById("quote");
+    if (!f) return;
+    var asked = q.value.trim(), what = /^[\d\s.\-]+$/.test(asked) ? item.title : asked;
+    f.elements.product.value = (what + " — " + item.code_fmt).slice(0, 200);
+    document.getElementById("contact").scrollIntoView({behavior: "smooth"});
+    setTimeout(function () { f.elements.company.focus({preventScroll: true}); }, 600);
+  }
+  function render(j) {
+    list.innerHTML = "";
+    if (!j.items.length) { note.textContent = t("none"); return; }
+    note.textContent = t(j.mode) + (t("ru") ? " " + t("ru") : "");
+    j.items.forEach(function (item) {
+      var card = el("div", "hs-item"), top = el("div", "hs-top");
+      top.appendChild(el("span", "hs-code", item.code_fmt));
+      top.appendChild(el("span", "hs-title", item.title));
+      card.appendChild(top);
+      if (item.path) card.appendChild(el("div", "hs-path", item.path));
+      if (item.reason) card.appendChild(el("div", "hs-why", item.reason));
+      var tags = el("div", "hs-tags");
+      tags.appendChild(el("span", "hs-tag", t("duty") + ": " + (item.duty || t("noduty"))));
+      tags.appendChild(el("span", "hs-tag vat", t("vat") + " " + item.vat + " %" + (item.vat_conditional ? " (" + t("cond") + ")" : "")));
+      var calc = el("button", "hs-calc", t("calc")); calc.type = "button";
+      calc.addEventListener("click", function () { toQuote(item); });
+      tags.appendChild(calc);
+      card.appendChild(tags);
+      list.appendChild(card);
+    });
+  }
+  function search() {
+    var text = q.value.trim();
+    if (text.length < 3) { q.focus(); return; }
+    note.textContent = t("wait"); list.innerHTML = ""; go.disabled = true;
+    fetch("https://panel.cargoclear.ru/public/hs-search", {method: "POST", body: JSON.stringify({q: text, lang: L()})})
+      .then(function (r) { return r.json().then(function (j) { j.status = r.status; return j; }); })
+      .then(function (j) {
+        if (j.status === 429) return void (note.textContent = t("limit"));
+        if (!j.ok) return void (note.textContent = t("none"));
+        render(j);
+      })
+      .catch(function () { note.textContent = t("fail"); })
+      .then(function () { go.disabled = false; });
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); search(); });
 })();
 </script>
 </body>
