@@ -16,6 +16,17 @@ ROOT = Path(__file__).resolve().parent.parent
 PANEL = "https://panel.cargoclear.ru"
 
 TOOL_STYLE = """
+.logo { display:flex; align-items:center; gap:9px; }
+header nav { gap:18px; }
+header nav a { color:var(--ink-2); padding:6px 0; border-bottom:2px solid transparent; }
+header nav a:hover { color:var(--teal); }
+header nav a.on { color:var(--teal); border-bottom-color:var(--teal); }
+header nav a { white-space:nowrap; }
+@media (max-width:640px) {
+  header .wrap { height:auto; flex-wrap:wrap; row-gap:2px; padding-top:10px; padding-bottom:4px; }
+  header nav { width:100%; gap:16px; font-size:14px; overflow-x:auto; scrollbar-width:none; }
+  .logo { font-size:17px; } .logo img { width:28px; height:23px; }
+}
 .tool { background:#fff; border:1px solid var(--line); border-radius:20px; padding:24px; box-shadow:0 18px 40px rgba(11,29,42,.07); margin-top:-28px; position:relative; }
 .tool label { display:block; font-weight:600; font-size:13px; color:var(--muted); margin:0 0 6px; }
 .tool input, .tool select { width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:inherit; color:var(--ink); background:#fff; }
@@ -49,8 +60,10 @@ TOOL_STYLE = """
 def page(slug: str, title: str, description: str, h1: str, lead: str, tool: str, body: str,
          faq: list[tuple[str, str]], script: str, extra_style: str = "") -> str:  # fmt: skip
     url = f"{SITE}/{slug}"
-    AUTO_LINK = ('<a class="hide-m" href="/rastamozhka-avto.html">Растаможка авто</a>'
-                 if "rastamozhka-avto.html" in PAGES else "")
+    links = [("/", "Главная"), ("/kod-tn-ved.html", "Код ТН ВЭД"),
+             ("/rastamozhka-avto.html", "Растаможка авто"), ("/#quote", "Расчёт")]
+    nav = "".join(f'<a href="{h}"' + (' class="on" aria-current="page"' if h == f"/{slug}" else "")
+                  + f">{t}</a>" for h, t in links)  # fmt: skip
     faq_ld = {
         "@context": "https://schema.org", "@type": "FAQPage",
         "mainEntity": [{"@type": "Question", "name": q,
@@ -78,8 +91,8 @@ def page(slug: str, title: str, description: str, h1: str, lead: str, tool: str,
 <script src="/protect.js" defer></script>
 </head>
 <body>
-<header><div class="wrap"><a class="logo" href="/">CargoClear</a>
-<nav><a class="hide-m" href="/kod-tn-ved.html">Код ТН ВЭД</a>{AUTO_LINK}<a href="/#quote">Расчёт</a></nav></div></header>
+<header><div class="wrap"><a class="logo" href="/"><img src="/logo-mark.svg" width="34" height="28" alt="">CargoClear</a>
+<nav>{nav}</nav></div></header>
 <div class="hero"><div class="wrap">
 <h1>{_e(h1)}</h1>
 <p>{_e(lead)}</p>
@@ -165,7 +178,7 @@ HS_SCRIPT = """
   }
   function search() {
     var text = q.value.trim();
-    if (text.length < 3) { q.focus(); return; }
+    if (text.length < 3) { note.textContent = "Напишите товар или код — хотя бы 3 символа."; q.focus(); return; }
     note.textContent = /^[\\d\\s.\\-]+$/.test(text) ? "Ищем…" : "Ищем… по описанию это 10–30 секунд.";
     list.innerHTML = ""; go.disabled = true;
     fetch("PANEL/public/hs-search", {method: "POST", body: JSON.stringify({q: text, lang: "ru"})})
