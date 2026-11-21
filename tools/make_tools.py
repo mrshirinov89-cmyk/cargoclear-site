@@ -186,30 +186,51 @@ HS_SCRIPT = """
 
 
 AUTO_STYLE = """
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; }
-.grid > div[hidden] { display:none; }
-.res { width:100%; border-collapse:collapse; margin-top:18px; }
-.res td { padding:10px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+.calc { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:28px; align-items:start; }
+.fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 14px; }
+.fields > div[hidden] { display:none; }
+.fields .wide { grid-column:1 / -1; }
+.fields label { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.tool select, .tool input { height:48px; padding:0 14px; font-size:15px; line-height:normal; }
+.tool select { appearance:none; -webkit-appearance:none; padding-right:38px; cursor:pointer;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230f766e' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center; }
+.money { display:flex; }
+.money input { border-radius:12px 0 0 12px; flex:1; min-width:0; }
+.money select { width:132px; flex:none; border-radius:0 12px 12px 0; border-left:0; background-color:var(--bg-2); }
+.rate { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin:14px 0 0; font-size:13px; color:var(--muted); }
+.rate button { font:inherit; font-size:13px; color:var(--teal); background:none; border:0; padding:0; cursor:pointer; text-decoration:underline; }
+.rate input { width:110px; height:34px; padding:0 10px; font-size:14px; }
+.result { background:linear-gradient(135deg,#071a26,#0b3a4a 60%,#0f766e); color:#fff; border-radius:16px; padding:22px; position:sticky; top:80px; }
+.result h3 { margin:0 0 4px; font-size:14px; font-weight:600; color:#5eead4; text-transform:uppercase; letter-spacing:.05em; }
+.result .total { font-size:34px; font-weight:700; line-height:1.15; margin:0 0 12px; }
+.result .small, .result li { color:rgba(255,255,255,.72); }
+.res { width:100%; border-collapse:collapse; }
+.res td { padding:9px 0; border-top:1px solid rgba(255,255,255,.14); vertical-align:top; font-size:14.5px; }
 .res td:last-child { text-align:right; font-weight:600; white-space:nowrap; padding-left:12px; }
-.res tfoot td { font-size:20px; font-weight:700; color:var(--teal); border-bottom:0; padding-top:14px; }
-#a-out ul { padding-left:18px; margin:8px 0 0; }
+.res .small { font-size:12.5px; }
+.result ul { padding-left:18px; margin:10px 0 0; font-size:13px; }
+.result .empty { color:rgba(255,255,255,.72); font-size:14.5px; margin:0; }
+.disclaimer { margin:16px 0 0; }
+@media (max-width:860px) { .calc { grid-template-columns:1fr; } .result { position:static; } }
+@media (max-width:480px) { .money select { width:112px; } }
 """
 
-AUTO_TOOL = """<div class="tool">
-<div class="grid">
-<div><label for="a-who">Кто ввозит</label><select id="a-who"><option value="personal">Физлицо для себя</option><option value="company">Юрлицо или физлицо для продажи</option></select></div>
+AUTO_TOOL = """<div class="tool"><div class="calc">
+<div>
+<div class="fields">
+<div><label for="a-who">Кто ввозит</label><select id="a-who"><option value="personal">Физлицо для себя</option><option value="company">Юрлицо / для продажи</option></select></div>
 <div><label for="a-age">Возраст авто</label><select id="a-age"><option value="new">до 3 лет</option><option value="3">от 3 до 5 лет</option><option value="5">от 5 до 7 лет</option><option value="7">старше 7 лет</option></select></div>
-<div><label for="a-engine">Двигатель</label><select id="a-engine"><option value="petrol">Бензин</option><option value="diesel">Дизель</option><option value="hyb">Гибрид (ДВС мощнее электромотора)</option><option value="seq">Последовательный гибрид</option><option value="ev">Электромобиль</option></select></div>
-<div id="a-cc-box"><label for="a-cc">Объём двигателя, см³</label><input id="a-cc" inputmode="numeric" placeholder="1998"></div>
+<div class="wide"><label for="a-engine">Двигатель</label><select id="a-engine"><option value="petrol">Бензин</option><option value="diesel">Дизель</option><option value="hyb">Гибрид</option><option value="seq">Последовательный гибрид</option><option value="ev">Электромобиль</option></select></div>
+<div id="a-cc-box"><label for="a-cc">Объём, см³</label><input id="a-cc" inputmode="numeric" placeholder="1998"></div>
 <div id="a-hp-box"><label for="a-hp">Мощность ДВС, л.с.</label><input id="a-hp" inputmode="decimal" placeholder="150"></div>
-<div id="a-em-box" hidden><label for="a-em" id="a-em-label">Мощность электромотора (30 мин), л.с.</label><input id="a-em" inputmode="decimal" placeholder="100"></div>
-<div><label for="a-price">Стоимость авто</label><input id="a-price" inputmode="decimal" placeholder="2 000 000"></div>
-<div><label for="a-cur">Валюта</label><select id="a-cur"><option value="RUB">₽ рубли</option><option value="EUR">€ евро</option><option value="USD">$ доллары</option><option value="CNY">¥ юани</option><option value="AED">дирхамы ОАЭ</option><option value="TRY">турецкие лиры</option></select></div>
-<div><label for="a-eur">Курс евро, ₽</label><input id="a-eur" inputmode="decimal"></div>
+<div id="a-em-box" hidden><label for="a-em" id="a-em-label" title="Максимальная 30-минутная мощность электромотора">Электромотор, л.с.</label><input id="a-em" inputmode="decimal" placeholder="100"></div>
+<div class="wide"><label for="a-price">Стоимость авто</label><div class="money"><input id="a-price" inputmode="decimal" placeholder="2 000 000"><select id="a-cur" aria-label="Валюта"><option value="RUB">₽ рубли</option><option value="EUR">€ евро</option><option value="USD">$ доллары</option><option value="CNY">¥ юани</option><option value="AED">AED дирхамы</option><option value="TRY">₺ лиры</option></select></div></div>
 </div>
-<p class="small" id="a-ratedate"></p>
-<div id="a-out" class="allow-copy" aria-live="polite"></div>
-<p class="small">Расчёт предварительный, по ставкам 2026 года. Точную сумму считает таможня на дату декларации; утильсбор — на дату оплаты.</p>
+<div class="rate"><span id="a-ratedate">Загружаем курс ЦБ…</span><button type="button" id="a-rate-edit">изменить курс</button><span id="a-eur-box" hidden><input id="a-eur" inputmode="decimal" aria-label="Курс евро, ₽"> ₽ за €</span></div>
+</div>
+<div class="result allow-copy" aria-live="polite"><h3>Платежи на таможне</h3><div id="a-out"></div></div>
+</div>
+<p class="small disclaimer">Расчёт предварительный, по ставкам 2026 года. Точную сумму считает таможня на дату декларации; утильсбор — на дату оплаты.</p>
 </div>"""
 
 AUTO_BODY = """<section><h2>Что входит в растаможку авто</h2><ul class="list">

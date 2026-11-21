@@ -8,10 +8,12 @@
   var RATES = {RUB: 1};
   fetch("/rates.json").then(function (r) { return r.json(); }).then(function (j) {
     Object.keys(j.rates).forEach(function (k) { RATES[k] = j.rates[k].value; });
-    $("a-ratedate").textContent = "Курсы ЦБ РФ на " + j.date.split("-").reverse().join(".");
+    RATE_DAY = j.date.split("-").reverse().join(".");
     if (!$("a-eur").value) $("a-eur").value = RATES.EUR;
     calc();
-  }).catch(function () { $("a-ratedate").textContent = "Курс не загрузился — укажите курс евро вручную."; });
+  }).catch(function () { $("a-ratedate").textContent = "Курс не загрузился — укажите курс евро:"; $("a-eur-box").hidden = false; $("a-rate-edit").hidden = true; });
+  var RATE_DAY = "";
+  $("a-rate-edit").addEventListener("click", function () { $("a-eur-box").hidden = false; $("a-rate-edit").hidden = true; $("a-eur").focus(); });
 
   function band(rows, kw) { for (var i = 0; i < rows.length; i++) if (kw <= rows[i][0]) return rows[i]; return rows[rows.length - 1]; }
   function etsNew(eur, cc) {
@@ -56,7 +58,8 @@
     $("a-cc-box").hidden = eng === "ev";
     $("a-hp-box").hidden = eng === "ev" || eng === "seq";
     $("a-em-box").hidden = !(eng === "ev" || eng === "seq" || eng === "hyb");
-    $("a-em-label").textContent = eng === "hyb" ? "Мощность электромотора (30 мин), л.с." : "Мощность электромотора (30 мин), л.с.";
+    var e = num("a-eur");
+    if (e) $("a-ratedate").textContent = "Курс ЦБ" + (RATE_DAY ? " на " + RATE_DAY : "") + ": 1 € = " + e.toLocaleString("ru-RU", {maximumFractionDigits: 2}) + " ₽";
   }
   function calc() {
     show();
@@ -65,7 +68,7 @@
     var cc = eng === "ev" ? 0 : num("a-cc"), hp = num("a-hp"), em = num("a-em");
     var out = $("a-out");
     if (!price || !eurRate || (eng !== "ev" && !cc) || (eng === "ev" || eng === "seq" ? !em : !hp)) {
-      out.innerHTML = '<p class="small">Заполните стоимость, объём и мощность — расчёт появится сразу.</p>'; return;
+      out.innerHTML = '<div class="total">—</div><p class="empty">Заполните объём, мощность и стоимость — расчёт появится сразу.</p>'; return;
     }
     if (!RATES[cur]) { out.innerHTML = '<p class="small">Нет курса для этой валюты — выберите рубли или евро.</p>'; return; }
     var valueRub = cur === "EUR" ? price * eurRate : price * RATES[cur], valueEur = valueRub / eurRate;
@@ -95,9 +98,9 @@
       ? "Льготный утильсбор (3 400 / 5 200 ₽) для электромобиля — только до 80 л.с. (58,84 кВт)."
       : "Льготный утильсбор (3 400 / 5 200 ₽) — только до 160 л.с. и 3 000 см³. Выше — коммерческая ставка.");
     if (personal) notes.push("Льготы для личного пользования — одна машина в 12 месяцев; при продаже раньше года утильсбор доплачивается до коммерческого.");
-    var html = '<table class="res"><tbody>' + lines.map(function (l) {
+    var html = '<div class="total">' + rub(total) + '</div><table class="res"><tbody>' + lines.map(function (l) {
       return "<tr><td>" + l[0] + (l[2] ? '<br><span class="small">' + l[2] + "</span>" : "") + "</td><td>" + rub(l[1]) + "</td></tr>";
-    }).join("") + '</tbody><tfoot><tr><td>Итого платежей</td><td>' + rub(total) + "</td></tr></tfoot></table>";
+    }).join("") + "</tbody></table>";
     html += '<p class="small">Стоимость авто: ' + rub(valueRub) + " (" + Math.round(valueEur).toLocaleString("ru-RU") + " €). Без учёта доставки, СВХ, СБКТС и ЭРА-ГЛОНАСС.</p>";
     if (notes.length) html += '<ul class="small">' + notes.map(function (n) { return "<li>" + n + "</li>"; }).join("") + "</ul>";
     out.innerHTML = html;
