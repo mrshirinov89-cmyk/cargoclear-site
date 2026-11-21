@@ -46,13 +46,21 @@ summary { font-weight:600; cursor:pointer; }
 .cta p { color:rgba(255,255,255,.85); }
 .more a { display:inline-block; margin:0 14px 8px 0; font-weight:600; }
 footer { border-top:1px solid var(--line); color:var(--muted); font-size:13px; padding:24px 0 40px; margin-top:24px; }
-@media (max-width:640px) { header nav a.hide-m { display:none; } }
+.logo { display:flex; align-items:center; gap:9px; }
+header nav { gap:18px; }
+header nav a { color:var(--ink-2); white-space:nowrap; }
+header nav a:hover { color:var(--teal); }
+@media (max-width:640px) {
+  header .wrap { height:auto; flex-wrap:wrap; row-gap:2px; padding-top:10px; padding-bottom:8px; }
+  header nav { width:100%; gap:16px; font-size:14px; overflow-x:auto; scrollbar-width:none; }
+  .logo { font-size:17px; } .logo img { width:28px; height:23px; }
+}
 </style>
 <script src="/protect.js" defer></script>
 </head>
 <body>
-<header><div class="wrap"><a class="logo" href="/">CargoClear</a>
-<nav><a class="hide-m" href="/#price">Цена</a><a class="hide-m" href="/news/">Новости</a><a href="/#quote">Расчёт</a></nav></div></header>
+<header><div class="wrap"><a class="logo" href="/"><img src="/logo-mark.svg" width="34" height="28" alt="">CargoClear</a>
+<nav><a href="/">Главная</a><a href="/kod-tn-ved.html">Код ТН ВЭД</a><a href="/rastamozhka-avto.html">Растаможка авто</a><a href="/#quote">Расчёт</a></nav></div></header>
 <div class="hero"><div class="wrap">
 <h1>Растаможка цветов из Эквадора</h1>
 <p>Розы, гвоздики, хризантемы и другие срезанные цветы. Проверим документы до вылета, подадим декларацию заранее и выпустим груз в день прилёта.</p>
