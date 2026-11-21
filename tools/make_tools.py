@@ -184,6 +184,60 @@ HS_SCRIPT = """
 })();
 """.replace("PANEL", PANEL)
 
+
+AUTO_STYLE = """
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; }
+.grid > div[hidden] { display:none; }
+.res { width:100%; border-collapse:collapse; margin-top:18px; }
+.res td { padding:10px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+.res td:last-child { text-align:right; font-weight:600; white-space:nowrap; padding-left:12px; }
+.res tfoot td { font-size:20px; font-weight:700; color:var(--teal); border-bottom:0; padding-top:14px; }
+#a-out ul { padding-left:18px; margin:8px 0 0; }
+"""
+
+AUTO_TOOL = """<div class="tool">
+<div class="grid">
+<div><label for="a-who">Кто ввозит</label><select id="a-who"><option value="personal">Физлицо для себя</option><option value="company">Юрлицо или физлицо для продажи</option></select></div>
+<div><label for="a-age">Возраст авто</label><select id="a-age"><option value="new">до 3 лет</option><option value="3">от 3 до 5 лет</option><option value="5">от 5 до 7 лет</option><option value="7">старше 7 лет</option></select></div>
+<div><label for="a-engine">Двигатель</label><select id="a-engine"><option value="petrol">Бензин</option><option value="diesel">Дизель</option><option value="hyb">Гибрид (ДВС мощнее электромотора)</option><option value="seq">Последовательный гибрид</option><option value="ev">Электромобиль</option></select></div>
+<div id="a-cc-box"><label for="a-cc">Объём двигателя, см³</label><input id="a-cc" inputmode="numeric" placeholder="1998"></div>
+<div id="a-hp-box"><label for="a-hp">Мощность ДВС, л.с.</label><input id="a-hp" inputmode="decimal" placeholder="150"></div>
+<div id="a-em-box" hidden><label for="a-em" id="a-em-label">Мощность электромотора (30 мин), л.с.</label><input id="a-em" inputmode="decimal" placeholder="100"></div>
+<div><label for="a-price">Стоимость авто</label><input id="a-price" inputmode="decimal" placeholder="2 000 000"></div>
+<div><label for="a-cur">Валюта</label><select id="a-cur"><option value="RUB">₽ рубли</option><option value="EUR">€ евро</option><option value="USD">$ доллары</option><option value="CNY">¥ юани</option><option value="AED">дирхамы ОАЭ</option><option value="TRY">турецкие лиры</option></select></div>
+<div><label for="a-eur">Курс евро, ₽</label><input id="a-eur" inputmode="decimal"></div>
+</div>
+<p class="small" id="a-ratedate"></p>
+<div id="a-out" class="allow-copy" aria-live="polite"></div>
+<p class="small">Расчёт предварительный, по ставкам 2026 года. Точную сумму считает таможня на дату декларации; утильсбор — на дату оплаты.</p>
+</div>"""
+
+AUTO_BODY = """<section><h2>Что входит в растаможку авто</h2><ul class="list">
+<li><b>Физлицо для себя</b> платит единую ставку — она заменяет пошлину, акциз и НДС. До 3 лет — процент от стоимости, но не менее определённой суммы за см³; старше — евро за см³ объёма.</li>
+<li><b>Юрлицо или физлицо для продажи</b> платит пошлину по Единому таможенному тарифу ЕАЭС, акциз по мощности и НДС 22 %.</li>
+<li><b>Таможенный сбор</b> — от 1 231 до 73 860 ₽, зависит от стоимости авто.</li>
+<li><b>Утилизационный сбор</b> — для личного авто до 160 л.с. и 3 000 см³: 3 400 ₽ (до 3 лет) или 5 200 ₽ (старше). Мощнее или для продажи — по коммерческой шкале, от сотен тысяч рублей.</li>
+<li><b>Электромобили</b> с 2026 года платят пошлину 15 %, акциз и НДС — льготный ввоз для России закончился 31.12.2025.</li>
+</ul></section>
+<section><h2>Как считается возраст</h2><ul class="list">
+<li>Возраст — от даты выпуска авто. Если известен только год — от 1 июля этого года, если год и месяц — от 15-го числа.</li>
+<li>Для единой ставки возраст смотрят на день регистрации декларации, для утильсбора «старше 3 лет» — тоже от даты выпуска.</li>
+</ul></section>"""
+
+AUTO_FAQ = [
+    ("Сколько стоит растаможка авто в 2026 году?",
+     "Зависит от возраста, объёма и мощности. Например, бензиновое авто 2,0 л, 150 л.с., 4 года, для себя: единая ставка 2,7 € за см³ (около 5 400 €), сбор 13 541 ₽ при стоимости 1,2–2,7 млн ₽, утильсбор 5 200 ₽."),
+    ("Какой утильсбор для личного авто?",
+     "3 400 ₽ для авто до 3 лет и 5 200 ₽ для авто старше 3 лет — при мощности до 160 л.с. и объёме до 3 000 см³, одна машина в 12 месяцев. Для электромобилей льгота — до 80 л.с."),
+    ("Платят ли электромобили пошлину?",
+     "Да. С 2026 года при ввозе в Россию — пошлина 15 %, акциз по мощности и НДС 22 %, утильсбор по мощности электромотора."),
+    ("Можете растаможить авто за меня?",
+     "Да. Проверим документы, посчитаем платежи, подадим декларацию и проведём через таможню. Растаможка — от 10 000 ₽."),
+]  # fmt: skip
+
+UTIL_JSON = (Path(__file__).with_name("util2026.json")).read_text()
+AUTO_SCRIPT = Path(__file__).with_name("auto_calc.js").read_text().replace("UTIL_JSON", UTIL_JSON)
+
 PAGES = {
     "kod-tn-ved.html": dict(
         title="Код ТН ВЭД онлайн: поиск по названию товара, пошлина и НДС | CargoClear",
@@ -191,6 +245,13 @@ PAGES = {
         h1="Поиск кода ТН ВЭД",
         lead="Опишите товар своими словами или введите код — покажем подходящие коды ТН ВЭД ЕАЭС с пошлиной и НДС. Бесплатно и без регистрации.",
         tool=HS_TOOL, body=HS_BODY, faq=HS_FAQ, script=HS_SCRIPT,
+    ),
+    "rastamozhka-avto.html": dict(
+        title="Калькулятор растаможки авто 2026 онлайн: пошлина, утильсбор, НДС | CargoClear",
+        description="Рассчитайте растаможку автомобиля в 2026 году: единая ставка для физлиц, пошлина, акциз и НДС для юрлиц, таможенный и утилизационный сбор. Бензин, дизель, гибрид, электро.",
+        h1="Калькулятор растаможки авто",
+        lead="Посчитайте платежи за ввоз легкового автомобиля в Россию по ставкам 2026 года: единая ставка или пошлина с акцизом и НДС, таможенный и утилизационный сбор.",
+        tool=AUTO_TOOL, body=AUTO_BODY, faq=AUTO_FAQ, script=AUTO_SCRIPT, extra_style=AUTO_STYLE,
     ),
 }  # fmt: skip
 
