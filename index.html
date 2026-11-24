@@ -258,8 +258,20 @@
 
   @media (max-width: 1240px) { .links { gap: 16px; font-size: 14px; } }
   @media (max-width: 1120px) { .links { gap: 10px; font-size: 13px; } }
+  .burger { display: none; width: 42px; height: 42px; border: 1px solid var(--line, rgba(0,0,0,.12)); border-radius: 10px; background: transparent; color: inherit; cursor: pointer; padding: 0; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+  .burger span { display: block; width: 20px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s, opacity .2s; }
+  header.menu-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  header.menu-open .burger span:nth-child(2) { opacity: 0; }
+  header.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   @media (max-width: 960px) {
     .links { display: none; }
+    .burger { display: inline-flex; }
+    header.menu-open, header.menu-open.over-hero { background: #fff; color: var(--ink, #0b1324); border-color: var(--line); }
+    header.menu-open.over-hero .links { color: var(--ink-2, #334); }
+    header.menu-open .logo, header.menu-open.over-hero .logo { color: var(--ink, #0b1324) !important; }
+    header.menu-open .links { display: flex; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 100%; background: #fff; padding: 8px 16px 16px; box-shadow: 0 14px 30px rgba(0,0,0,.12); font-size: 16px; color: var(--ink-2, #334); max-height: calc(100vh - 70px); overflow-y: auto; }
+    header.menu-open .links a { padding: 13px 4px; border-bottom: 1px solid rgba(0,0,0,.07); }
+    header.menu-open .links a:last-child { border-bottom: 0; }
     .hero { padding: 56px 0 48px; }
     .hero .grid, .food, .contact { grid-template-columns: 1fr; }
     h1 { font-size: 38px; }
@@ -383,6 +395,7 @@
         <button type="button" data-set="fa">فا</button>
         <button type="button" data-set="ar">ع</button>
       </div>
+      <button type="button" class="burger" aria-label="Menu" aria-expanded="false" onclick="var h=this.closest('header');var o=h.classList.toggle('menu-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button>
       <a class="btn primary small" href="#contact"><span class="en">Get a quote</span><span class="ru">Расчёт</span><span class="zh">获取报价</span><span class="tr">Fiyat Teklifi Al</span><span class="fa">درخواست پیش‌فاکتور</span><span class="ar">احصل على عرض سعر</span></a>
     </div>
   </div>
@@ -1096,5 +1109,6 @@ function ccSend(path, data) {
   all();
 })();
 </script>
+<script>document.querySelectorAll('header .links a').forEach(function(a){a.addEventListener('click',function(){var h=document.querySelector('header');h.classList.remove('menu-open');var b=h.querySelector('.burger');if(b)b.setAttribute('aria-expanded','false');});});</script>
 </body>
 </html>
