@@ -1,5 +1,98 @@
 [
  {
+  "news_id": "f18fa684750ac0ac",
+  "slug": "2026-11-25-eaeu-court-clarifies-supply-from-kazakhstan-to-russia-not-gr",
+  "day": "2026-11-25",
+  "title_en": "EAEU Court clarifies: supply from Kazakhstan to Russia not grounds for extra duties",
+  "summary_en": "The EAEU Court has clarified that a supply from Kazakhstan to Russia is not grounds for additional customs duties, according to Jurisora. Exporters shipping goods between EAEU member states should check that their transactions comply with this interpretation to avoid unnecessary charges.",
+  "title_ru": "Суд ЕАЭС разъяснил: поставка из Казахстана в РФ не основание для доначисления пошлин",
+  "summary_ru": "Суд ЕАЭС разъяснил, что поставка из Казахстана в Россию не является основанием для доначисления таможенных пошлин, сообщает Jurisora. Экспортерам, отправляющим товары между странами ЕАЭС, следует проверить соответствие своих операций данному толкованию, чтобы избежать лишних начислений.",
+  "source": "https://jurisora.ru/",
+  "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUWNva2FQMldsNjhFbHpRWG1sRFVCeTJudnlCR3pCWVkzc3p0eEpUX3lxamVXOUVHTEQwOVhiVzR1c2l5QXBta3ROdHRXY2ZUUUsxUUZ5UGdyZjBtU1dRLS16UDhnUG9KWWlxazRrUVhiUDZQc2xRVWNqMVlhSkZhb0U3Zmk?oc=5",
+  "translations": {
+   "zh": {
+    "title": "欧亚经济联盟法院澄清：从哈萨克斯坦向俄罗斯供货不构成额外关税依据",
+    "summary": "据Jurisora报道，欧亚经济联盟法院已澄清，从哈萨克斯坦向俄罗斯供货不构成征收额外关税的依据。在欧亚经济联盟成员国之间运输货物的出口商应检查其交易是否符合此解释，以避免不必要的费用。"
+   },
+   "tr": {
+    "title": "EAEU Mahkemesi açıkladı: Kazakistan'dan Rusya'ya tedarik ek gümrük vergisi nedeni değil",
+    "summary": "Jurisora'ya göre, EAEU Mahkemesi, Kazakistan'dan Rusya'ya yapılan tedarikin ek gümrük vergileri için gerekçe oluşturmadığını açıkladı. EAEU üye ülkeleri arasında mal sevk eden ihracatçılar, gereksiz masraflardan kaçınmak için işlemlerinin bu yoruma uygun olup olmadığını kontrol etmelidir."
+   },
+   "fa": {
+    "title": "دادگاه اتحادیه اقتصادی اوراسیا روشن کرد: تأمین از قزاقستان به روسیه مبنایی برای عوارض گمرکی اضافی نیست",
+    "summary": "به گزارش Jurisora، دادگاه اتحادیه اقتصادی اوراسیا روشن کرده است که تأمین کالا از قزاقستان به روسیه مبنایی برای عوارض گمرکی اضافی نیست. صادرکنندگانی که کالا را بین کشورهای عضو اتحادیه اقتصادی اوراسیا حمل می‌کنند، باید بررسی کنند که معاملاتشان با این تفسیر مطابقت دارد تا از هزینه‌های غیرضروری اجتناب کنند."
+   },
+   "ar": {
+    "title": "توضيح محكمة الاتحاد الاقتصادي الأوراسي: التوريد من كازاخستان إلى روسيا ليس سببًا لرسوم جمركية إضافية",
+    "summary": "وفقًا لـ Jurisora، أوضحت محكمة الاتحاد الاقتصادي الأوراسي أن التوريد من كازاخستان إلى روسيا لا يشكل سببًا لفرض رسوم جمركية إضافية. يجب على المصدرين الذين يشحنون البضائع بين دول الأعضاء في الاتحاد الاقتصادي الأوراسي التحقق من امتثال معاملاتهم لهذا التفسير لتجنب الرسوم غير الضرورية."
+   }
+  },
+  "topic": "Пошлины и ставки",
+  "photo": "court documents"
+ },
+ {
+  "news_id": "d66ee75f1c6271a7",
+  "slug": "2026-11-25-russia-lifts-some-restrictions-on-feed-for-lab-animals",
+  "day": "2026-11-25",
+  "title_en": "Russia lifts some restrictions on feed for lab animals",
+  "summary_en": "Rosselkhoznadzor has removed certain restrictions on supplies of feed for laboratory animals, according to Veterinary and Life. Exporters of such goods may find it easier to ship to Russia.",
+  "title_ru": "Россельхознадзор снял часть ограничений на корма для лабораторных животных",
+  "summary_ru": "Россельхознадзор отменил отдельные ограничения на поставки кормов для лабораторных животных, сообщает издание «Ветеринария и жизнь». Экспортерам такой продукции может стать проще ввозить ее в Россию.",
+  "source": "Ветеринария и жизнь",
+  "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPWlpUdVhORmpfWnR0OFhvd3FfTjZWNDdqUmlYdTFPMnpYZDJITmk4Rno2X0NDTmdaUGZBTldSQUs2NjdsOUwzcm1DOF9uZDdFTWU4bG4zX3hFQVZwNTJ5LVh6a1pRenhlMDlyRUNFbDVCLU1HeWxWVVlDNnR3aEU3aDR2X3JlNldNaDdlLXhzSHdIUjg1c2lxVWJ0S256WE1TMS1vQ0w3M29sZEZ1ZzB4VFpvbjhMaEViaXNjcjl0WmNPUDlCTE9PaS0tYw?oc=5",
+  "translations": {
+   "zh": {
+    "title": "俄罗斯取消对实验动物饲料的部分限制",
+    "summary": "据《兽医与生活》报道，俄罗斯联邦兽医和植物卫生监督局已取消对实验室动物饲料供应的某些限制。此类商品的出口商可能更容易向俄罗斯发货。"
+   },
+   "tr": {
+    "title": "Rusya laboratuvar hayvanları için yem kısıtlamalarını kaldırdı",
+    "summary": "Veterinary and Life'a göre, Rosselkhoznadzor laboratuvar hayvanları için yem tedarikindeki bazı kısıtlamaları kaldırdı. Bu tür malların ihracatçıları Rusya'ya sevkiyat yapmayı daha kolay bulabilir."
+   },
+   "fa": {
+    "title": "روسیه برخی محدودیت‌های خوراک حیوانات آزمایشگاهی را لغو کرد",
+    "summary": "به گزارش Veterinary and Life، سازمان Rosselkhoznadzor برخی محدودیت‌های مربوط به تأمین خوراک حیوانات آزمایشگاهی را حذف کرده است. صادرکنندگان این کالاها ممکن است ارسال به روسیه را آسان‌تر بیابند."
+   },
+   "ar": {
+    "title": "روسيا ترفع بعض القيود على أعلاف الحيوانات المخبرية",
+    "summary": "وفقًا لتقرير Veterinary and Life، ألغت Rosselkhoznadzor بعض القيود على إمدادات الأعلاف للحيوانات المخبرية. قد يجد مصدرو هذه السلع شحنها إلى روسيا أسهل."
+   }
+  },
+  "topic": "Пошлины и ставки",
+  "photo": "laboratory animal feed"
+ },
+ {
+  "news_id": "7c98eb037187dc5e",
+  "slug": "2026-11-25-eaeu-commission-to-update-duty-free-import-rules-for-persona",
+  "day": "2026-11-25",
+  "title_en": "EAEU Commission to update duty-free import rules for personal goods",
+  "summary_en": "The Eurasian Economic Commission is preparing to update the norms for duty-free import and the list of goods for personal use, according to TKS.RU. Exporters should check the new rules, as changes to duty-free allowances may affect shipments classified as personal imports.",
+  "title_ru": "ЕЭК готовит обновление правил беспошлинного ввоза товаров для личного пользования",
+  "summary_ru": "Евразийская экономическая комиссия готовит обновление норм беспошлинного ввоза и перечня товаров для личного пользования, сообщает TKS.RU. Экспортерам следует следить за новыми правилами, так как изменения в беспошлинных нормах могут повлиять на поставки, классифицируемые как личный импорт.",
+  "source": "TKS.RU",
+  "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPQjlLZW5GcW1vdG0xS3Vkc0ExS1BPVldmTjhTT1RvZTdJRkxLVmxuUnpidDhPdEFkdGVyTEtZMjBLRmp4Z3FFQXJYT3NZczhwYU5mV0RmczNkNVR4LTVPSUVnVXo2cEpDMzRmcXF5dHRVSDhFVHJoQWM5Tmt2Q1M2UllsQjVVYVRxVzZJYlU3YlMyNHVKMmJsMkZIaFNEUHM4Y250WU9BcG1ZM1NRNDJ1blJDX2k0Sm1fYWhDdWRtWnhGYi00VmpsZV9EQkRIUExzT0xmZFBKaVVwdw?oc=5",
+  "translations": {
+   "zh": {
+    "title": "欧亚经济委员会将更新个人物品免税进口规则",
+    "summary": "据TKS.RU报道，欧亚经济委员会正准备更新个人使用物品的免税进口规范和商品清单。出口商应核查新规，因为免税限额的变化可能影响被归类为个人进口的货物运输。"
+   },
+   "tr": {
+    "title": "EAEU Komisyonu, kişisel eşyalar için gümrüksüz ithalat kurallarını güncelleyecek",
+    "summary": "TKS.RU'ya göre, Avrasya Ekonomik Komisyonu, kişisel kullanım için gümrüksüz ithalat normlarını ve mal listesini güncellemeye hazırlanıyor. İhracatçılar, gümrüksüz limitlerdeki değişiklikler kişisel ithalat olarak sınıflandırılan sevkiyatları etkileyebileceğinden yeni kuralları kontrol etmelidir."
+   },
+   "fa": {
+    "title": "کمیسیون اتحادیه اقتصادی اوراسیا قوانین واردات معاف از عوارض کالاهای شخصی را به‌روزرسانی می‌کند",
+    "summary": "به گزارش TKS.RU، کمیسیون اقتصادی اوراسیا در حال آماده‌سازی برای به‌روزرسانی مقررات واردات معاف از عوارض و فهرست کالاهای مصرف شخصی است. صادرکنندگان باید قوانین جدید را بررسی کنند، زیرا تغییرات در سقف معافیت عوارض ممکن است بر محموله‌هایی که به‌عنوان واردات شخصی طبقه‌بندی می‌شوند تأثیر بگذارد."
+   },
+   "ar": {
+    "title": "لجنة الاتحاد الاقتصادي الأوراسي ستحدّث قواعد الاستيراد المعفاة من الرسوم الجمركية للبضائع الشخصية",
+    "summary": "وفقًا لتقرير TKS.RU، تعدّ اللجنة الاقتصادية الأوراسية لتحديث معايير الاستيراد المعفاة من الرسوم الجمركية وقائمة البضائع للاستخدام الشخصي. يجب على المصدرين التحقق من القواعد الجديدة، حيث قد تؤثر التغييرات في البدلات المعفاة من الرسوم على الشحنات المصنفة كاستيرادات شخصية."
+   }
+  },
+  "topic": "Пошлины и ставки",
+  "photo": "customs declaration form"
+ },
+ {
   "news_id": "eb4388bc5578d312",
   "slug": "2026-11-24-kazakhstan-sets-rules-for-tariff-quotas-on-imports-from-iran",
   "day": "2026-11-24",
